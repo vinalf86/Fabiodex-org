@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Numero documento Ispettorato del Lavoro --></label>
+    <name>Numero_documento_Ispettorato_del_Lavoro__c</name>
+</CustomFieldTranslation>

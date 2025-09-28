@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Ceremony area name plan A --></label>
+    <name>Ceremony_area_name_plan_A__c</name>
+</CustomFieldTranslation>

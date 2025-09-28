@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Richiesta</fullName>
+        <color>#66FF99</color>
+        <default>false</default>
+        <description>Richiesta</description>
+        <label>Richiesta</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Sollecito vendita</fullName>
+        <color>#DDDDDD</color>
+        <default>false</default>
+        <description>Sollecito vendita</description>
+        <label>Sollecito vendita</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Vendita Fissata</fullName>
+        <color>#66FF99</color>
+        <default>false</default>
+        <description>Vendita Fissata</description>
+        <label>Vendita Fissata</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Quote inviato</fullName>
+        <color>#33FF33</color>
+        <default>false</default>
+        <description>Quote inviato</description>
+        <label>Quote inviato</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>1° Sollecito</fullName>
+        <default>false</default>
+        <description>1 sollecito firma dell&apos;ultima offerta inviata</description>
+        <label>1° Sollecito</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>2° Sollecito</fullName>
+        <default>false</default>
+        <description>2° sollecito firma dell&apos;ultima offerta inviata</description>
+        <label>2° Sollecito</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Negotiation</fullName>
+        <default>false</default>
+        <description>You&apos;re working with the prospect on the proposal you delivered.</description>
+        <label>Negotiation</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Vuole Confermare</fullName>
+        <color>#33CC00</color>
+        <default>false</default>
+        <description>Vuole Confermare verbalmente</description>
+        <label>Vuole Confermare</label>
+        <closed>false</closed>
+        <forecastCategory>BestCase</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Inviato contratto</fullName>
+        <color>#33FF33</color>
+        <default>false</default>
+        <label>Inviato contratto</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Ricevuta caparra</fullName>
+        <color>#33FF33</color>
+        <default>false</default>
+        <label>Ricevuta caparra</label>
+        <closed>false</closed>
+        <forecastCategory>Pipeline</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Tentare upsell</fullName>
+        <color>#33FFFF</color>
+        <default>false</default>
+        <description>dopo la chiusura, tentare upselle per le cose rimaste in sospeso, o individuate come necessarie, ricordarsi sempre luci, e cerimonia, e che l&apos;upsell deve essere piccolo, uno!</description>
+        <label>Tentare upsell</label>
+        <closed>false</closed>
+        <forecastCategory>Forecast</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Chiuse/Conseguite</fullName>
+        <default>false</default>
+        <description>Sold!</description>
+        <label>Chiuse/Conseguite</label>
+        <closed>true</closed>
+        <forecastCategory>Closed</forecastCategory>
+        <probability>100</probability>
+        <won>true</won>
+    </standardValue>
+    <standardValue>
+        <fullName>Chiuse/Perse</fullName>
+        <color>#FF0000</color>
+        <default>false</default>
+        <description>No sale.</description>
+        <label>Chiuse/Perse</label>
+        <closed>true</closed>
+        <forecastCategory>Omitted</forecastCategory>
+        <probability>0</probability>
+        <won>false</won>
+    </standardValue>
+</StandardValueSet>

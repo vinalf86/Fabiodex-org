@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Agenzie di spettacolo</fullName>
+        <default>false</default>
+        <label>Agenzie di spettacolo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Allestitori</fullName>
+        <default>false</default>
+        <label>Allestitori</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Altro</fullName>
+        <default>false</default>
+        <label>Altro</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Artisti</fullName>
+        <default>false</default>
+        <label>Artisti</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cooperativa</fullName>
+        <default>false</default>
+        <label>Cooperativa</label>
+    </standardValue>
+    <standardValue>
+        <fullName>DMC</fullName>
+        <default>false</default>
+        <label>DMC</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Event Planner</fullName>
+        <default>false</default>
+        <label>Event Planner</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Facchini</fullName>
+        <default>false</default>
+        <label>Facchini</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Final client</fullName>
+        <default>false</default>
+        <label>Final client</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Impresa di spettacolo</fullName>
+        <default>false</default>
+        <label>Impresa di spettacolo</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Intermediario occasionale</fullName>
+        <default>false</default>
+        <label>Intermediario occasionale</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Location</fullName>
+        <default>false</default>
+        <label>Location</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Performer</fullName>
+        <default>false</default>
+        <label>Performer</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tecnici Audio</fullName>
+        <default>false</default>
+        <label>Tecnici Audio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tecnici generici backup DJ</fullName>
+        <default>false</default>
+        <label>Tecnici generici backup DJ</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tecnici Generici Fabiodex</fullName>
+        <default>false</default>
+        <label>Tecnici Generici Fabiodex</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tecnici Luce</fullName>
+        <default>false</default>
+        <label>Tecnici Luce</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tecnici Video</fullName>
+        <default>false</default>
+        <label>Tecnici Video</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Tour Operator</fullName>
+        <default>false</default>
+        <label>Tour Operator</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Venue</fullName>
+        <default>false</default>
+        <label>Venue</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Wedding Planner</fullName>
+        <default>false</default>
+        <label>Wedding Planner</label>
+    </standardValue>
+</StandardValueSet>

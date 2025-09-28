@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wedding_planner_record_type_label</fullName>
+    <active>true</active>
+    <description>Wedding planner record type label</description>
+    <label>Wedding planner record type label</label>
+</RecordType>

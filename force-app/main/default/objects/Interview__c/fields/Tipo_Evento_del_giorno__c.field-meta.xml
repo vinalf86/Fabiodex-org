@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo_Evento_del_giorno__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>ESEMPIO Welcome Party / Wedding Day / Pool Party / BBQ Party)</inlineHelpText>
+    <label>Tipo Evento del giorno</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

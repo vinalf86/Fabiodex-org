@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MyAccounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>Email_per_fatturazione__pc</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>VAT_Number__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Accounts</label>
+</ListView>

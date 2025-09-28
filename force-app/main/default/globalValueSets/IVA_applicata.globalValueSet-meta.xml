@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>IVA Esente</fullName>
+        <default>false</default>
+        <label>IVA Esente</label>
+    </customValue>
+    <customValue>
+        <fullName>IVA al 10%</fullName>
+        <default>false</default>
+        <label>IVA al 10%</label>
+    </customValue>
+    <customValue>
+        <fullName>IVA al 22%</fullName>
+        <default>false</default>
+        <label>IVA al 22%</label>
+    </customValue>
+    <masterLabel>IVA applicata</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

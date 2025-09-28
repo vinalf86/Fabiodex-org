@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Wedding</fullName>
+        <default>false</default>
+        <label>Wedding</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Incentive</fullName>
+        <default>false</default>
+        <label>Incentive</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Birthday</fullName>
+        <default>false</default>
+        <label>Birthday</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Holiday</fullName>
+        <default>false</default>
+        <label>Holiday</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Anniversary</fullName>
+        <default>false</default>
+        <label>Anniversary</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service</fullName>
+        <default>false</default>
+        <label>Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Noleggio</fullName>
+        <default>false</default>
+        <label>Noleggio</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Noleggio Trasporto</fullName>
+        <default>false</default>
+        <label>Noleggio Trasporto</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </standardValue>
+</StandardValueSet>

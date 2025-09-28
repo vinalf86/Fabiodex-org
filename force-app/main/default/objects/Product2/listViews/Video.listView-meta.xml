@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Video</fullName>
+    <columns>PRODUCT2.NAME</columns>
+    <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+    <columns>PRODUCT2.DESCRIPTION</columns>
+    <columns>Price__c</columns>
+    <columns>Compenso_netto_musicista_50_eu_benzina__c</columns>
+    <columns>X40_margine_di_guadagno__c</columns>
+    <columns>X30_tassazione_cooperative_o_varie__c</columns>
+    <columns>X10_commissione_planner__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>PRODUCT2.FAMILY</field>
+        <operation>equals</operation>
+        <value>Video</value>
+    </filters>
+    <label>Video</label>
+</ListView>

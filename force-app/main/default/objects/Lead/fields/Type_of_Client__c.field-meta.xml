@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Client__c</fullName>
+    <label>Type of Client</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Event Planner</fullName>
+                <default>false</default>
+                <label>Event Planner</label>
+            </value>
+            <value>
+                <fullName>Wedding Planner</fullName>
+                <default>false</default>
+                <label>Wedding Planner</label>
+            </value>
+            <value>
+                <fullName>Location Manager</fullName>
+                <default>false</default>
+                <label>Location Manager</label>
+            </value>
+            <value>
+                <fullName>Private (Direct Client)</fullName>
+                <default>false</default>
+                <label>Private (Direct Client)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

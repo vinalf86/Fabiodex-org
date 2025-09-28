@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Error_Message</name>
+        <label>Error Message</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Error_Message_1</name>
+        <label>Error Message</label>
+        <locationX>842</locationX>
+        <locationY>755</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_collection</name>
+        <label>Check collection</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Check_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Empty</defaultConnectorLabel>
+        <rules>
+            <name>Not_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Events</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Events</targetReference>
+            </connector>
+            <label>Not empty</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Lead</name>
+        <label>Check Lead</label>
+        <locationX>842</locationX>
+        <locationY>1079</locationY>
+        <defaultConnectorLabel>Lead not available</defaultConnectorLabel>
+        <rules>
+            <name>Lead_available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_Lead</targetReference>
+            </connector>
+            <label>Lead available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Stage</name>
+        <label>Check Stage</label>
+        <locationX>446</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Events</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Chiusa persa</defaultConnectorLabel>
+        <rules>
+            <name>Riaperta</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chiuse/Perse</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_User</targetReference>
+            </connector>
+            <label>Riaperta</label>
+        </rules>
+    </decisions>
+    <description>L&apos;evento viene creato e legato all&apos;Opportunità solo quando arriva alla fase &quot;Quote Inviato&quot;; nel momento in cui è Chiusa/Persa l&apos;evento viene cancellato.
+Se l&apos;Opportunità è Chiusa/Persa e c&apos;è un Lead collegato, lo stato del Lead viene cambiato a &quot;Chiuso&quot;.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Subject</name>
+        <dataType>String</dataType>
+        <expression>IF (
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} = {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName}
+)
+)
+)</expression>
+    </formulas>
+    <interviewLabel>Crea o cancella eventi in base all&apos;Opportunità {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Crea o cancella eventi in base all&apos;Opportunità</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Event</name>
+        <label>Create Event</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <faultConnector>
+            <targetReference>Error_Message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsAllDayEvent</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <name>Delete_Events</name>
+        <label>Delete Events</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Check_Lead</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Message_1</targetReference>
+        </faultConnector>
+        <inputReference>Get_Events</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Events</name>
+        <label>Get Events</label>
+        <locationX>842</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_collection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_User</name>
+        <label>Get User</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Event</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FirstName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Admin</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LastName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>User</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Close_Lead</name>
+        <label>Close Lead</label>
+        <locationX>710</locationX>
+        <locationY>1187</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Lead__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Unqualified</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <start>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Stage</targetReference>
+        </connector>
+        <filterFormula>ISPICKVAL ({!$Record.StageName}, &apos;Chiuse/Perse&apos;) ||
+(
+ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
+ISCHANGED ({!$Record.StageName})
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>100</triggerOrder>
+    <variables>
+        <name>EventsToDelete</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Event</objectType>
+    </variables>
+</Flow>

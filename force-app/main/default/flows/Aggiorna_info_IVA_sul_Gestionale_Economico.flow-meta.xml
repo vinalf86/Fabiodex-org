@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <description>Flow che scatta soltanto alla creazione di un nuovo gestionale economico: vengono copiate le informazioni IVA del fornitore associato sui rispettivi campi del gestionale; i campi restano successivamente modificabili a mano.</description>
+    <environments>Default</environments>
+    <interviewLabel>Aggiorna info IVA sul Gestionale Economico {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Aggiorna info IVA sul Gestionale Economico</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_IVA_info</name>
+        <label>Update IVA info</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>IVA_Applicata__c</field>
+            <value>
+                <elementReference>$Record.Fornitore__r.IVA_Applicata__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Modalita_pagamento_fornitore__c</field>
+            <value>
+                <elementReference>$Record.Fornitore__r.Modalita_pagamento_fornitore__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Ritenuta__c</field>
+            <value>
+                <elementReference>$Record.Fornitore__r.Ritenuta__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_IVA_info</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Fornitore__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Gestionale_Economico__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

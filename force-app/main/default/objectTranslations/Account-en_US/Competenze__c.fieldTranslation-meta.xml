@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Competenze --></label>
+    <name>Competenze__c</name>
+    <picklistValues>
+        <masterLabel>Arpista</masterLabel>
+        <translation><!-- Arpista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ballerina</masterLabel>
+        <translation><!-- Ballerina --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Banjoista</masterLabel>
+        <translation><!-- Banjoista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bassista</masterLabel>
+        <translation><!-- Bassista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Batterista</masterLabel>
+        <translation><!-- Batterista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burlesque, Boylesque</masterLabel>
+        <translation><!-- Burlesque, Boylesque --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cajonista</masterLabel>
+        <translation><!-- Cajonista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cantante</masterLabel>
+        <translation><!-- Cantante --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chitarrista</masterLabel>
+        <translation><!-- Chitarrista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Clarinetista</masterLabel>
+        <translation><!-- Clarinetista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contrabbassista</masterLabel>
+        <translation><!-- Contrabbassista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dhol</masterLabel>
+        <translation><!-- Dhol --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dj</masterLabel>
+        <translation><!-- Dj --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Drag Queen</masterLabel>
+        <translation><!-- Drag Queen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Figurante</masterLabel>
+        <translation><!-- Figurante --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fisarmonicista</masterLabel>
+        <translation><!-- Fisarmonicista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flautista</masterLabel>
+        <translation><!-- Flautista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Folk</masterLabel>
+        <translation><!-- Folk --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Giullare</masterLabel>
+        <translation><!-- Giullare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mandolinista</masterLabel>
+        <translation><!-- Mandolinista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mangiafuoco</masterLabel>
+        <translation><!-- Mangiafuoco --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mariachi</masterLabel>
+        <translation><!-- Mariachi --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Percussionista</masterLabel>
+        <translation><!-- Percussionista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pianista</masterLabel>
+        <translation><!-- Pianista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pole Dancer</masterLabel>
+        <translation><!-- Pole Dancer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sassofonista</masterLabel>
+        <translation><!-- Sassofonista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Soprano</masterLabel>
+        <translation><!-- Soprano --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tenore</masterLabel>
+        <translation><!-- Tenore --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tessutista</masterLabel>
+        <translation><!-- Tessutista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trombettista</masterLabel>
+        <translation><!-- Trombettista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trombonista</masterLabel>
+        <translation><!-- Trombonista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ukulelista</masterLabel>
+        <translation><!-- Ukulelista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Violinista</masterLabel>
+        <translation><!-- Violinista --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Violoncellista</masterLabel>
+        <translation><!-- Violoncellista --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

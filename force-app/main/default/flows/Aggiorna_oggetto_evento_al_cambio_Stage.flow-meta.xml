@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Notify_Won_Opportunity</name>
+        <label>Notify Won Opportunity</label>
+        <locationX>50</locationX>
+        <locationY>1463</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Notification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>recipientId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <elementReference>Title</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_recipient</name>
+        <label>Assign recipient</label>
+        <locationX>50</locationX>
+        <locationY>1355</locationY>
+        <assignmentItems>
+            <assignToReference>recipientId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_group.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Notify_Won_Opportunity</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Subject</name>
+        <label>Assign Subject</label>
+        <locationX>534</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>Events.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EventsList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Events</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Events</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Subject_T_O</name>
+        <label>Assign Subject T.O.</label>
+        <locationX>270</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>Events.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Subject_TO</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>EventsList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Events</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Events</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Stage</name>
+        <label>Check Stage</label>
+        <locationX>182</locationX>
+        <locationY>1031</locationY>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chiuse/Conseguite</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Notification</targetReference>
+            </connector>
+            <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+            <label>Closed Won</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Tutto_Organizzato</name>
+        <label>Check Tutto Organizzato</label>
+        <locationX>402</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Assign_Subject</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Tutto_Organizzato</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chiuse/Conseguite</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Tutto_Organizzato__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Subject_T_O</targetReference>
+            </connector>
+            <label>Tutto Organizzato</label>
+        </rules>
+    </decisions>
+    <description>Quando viene creata l&apos;Opportunità o quando cambia lo Stage, l&apos;oggetto degli eventi associati si aggiorna per mostrare anche lo Stage attuale.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Subject</name>
+        <dataType>String</dataType>
+        <expression>IF (
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} = {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName}
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Subject_TO</name>
+        <dataType>String</dataType>
+        <expression>IF (
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;T.O.&quot; &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} = {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;T.O.&quot; &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;T.O.&quot; &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;T.O.&quot; &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName}
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Aggiorna nome evento al cambio Stage {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Aggiorna oggetto evento al cambio Stage</label>
+    <loops>
+        <name>Events</name>
+        <label>Events</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <collectionReference>Get_Events</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Tutto_Organizzato</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Events</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Events</name>
+        <label>Get Events</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Events</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>StartDateTime</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_group</name>
+        <label>Get group</label>
+        <locationX>50</locationX>
+        <locationY>1247</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_recipient</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Gestione_Lead</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Notification</name>
+        <label>Get Notification</label>
+        <locationX>50</locationX>
+        <locationY>1139</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_group</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Nuova_Opportunita</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Events</name>
+        <label>Update Events</label>
+        <locationX>182</locationX>
+        <locationY>923</locationY>
+        <connector>
+            <targetReference>Check_Stage</targetReference>
+        </connector>
+        <inputReference>EventsList</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Events</targetReference>
+        </connector>
+        <filterFormula>OR (
+ISNEW(),
+AND (
+ISCHANGED ({!$Record.StageName}),
+!ISPICKVAL({!$Record.StageName}, &apos;Chiuse/Perse&apos;),
+!ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;)
+          ),
+ISCHANGED ({!$Record.Tutto_Organizzato__c})
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>È tempo di festeggiare, l&apos;Opportunità {!$Record.Name} ha raggiunto la fase Chiusa / Conseguita! Clicca per vedere l&apos;Opportunità.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Title</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Opportunità Chiusa / Conseguita!</text>
+    </textTemplates>
+    <triggerOrder>1700</triggerOrder>
+    <variables>
+        <name>EventsList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Event</objectType>
+    </variables>
+    <variables>
+        <name>recipientId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

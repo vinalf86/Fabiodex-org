@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Fattura e anno caparra 2 per esteso --></label>
+    <name>Fattura_e_anno_caparra_2_per_esteso__c</name>
+</CustomFieldTranslation>

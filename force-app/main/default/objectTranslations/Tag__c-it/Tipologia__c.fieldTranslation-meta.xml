@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Tipologia --></label>
+    <name>Tipologia__c</name>
+    <picklistValues>
+        <masterLabel>Artists</masterLabel>
+        <translation><!-- Artists --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Catering</masterLabel>
+        <translation><!-- Catering --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Client 1</masterLabel>
+        <translation><!-- Client 1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Client 2</masterLabel>
+        <translation><!-- Client 2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DJ</masterLabel>
+        <translation><!-- DJ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flowers</masterLabel>
+        <translation><!-- Flowers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hair</masterLabel>
+        <translation><!-- Hair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lights</masterLabel>
+        <translation><!-- Lights --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MUA</masterLabel>
+        <translation><!-- MUA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Photography</masterLabel>
+        <translation><!-- Photography --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rentals</masterLabel>
+        <translation><!-- Rentals --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Venue</masterLabel>
+        <translation><!-- Venue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Videography</masterLabel>
+        <translation><!-- Videography --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wedding planner</masterLabel>
+        <translation><!-- Wedding planner --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

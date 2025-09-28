@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Budget massimo stimato con la planner --></label>
+    <name>Budget_massimo_stimato_con_la_planner__c</name>
+</CustomFieldTranslation>

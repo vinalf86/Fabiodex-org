@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Ms.</fullName>
+        <default>false</default>
+        <label>Sig.na</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mrs.</fullName>
+        <default>false</default>
+        <label>Sig.ra</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Dr.</fullName>
+        <default>false</default>
+        <label>Dott.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Prof.</fullName>
+        <default>false</default>
+        <label>Prof.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mx.</fullName>
+        <default>false</default>
+        <label>Mx.</label>
+    </standardValue>
+</StandardValueSet>

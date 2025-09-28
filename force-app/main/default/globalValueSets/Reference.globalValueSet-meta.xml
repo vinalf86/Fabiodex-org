@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Professional Planner</fullName>
+        <default>false</default>
+        <label>Professional Planner</label>
+    </customValue>
+    <customValue>
+        <fullName>Venue</fullName>
+        <default>false</default>
+        <label>Venue</label>
+    </customValue>
+    <customValue>
+        <fullName>Friends</fullName>
+        <default>false</default>
+        <label>Friends</label>
+    </customValue>
+    <customValue>
+        <fullName>Instagram</fullName>
+        <default>false</default>
+        <label>Instagram</label>
+    </customValue>
+    <customValue>
+        <fullName>YouTube</fullName>
+        <default>false</default>
+        <label>YouTube</label>
+    </customValue>
+    <customValue>
+        <fullName>Web Search</fullName>
+        <default>false</default>
+        <label>Web Search</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>--None--</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>--None--</label>
+    </customValue>
+    <customValue>
+        <fullName>Da qualche parte</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Da qualche parte</label>
+    </customValue>
+    <customValue>
+        <fullName>Online</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Online</label>
+    </customValue>
+    <customValue>
+        <fullName>Somewhere over the rainbow</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Somewhere over the rainbow</label>
+    </customValue>
+    <customValue>
+        <fullName>Test form sito web</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Test form sito web</label>
+    </customValue>
+    <masterLabel>Reference</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

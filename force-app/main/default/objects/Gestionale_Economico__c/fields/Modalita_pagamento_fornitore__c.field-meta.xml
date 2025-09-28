@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Modalita_pagamento_fornitore__c</fullName>
+    <label>Modalità pagamento fornitore</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>IVA_Applicata__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Modalita_pagamento_fornitore</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>IVA Esente</controllingFieldValue>
+            <valueName>Fattura senza IVA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA Esente</controllingFieldValue>
+            <valueName>Prestazione Occasionale</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA Esente</controllingFieldValue>
+            <valueName>Fattura Estera</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA Esente</controllingFieldValue>
+            <valueName>Altro (Specificare)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA al 10%</controllingFieldValue>
+            <valueName>Fattura con IVA 10%</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA al 22%</controllingFieldValue>
+            <valueName>Fattura con IVA 22%</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>No Ritenuta</fullName>
+        <default>true</default>
+        <label>No Ritenuta</label>
+    </customValue>
+    <customValue>
+        <fullName>Ritenuta d&apos;acconto 20%</fullName>
+        <default>false</default>
+        <label>Ritenuta d&apos;acconto 20%</label>
+    </customValue>
+    <masterLabel>Ritenuta</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

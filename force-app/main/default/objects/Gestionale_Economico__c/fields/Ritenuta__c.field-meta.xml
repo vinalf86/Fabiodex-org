@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ritenuta__c</fullName>
+    <label>Ritenuta</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>IVA_Applicata__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Ritenuta</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>IVA Esente</controllingFieldValue>
+            <valueName>No Ritenuta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA Esente</controllingFieldValue>
+            <valueName>Ritenuta d&apos;acconto 20%</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

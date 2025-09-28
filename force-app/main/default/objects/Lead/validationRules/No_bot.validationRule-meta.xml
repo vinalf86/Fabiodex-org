@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_bot</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+				ISNEW(),
+					!ISBLANK (honeypot__c)
+					)</errorConditionFormula>
+    <errorMessage>Sei stato identificato come un bot</errorMessage>
+</ValidationRule>

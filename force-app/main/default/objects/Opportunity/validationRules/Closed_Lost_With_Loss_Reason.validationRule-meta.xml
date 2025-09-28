@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Closed_Lost_With_Loss_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL ( StageName , &apos;Chiuse/Perse&apos;) &amp;&amp;
+ISBLANK ( TEXT(Loss_Reason__c ))</errorConditionFormula>
+    <errorDisplayField>Loss_Reason__c</errorDisplayField>
+    <errorMessage>Quando l&apos;Opportunità è persa, il campo Loss Reason deve essere compilato</errorMessage>
+</ValidationRule>

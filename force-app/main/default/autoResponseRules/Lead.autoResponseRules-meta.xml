@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Risposta formulario online</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Lead da Formulario Online</value>
+            </criteriaItems>
+            <senderEmail>info@fabiodex.com</senderEmail>
+            <senderName>Fabiodex</senderName>
+            <template>unfiled$public/Invito_video_call_1709467703866</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

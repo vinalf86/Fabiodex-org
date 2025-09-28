@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stato_Pagamento__c</fullName>
+    <label>Stato Pagamento</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pagare</fullName>
+                <default>false</default>
+                <label>Pagare</label>
+            </value>
+            <value>
+                <fullName>Caparrato</fullName>
+                <default>false</default>
+                <label>Caparrato</label>
+            </value>
+            <value>
+                <fullName>Attesa fatt</fullName>
+                <default>false</default>
+                <label>Attesa fatt</label>
+            </value>
+            <value>
+                <fullName>Opzionato</fullName>
+                <default>false</default>
+                <label>Opzionato</label>
+            </value>
+            <value>
+                <fullName>Pagato</fullName>
+                <default>false</default>
+                <label>Pagato</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

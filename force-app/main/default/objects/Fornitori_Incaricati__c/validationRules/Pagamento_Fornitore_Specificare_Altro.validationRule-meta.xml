@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pagamento_Fornitore_Specificare_Altro</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND (
+ISPICKVAL ( Modalita_pagamento_fornitore__c , &apos;Altro (Specificare)&apos;),
+  ISBLANK (Pagamento_fornitore_Altro_specificare__c)
+)</errorConditionFormula>
+    <errorDisplayField>Pagamento_fornitore_Altro_specificare__c</errorDisplayField>
+    <errorMessage>Se si è scelto &quot;Altro&quot; come modalità di pagamento del fornitore, bisogna indicare la tipologia di pagamento</errorMessage>
+</ValidationRule>

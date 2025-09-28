@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Fornitore Incaricato</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Fornitori Incaricati</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Fornitore Incaricato Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Se si è scelto &quot;Altro&quot; come modalità di pagamento del fornitore, bisogna indicare la tipologia di pagamento --></errorMessage>
+        <name>Pagamento_Fornitore_Specificare_Altro</name>
+    </validationRules>
+</CustomObjectTranslation>

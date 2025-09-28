@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Lead Layout</layout>
+        <sections>
+            <label><!-- Event Information --></label>
+            <section>Event Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>WP Layout</layout>
+        <sections>
+            <label><!-- Event Information --></label>
+            <section>Event Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- New Email --></label>
+        <name>New_Email</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SocialPublisher --></label>
+        <name>SocialPublisher</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Record type used for leads coming through the web-to-lead form --></description>
+        <label><!-- Lead da Formulario Online --></label>
+        <name>Lead_Formulario_Online</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- the lead record type - business --></description>
+        <label><!-- Wedding planner record type label --></label>
+        <name>Wedding_planner_record_type_label</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Sei stato identificato come un bot --></errorMessage>
+        <name>No_bot</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Spam --></label>
+        <name>Spam</name>
+    </webLinks>
+</CustomObjectTranslation>

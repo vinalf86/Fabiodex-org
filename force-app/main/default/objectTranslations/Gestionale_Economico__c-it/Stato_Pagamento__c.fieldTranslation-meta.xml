@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Stato Pagamento --></label>
+    <name>Stato_Pagamento__c</name>
+    <picklistValues>
+        <masterLabel>Attesa fatt</masterLabel>
+        <translation><!-- Attesa fatt --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Caparrato</masterLabel>
+        <translation><!-- Caparrato --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Opzionato</masterLabel>
+        <translation><!-- Opzionato --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pagare</masterLabel>
+        <translation><!-- Pagare --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pagato</masterLabel>
+        <translation><!-- Pagato --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

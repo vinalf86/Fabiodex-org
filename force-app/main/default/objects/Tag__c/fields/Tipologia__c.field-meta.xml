@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipologia__c</fullName>
+    <label>Tipologia</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client 1</fullName>
+                <default>false</default>
+                <label>Client 1</label>
+            </value>
+            <value>
+                <fullName>Client 2</fullName>
+                <default>false</default>
+                <label>Client 2</label>
+            </value>
+            <value>
+                <fullName>Wedding planner</fullName>
+                <default>false</default>
+                <label>Wedding planner</label>
+            </value>
+            <value>
+                <fullName>Venue</fullName>
+                <default>false</default>
+                <label>Venue</label>
+            </value>
+            <value>
+                <fullName>DJ</fullName>
+                <default>false</default>
+                <label>DJ</label>
+            </value>
+            <value>
+                <fullName>Photography</fullName>
+                <default>false</default>
+                <label>Photography</label>
+            </value>
+            <value>
+                <fullName>Videography</fullName>
+                <default>false</default>
+                <label>Videography</label>
+            </value>
+            <value>
+                <fullName>Flowers</fullName>
+                <default>false</default>
+                <label>Flowers</label>
+            </value>
+            <value>
+                <fullName>MUA</fullName>
+                <default>false</default>
+                <label>MUA</label>
+            </value>
+            <value>
+                <fullName>Hair</fullName>
+                <default>false</default>
+                <label>Hair</label>
+            </value>
+            <value>
+                <fullName>Catering</fullName>
+                <default>false</default>
+                <label>Catering</label>
+            </value>
+            <value>
+                <fullName>Lights</fullName>
+                <default>false</default>
+                <label>Lights</label>
+            </value>
+            <value>
+                <fullName>Artists</fullName>
+                <default>false</default>
+                <label>Artists</label>
+            </value>
+            <value>
+                <fullName>Rentals</fullName>
+                <default>false</default>
+                <label>Rentals</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>DJ Photography</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DJ Photography</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

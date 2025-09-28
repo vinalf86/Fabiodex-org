@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Gestionale Economico</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Gestionali Economici</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Gestionale Economico Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fatturazione --></label>
+            <section>Fatturazione</section>
+        </sections>
+        <sections>
+            <label><!-- Prestazione Occasionale --></label>
+            <section>Prestazione Occasionale</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- In caso di prestazione occasionale, è necessario inserire la data di comunicazione all&apos;Ispettorato del Lavoro --></errorMessage>
+        <name>Data_Comunicazione_Vuota</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Se si indica &quot;Altro&quot; come modalità di pagamento del fornitore, bisogna specificare qual è la modalità di pagamento --></errorMessage>
+        <name>Pagamento_Fornitore_Specificare_Altro</name>
+    </validationRules>
+</CustomObjectTranslation>

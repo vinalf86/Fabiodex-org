@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Copy_1_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>3218</locationX>
+        <locationY>863</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Copy_2_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>2690</locationX>
+        <locationY>971</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Copy_3_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>3746</locationX>
+        <locationY>863</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Copy_4_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>4010</locationX>
+        <locationY>1295</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Copy_5_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>1106</locationX>
+        <locationY>755</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Copy_6_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>842</locationX>
+        <locationY>863</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Copy_8_of_Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>2426</locationX>
+        <locationY>1079</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Custom_error_message</name>
+        <label>Custom error message</label>
+        <locationX>1898</locationX>
+        <locationY>971</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>This Error should manage missing fields on Account</description>
+        <name>Manage_Error_From_Account_Event</name>
+        <label>Manage Error From Account Event</label>
+        <locationX>1634</locationX>
+        <locationY>1079</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se le date di inizio e fine evento sono correttamente compilate sull&apos;Opportunità</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>This Error should manage missing fields on Lead</description>
+        <name>Manage_Error_From_Lead_Event</name>
+        <label>Manage Error From Lead Event</label>
+        <locationX>314</locationX>
+        <locationY>863</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se le date di inizio e fine evento sono correttamente compilate sull&apos;Opportunità</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>Manage Error From Opportunity Update</description>
+        <name>Manage_Error_From_Opportunity_Update</name>
+        <label>Manage Error From Opportunity Update</label>
+        <locationX>4450</locationX>
+        <locationY>1811</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se la data dell&apos;evento è correttamente compilata sul tuo {!ErrorManagementText}.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_Account_Rec_Type</name>
+        <label>Check Account Rec Type</label>
+        <locationX>3218</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opp_Name_Person_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Person Account</defaultConnectorLabel>
+        <rules>
+            <name>Business_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Opp_Name_Business_Account</targetReference>
+            </connector>
+            <label>Business Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Primary_Quote</name>
+        <label>Check Primary Quote</label>
+        <locationX>2294</locationX>
+        <locationY>1811</locationY>
+        <defaultConnectorLabel>No Quote</defaultConnectorLabel>
+        <rules>
+            <name>Has_Quote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SyncedQuoteId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Quote</targetReference>
+            </connector>
+            <label>Has Quote</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Check_Account_Rec_Type</name>
+        <label>Check Account Rec Type</label>
+        <locationX>1766</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Update_Opp_Name_Person_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Person Account</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Business_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Update_Opp_Name_Business_Account</targetReference>
+            </connector>
+            <label>Business Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Copy_1_of_Event_existing</name>
+        <label>Event existing?</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Update_Opp_Name_Lead</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing</defaultConnectorLabel>
+        <rules>
+            <name>Copy_1_of_Not_Existing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_existing_Event</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_user</targetReference>
+            </connector>
+            <label>Not Existing</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Event_existing</name>
+        <label>Event existing?</label>
+        <locationX>2492</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Check_Account_Rec_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing</defaultConnectorLabel>
+        <rules>
+            <name>Not_Existing</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_existing_Event</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_user_2</targetReference>
+            </connector>
+            <label>Not Existing</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>OpportunityComesFrom</name>
+        <label>Opportunity Comes From</label>
+        <locationX>2294</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Close_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>From_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Lead__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Event_existing</targetReference>
+            </connector>
+            <label>From Lead</label>
+        </rules>
+        <rules>
+            <name>FromAccount</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Event_existing</targetReference>
+            </connector>
+            <label>From Account</label>
+        </rules>
+    </decisions>
+    <description>This Flow run creating a new Event for each Opportunity with Lead Source different from &quot;Website&quot; and with Lead field filled properly. Update Close Date using a formula</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CloseDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF({!FromAccount},{!$Flow.CurrentDate} + (FLOOR({!$Record.Event_Start_Date__c}-{!$Flow.CurrentDate})/2),{!$Flow.CurrentDate} + (FLOOR({!$Record.Event_Start_Date__c}-{!$Flow.CurrentDate})/2))</expression>
+    </formulas>
+    <formulas>
+        <name>ErrorManagementText</name>
+        <dataType>String</dataType>
+        <expression>IF({!FromAccount},&quot;Account &quot;+{!$Record.Account.Name},&quot;Lead &quot;+{!$Record.Lead__r.FirstName}+&quot; &quot;+{!$Record.Lead__r.LastName})</expression>
+    </formulas>
+    <formulas>
+        <name>Now</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <name>OpportunityNameBusAccount</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OpportunityNameLead</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp;  TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp;&quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp;&quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>OpportunityNamePersAccount</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.FirstName} &amp; &quot; &quot; &amp; {!$Record.Account.LastName},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.FirstName} &amp; &quot; &quot; &amp; {!$Record.Account.LastName}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SubjectEventBusAccount</name>
+        <dataType>String</dataType>
+        <expression>IF (
+{!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.Name} 
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SubjectEventLead</name>
+        <dataType>String</dataType>
+        <expression>IF (
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} = {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName}
+)
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>SubjectEventPersAccount</name>
+        <dataType>String</dataType>
+        <expression>IF (
+{!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.FirstName} &amp; &quot; &quot; &amp; {!$Record.Account.LastName},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Account.FirstName} &amp; &quot; &quot; &amp; {!$Record.Account.LastName}
+)</expression>
+    </formulas>
+    <interviewLabel>QuoteAfterUpdate {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity After Insert</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Event_Business_Account</name>
+        <label>Create Event Business Account</label>
+        <locationX>1370</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Close_Date</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Manage_Error_From_Account_Event</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsAllDayEvent</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_user_2.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>SubjectEventBusAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Event_Person_Account</name>
+        <label>Create Event Person Account</label>
+        <locationX>2162</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Close_Date</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_8_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsAllDayEvent</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_user_2.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>SubjectEventPersAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>CreateEvent</name>
+        <label>CreateEvent</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Close_Date</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Manage_Error_From_Lead_Event</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsAllDayEvent</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_user.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>SubjectEventLead</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_existing_Event</name>
+        <label>Get existing Event</label>
+        <locationX>2294</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OpportunityComesFrom</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Event</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_user</name>
+        <label>Get user</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CreateEvent</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FirstName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Admin</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LastName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>User</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_user_2</name>
+        <label>Get user 2</label>
+        <locationX>1766</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Check_Account_Rec_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>FirstName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Admin</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LastName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>User</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Copy_1_of_Update_Opp_Name_Business_Account</name>
+        <label>Update Opp Name Business Account</label>
+        <locationX>1370</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>Create_Event_Business_Account</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Custom_error_message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OpportunityNameBusAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Copy_2_of_Update_Opp_Name_Person_Account</name>
+        <label>Update Opp Name Person Account</label>
+        <locationX>2162</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>Create_Event_Person_Account</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_2_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OpportunityNamePersAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Close_Date</name>
+        <label>Update Close Date</label>
+        <locationX>2294</locationX>
+        <locationY>1703</locationY>
+        <connector>
+            <targetReference>Check_Primary_Quote</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Manage_Error_From_Opportunity_Update</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>CloseDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Event_Account</name>
+        <label>Update Event Account</label>
+        <locationX>3218</locationX>
+        <locationY>1187</locationY>
+        <connector>
+            <targetReference>Update_Close_Date</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_4_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_existing_Event.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsAllDayEvent</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Event_Lead</name>
+        <label>Update Event Lead</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Close_Date</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_6_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_existing_Event.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IsAllDayEvent</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>SubjectEventLead</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp_Name_Business_Account</name>
+        <label>Update Opp Name Business Account</label>
+        <locationX>2954</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Event_Account</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_1_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OpportunityNameBusAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp_Name_Lead</name>
+        <label>Update Opp Name Lead</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Event_Lead</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_5_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OpportunityNameLead</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp_Name_Person_Account</name>
+        <label>Update Opp Name Person Account</label>
+        <locationX>3482</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Update_Event_Account</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Copy_3_of_Custom_error_message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OpportunityNamePersAccount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Quote</name>
+        <label>Update Quote</label>
+        <locationX>2162</locationX>
+        <locationY>1919</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SyncedQuoteId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
+    </recordUpdates>
+    <start>
+        <locationX>2168</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_existing_Event</targetReference>
+        </connector>
+        <filterFormula>!ISPICKVAL({!$Record.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
+!ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
+{!$Record.Opp_automatica_da_web__c} = FALSE &amp;&amp;
+!ISCHANGED ({!$Record.TECH_ReminderSent__c}) &amp;&amp;
+!ISCHANGED ({!$Record.Eventi_in_contemporanea__c}) &amp;&amp;
+
+(
+!ISNULL ({!$Record.AccountId}) ||
+(!ISNULL ({!$Record.Lead__c}) &amp;&amp;
+!ISPICKVAL ({!$Record.Lead__r.LeadSource}, &apos;Website&apos;)) ||
+ISCHANGED ({!$Record.Location__c})
+       )</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>300</triggerOrder>
+    <variables>
+        <name>RecipientId</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

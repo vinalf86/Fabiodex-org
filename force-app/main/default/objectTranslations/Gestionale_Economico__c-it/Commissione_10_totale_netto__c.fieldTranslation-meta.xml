@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Commissione 10% totale netto --></label>
+    <name>Commissione_10_totale_netto__c</name>
+</CustomFieldTranslation>

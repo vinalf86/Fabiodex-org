@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Customer Information --></label>
+            <section>Customer Information</section>
+        </sections>
+        <sections>
+            <label><!-- TAGS --></label>
+            <section>TAGS</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Conferma/Disdici --></label>
+        <name>Conferma_Disdici</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Go Interview --></label>
+        <name>Go_Interview</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Email --></label>
+        <name>New_Email</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Almeno uno tra Account e Lead deve essere inserito sull&apos;Opportunità --></errorMessage>
+        <name>Account_or_Lead</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Quando l&apos;Opportunità è persa, il campo Loss Reason deve essere compilato --></errorMessage>
+        <name>Closed_Lost_With_Loss_Reason</name>
+    </validationRules>
+</CustomObjectTranslation>

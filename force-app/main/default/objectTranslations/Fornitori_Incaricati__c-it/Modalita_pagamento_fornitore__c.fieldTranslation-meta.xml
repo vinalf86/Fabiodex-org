@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Modalità pagamento fornitore --></label>
+    <name>Modalita_pagamento_fornitore__c</name>
+    <picklistValues>
+        <masterLabel>Altro (Specificare)</masterLabel>
+        <translation><!-- Altro (Specificare) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fattura Estera</masterLabel>
+        <translation><!-- Fattura Estera --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fattura con IVA 10%</masterLabel>
+        <translation><!-- Fattura con IVA 10% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fattura con IVA 22%</masterLabel>
+        <translation><!-- Fattura con IVA 22% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fattura senza IVA</masterLabel>
+        <translation><!-- Fattura senza IVA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prestazione Occasionale</masterLabel>
+        <translation><!-- Prestazione Occasionale --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

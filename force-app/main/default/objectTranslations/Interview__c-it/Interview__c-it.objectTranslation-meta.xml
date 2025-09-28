@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interview</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interviews</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Interview Layout</layout>
+        <sections>
+            <label><!-- Cake --></label>
+            <section>Cake</section>
+        </sections>
+        <sections>
+            <label><!-- Ceremony --></label>
+            <section>Ceremony</section>
+        </sections>
+        <sections>
+            <label><!-- Cocktail --></label>
+            <section>Cocktail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Dinner --></label>
+            <section>Dinner</section>
+        </sections>
+        <sections>
+            <label><!-- Guests --></label>
+            <section>Guests</section>
+        </sections>
+        <sections>
+            <label><!-- Lunch --></label>
+            <section>Lunch</section>
+        </sections>
+        <sections>
+            <label><!-- Party --></label>
+            <section>Party</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Interview 1st day --></label>
+        <name>Interview_1st_day</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Interview 2nd day --></label>
+        <name>Interview_2nd_day</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Interview 3rd day --></label>
+        <name>Interview_3rd_day</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Interview Main Record Type --></label>
+        <name>Interview_Main_Record_Type</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>
