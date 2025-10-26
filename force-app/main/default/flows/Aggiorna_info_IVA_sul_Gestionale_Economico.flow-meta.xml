@@ -2,6 +2,33 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>64.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_values_to_GE</name>
+        <label>Assign values to GE</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Ritenuta__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Fornitore__r.Ritenuta__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.IVA_Applicata__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Fornitore__r.IVA_Applicata__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.Modalita_pagamento_fornitore__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Fornitore__r.Modalita_pagamento_fornitore__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
     <description>Flow che scatta soltanto alla creazione di un nuovo gestionale economico: vengono copiate le informazioni IVA del fornitore associato sui rispettivi campi del gestionale; i campi restano successivamente modificabili a mano.</description>
     <environments>Default</environments>
     <interviewLabel>Aggiorna info IVA sul Gestionale Economico {!$Flow.CurrentDateTime}</interviewLabel>
@@ -25,36 +52,11 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Update_IVA_info</name>
-        <label>Update IVA info</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <inputAssignments>
-            <field>IVA_Applicata__c</field>
-            <value>
-                <elementReference>$Record.Fornitore__r.IVA_Applicata__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Modalita_pagamento_fornitore__c</field>
-            <value>
-                <elementReference>$Record.Fornitore__r.Modalita_pagamento_fornitore__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Ritenuta__c</field>
-            <value>
-                <elementReference>$Record.Fornitore__r.Ritenuta__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_IVA_info</targetReference>
+            <targetReference>Assign_values_to_GE</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
