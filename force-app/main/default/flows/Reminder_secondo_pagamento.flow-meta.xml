@@ -4,7 +4,7 @@
         <name>Copy_1_of_No_Email</name>
         <label>No Email</label>
         <locationX>842</locationX>
-        <locationY>1116</locationY>
+        <locationY>900</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -45,7 +45,7 @@
         <name>No_Email</name>
         <label>No Email</label>
         <locationX>314</locationX>
-        <locationY>1116</locationY>
+        <locationY>900</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -86,7 +86,7 @@
         <name>Notify_Fabio</name>
         <label>Notify Fabio</label>
         <locationX>1282</locationX>
-        <locationY>900</locationY>
+        <locationY>792</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -130,7 +130,7 @@
         <name>Notify_internal_users</name>
         <label>Notify internal users</label>
         <locationX>578</locationX>
-        <locationY>1548</locationY>
+        <locationY>1440</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -143,7 +143,7 @@
         <inputParameters>
             <name>recipientIds</name>
             <value>
-                <elementReference>RecipientId</elementReference>
+                <elementReference>Recipients</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -171,7 +171,7 @@
         <name>Notify_Sabrina</name>
         <label>Notify Sabrina</label>
         <locationX>1546</locationX>
-        <locationY>900</locationY>
+        <locationY>792</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -215,11 +215,11 @@
         <name>Reminder_pagamento_Lead</name>
         <label>Reminder pagamento Lead</label>
         <locationX>50</locationX>
-        <locationY>900</locationY>
+        <locationY>684</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Add_recipients</targetReference>
+            <targetReference>Get_users</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Assign_recipient_Id</targetReference>
@@ -280,11 +280,11 @@
         <name>Reminder_pagamento_Person_Account</name>
         <label>Reminder pagamento Person Account</label>
         <locationX>578</locationX>
-        <locationY>900</locationY>
+        <locationY>684</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Add_recipients</targetReference>
+            <targetReference>Get_users</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Copy_2_of_Assign_recipient_Id</targetReference>
@@ -344,33 +344,10 @@
     <apiVersion>60.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Add_recipients</name>
-        <label>Add recipients</label>
-        <locationX>578</locationX>
-        <locationY>1440</locationY>
-        <assignmentItems>
-            <assignToReference>RecipientId</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_User_Fabio.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>RecipientId</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_User_Sabrina.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Notify_internal_users</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_Recipient_Fabio</name>
         <label>Assign Recipient Fabio</label>
         <locationX>1282</locationX>
-        <locationY>792</locationY>
+        <locationY>684</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -386,7 +363,7 @@
         <name>Assign_recipient_Id</name>
         <label>Assign recipient Id</label>
         <locationX>314</locationX>
-        <locationY>1008</locationY>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -402,7 +379,7 @@
         <name>Assign_Recipient_Sabrina</name>
         <label>Assign Recipient Sabrina</label>
         <locationX>1546</locationX>
-        <locationY>792</locationY>
+        <locationY>684</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -418,7 +395,7 @@
         <name>Copy_2_of_Assign_recipient_Id</name>
         <label>Assign recipient Id</label>
         <locationX>842</locationX>
-        <locationY>1008</locationY>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -434,7 +411,7 @@
         <name>Remove_Recipient</name>
         <label>Remove Recipient</label>
         <locationX>1282</locationX>
-        <locationY>1008</locationY>
+        <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>RemoveAll</operator>
@@ -447,7 +424,7 @@
         <name>Remove_Recipient_2</name>
         <label>Remove Recipient</label>
         <locationX>1546</locationX>
-        <locationY>1008</locationY>
+        <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>RemoveAll</operator>
@@ -467,7 +444,7 @@
         <name>Check_Days_to_Event</name>
         <label>Check Days to Event</label>
         <locationX>1194</locationX>
-        <locationY>684</locationY>
+        <locationY>468</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X30_Days</name>
@@ -502,7 +479,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Recipient_Fabio</targetReference>
+                <targetReference>Get_User_Fabio</targetReference>
             </connector>
             <label>7 Days</label>
         </rules>
@@ -517,7 +494,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Recipient_Sabrina</targetReference>
+                <targetReference>Get_User_Sabrina</targetReference>
             </connector>
             <label>Today plus 7</label>
         </rules>
@@ -526,9 +503,9 @@
         <name>Check_Lead_or_Contact</name>
         <label>Check Lead or Contact</label>
         <locationX>578</locationX>
-        <locationY>792</locationY>
+        <locationY>576</locationY>
         <defaultConnector>
-            <targetReference>Add_recipients</targetReference>
+            <targetReference>Get_users</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Business Account</defaultConnectorLabel>
         <rules>
@@ -603,7 +580,7 @@
         <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_User_Fabio</targetReference>
+            <targetReference>Check_Days_to_Event</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -648,11 +625,11 @@
     <recordLookups>
         <name>Get_User_Fabio</name>
         <label>Get User Fabio</label>
-        <locationX>1194</locationX>
-        <locationY>468</locationY>
+        <locationX>1282</locationX>
+        <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_User_Sabrina</targetReference>
+            <targetReference>Assign_Recipient_Fabio</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -676,11 +653,11 @@
     <recordLookups>
         <name>Get_User_Sabrina</name>
         <label>Get User Sabrina</label>
-        <locationX>1194</locationX>
+        <locationX>1546</locationX>
         <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_Days_to_Event</targetReference>
+            <targetReference>Assign_Recipient_Sabrina</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -698,6 +675,41 @@
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_users</name>
+        <label>Get users</label>
+        <locationX>578</locationX>
+        <locationY>1224</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Recipients</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Fabio Cisternino</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Amministrazione Carvalho</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>User</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -802,6 +814,27 @@
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>7 giorni trascorsi dall&apos;evento</text>
     </textTemplates>
+    <transforms>
+        <name>Recipients</name>
+        <label>Recipients</label>
+        <locationX>578</locationX>
+        <locationY>1332</locationY>
+        <connector>
+            <targetReference>Notify_internal_users</targetReference>
+        </connector>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <scale>0</scale>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <transformValues>
+            <transformValueActions>
+                <transformType>Map</transformType>
+                <value>
+                    <elementReference>Get_users[$EachItem].Id</elementReference>
+                </value>
+            </transformValueActions>
+        </transformValues>
+    </transforms>
     <variables>
         <name>RecipientId</name>
         <dataType>String</dataType>
