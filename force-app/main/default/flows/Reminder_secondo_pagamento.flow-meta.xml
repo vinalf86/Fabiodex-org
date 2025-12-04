@@ -633,10 +633,10 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Fabio Cisternino</stringValue>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -661,10 +661,10 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Amministrazione Carvalho</stringValue>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -696,17 +696,17 @@
             </value>
         </filters>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Fabio Cisternino</stringValue>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Amministrazione Carvalho</stringValue>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
