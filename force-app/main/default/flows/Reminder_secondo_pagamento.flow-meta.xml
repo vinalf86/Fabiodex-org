@@ -85,13 +85,16 @@
     <actionCalls>
         <name>Notify_Fabio</name>
         <label>Notify Fabio</label>
-        <locationX>1282</locationX>
+        <locationX>1546</locationX>
         <locationY>792</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
             <targetReference>Remove_Recipient</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Check_retry</targetReference>
+        </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>customNotifTypeId</name>
@@ -133,6 +136,10 @@
         <locationY>1440</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Check_retry</targetReference>
+        </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>customNotifTypeId</name>
@@ -170,13 +177,17 @@
     <actionCalls>
         <name>Notify_Sabrina</name>
         <label>Notify Sabrina</label>
-        <locationX>1546</locationX>
+        <locationX>2338</locationX>
         <locationY>792</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
             <targetReference>Remove_Recipient_2</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Check_retry</targetReference>
+        </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>customNotifTypeId</name>
@@ -346,7 +357,7 @@
     <assignments>
         <name>Assign_Recipient_Fabio</name>
         <label>Assign Recipient Fabio</label>
-        <locationX>1282</locationX>
+        <locationX>1546</locationX>
         <locationY>684</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
@@ -378,7 +389,7 @@
     <assignments>
         <name>Assign_Recipient_Sabrina</name>
         <label>Assign Recipient Sabrina</label>
-        <locationX>1546</locationX>
+        <locationX>2338</locationX>
         <locationY>684</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
@@ -408,9 +419,25 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Increase_retry</name>
+        <label>Increase retry</label>
+        <locationX>1810</locationX>
+        <locationY>1008</locationY>
+        <assignmentItems>
+            <assignToReference>retry</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Wait_5_minutes</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Remove_Recipient</name>
         <label>Remove Recipient</label>
-        <locationX>1282</locationX>
+        <locationX>1546</locationX>
         <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
@@ -423,7 +450,7 @@
     <assignments>
         <name>Remove_Recipient_2</name>
         <label>Remove Recipient</label>
-        <locationX>1546</locationX>
+        <locationX>2338</locationX>
         <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
@@ -443,7 +470,7 @@
     <decisions>
         <name>Check_Days_to_Event</name>
         <label>Check Days to Event</label>
-        <locationX>1194</locationX>
+        <locationX>1722</locationX>
         <locationY>468</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -546,6 +573,28 @@
             <label>Person Account</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Check_retry</name>
+        <label>Check retry</label>
+        <locationX>1942</locationX>
+        <locationY>900</locationY>
+        <defaultConnectorLabel>Greater than 2</defaultConnectorLabel>
+        <rules>
+            <name>Less_or_equal_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>retry</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>2.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Increase_retry</targetReference>
+            </connector>
+            <label>Less or equal 2</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>EventPlus7</name>
@@ -576,7 +625,7 @@
     <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
-        <locationX>1194</locationX>
+        <locationX>1722</locationX>
         <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -597,7 +646,7 @@
     <recordLookups>
         <name>Get_Primary_Contact</name>
         <label>Get Primary Contact</label>
-        <locationX>1194</locationX>
+        <locationX>1722</locationX>
         <locationY>252</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -625,7 +674,7 @@
     <recordLookups>
         <name>Get_User_Fabio</name>
         <label>Get User Fabio</label>
-        <locationX>1282</locationX>
+        <locationX>1546</locationX>
         <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -633,10 +682,10 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Fabio Cisternino</stringValue>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -653,7 +702,7 @@
     <recordLookups>
         <name>Get_User_Sabrina</name>
         <label>Get User Sabrina</label>
-        <locationX>1546</locationX>
+        <locationX>2338</locationX>
         <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -661,10 +710,10 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Amministrazione Carvalho</stringValue>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -696,17 +745,17 @@
             </value>
         </filters>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Fabio Cisternino</stringValue>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </filters>
         <filters>
-            <field>Name</field>
+            <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Amministrazione Carvalho</stringValue>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
@@ -714,7 +763,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>1068</locationX>
+        <locationX>1596</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Primary_Contact</targetReference>
@@ -842,4 +891,33 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
+    <variables>
+        <name>retry</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <waits>
+        <name>Wait_5_minutes</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Wait 5 minutes</label>
+        <locationX>1810</locationX>
+        <locationY>1116</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Get_Primary_Contact</targetReference>
+            </connector>
+            <label>el_0</label>
+            <offset>3</offset>
+            <offsetUnit>Minutes</offsetUnit>
+        </waitEvents>
+    </waits>
 </Flow>
