@@ -4205,7 +4205,7 @@
             </value>
         </filters>
         <filters>
-            <field>Active_Product__c</field>
+            <field>IsActive</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -19409,13 +19409,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_Prod_Day_5[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
-            <transformValueActions>
                 <outputFieldApiName>CreatedById</outputFieldApiName>
                 <transformType>Map</transformType>
                 <value>
@@ -19565,13 +19558,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_day_6[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
-            <transformValueActions>
                 <outputFieldApiName>CreatedById</outputFieldApiName>
                 <transformType>Map</transformType>
                 <value>
@@ -19720,13 +19706,6 @@
         <scale>0</scale>
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
-            <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_Prod_Day_7[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
             <transformValueActions>
                 <outputFieldApiName>CreatedById</outputFieldApiName>
                 <transformType>Map</transformType>
@@ -19996,13 +19975,6 @@
                 </value>
             </transformValueActions>
             <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_Prod_Day_1[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
-            <transformValueActions>
                 <outputFieldApiName>CreatedDate</outputFieldApiName>
                 <transformType>Map</transformType>
                 <value>
@@ -20032,13 +20004,6 @@
         <scale>0</scale>
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
-            <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_Prod_Day_2[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
             <transformValueActions>
                 <outputFieldApiName>CreatedById</outputFieldApiName>
                 <transformType>Map</transformType>
@@ -20189,13 +20154,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_Prod_Day_3[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
-            <transformValueActions>
                 <outputFieldApiName>CreatedById</outputFieldApiName>
                 <transformType>Map</transformType>
                 <value>
@@ -20345,20 +20303,6 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
         <transformValues>
             <transformValueActions>
-                <outputFieldApiName>Active_Product__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Filter_Prod_Day_4[$EachItem].Active_Product__c</elementReference>
-                </value>
-            </transformValueActions>
-            <transformValueActions>
-                <outputFieldApiName>Day_Text__c</outputFieldApiName>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Day4</elementReference>
-                </value>
-            </transformValueActions>
-            <transformValueActions>
                 <outputFieldApiName>CreatedById</outputFieldApiName>
                 <transformType>Map</transformType>
                 <value>
@@ -20482,6 +20426,13 @@
                 <transformType>Map</transformType>
                 <value>
                     <elementReference>Filter_Prod_Day_4[$EachItem].UseStandardPrice</elementReference>
+                </value>
+            </transformValueActions>
+            <transformValueActions>
+                <outputFieldApiName>Day_Text__c</outputFieldApiName>
+                <transformType>Map</transformType>
+                <value>
+                    <elementReference>Day4</elementReference>
                 </value>
             </transformValueActions>
         </transformValues>
