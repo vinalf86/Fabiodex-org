@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Copy_2_of_New_Lead</name>
         <label>Copy 2 of New Lead</label>
-        <locationX>1502</locationX>
-        <locationY>1835</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -47,8 +47,8 @@
     <actionCalls>
         <name>Copy_2_of_New_Opportunity</name>
         <label>Copy 2 of New Opportunity</label>
-        <locationX>1502</locationX>
-        <locationY>1727</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -82,7 +82,7 @@
         <inputParameters>
             <name>targetId</name>
             <value>
-                <elementReference>Get_New_Opportunity_Info.Id</elementReference>
+                <elementReference>Create_Opportunity.Id</elementReference>
             </value>
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
@@ -91,8 +91,8 @@
     <actionCalls>
         <name>LeadNotification</name>
         <label>Lead Notification</label>
-        <locationX>314</locationX>
-        <locationY>971</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -135,8 +135,8 @@
     <actionCalls>
         <name>New_Lead</name>
         <label>New Lead</label>
-        <locationX>1766</locationX>
-        <locationY>1619</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -179,8 +179,8 @@
     <actionCalls>
         <name>New_Opportunity</name>
         <label>New Opportunity</label>
-        <locationX>1766</locationX>
-        <locationY>1511</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -214,7 +214,7 @@
         <inputParameters>
             <name>targetId</name>
             <value>
-                <elementReference>Copy_1_of_Get_New_Opportunity_Info.Id</elementReference>
+                <elementReference>Create_Opportunity_2.Id</elementReference>
             </value>
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
@@ -223,8 +223,8 @@
     <actionCalls>
         <name>Send_email_Fabiodex</name>
         <label>Send email Fabiodex</label>
-        <locationX>1106</locationX>
-        <locationY>2243</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <faultConnector>
@@ -279,8 +279,8 @@
     <actionCalls>
         <name>Send_email_Tuscany_Entertainment</name>
         <label>Send email Tuscany Entertainment</label>
-        <locationX>1634</locationX>
-        <locationY>2243</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <faultConnector>
@@ -333,13 +333,13 @@
         <nameSegment>emailSimple</nameSegment>
         <offset>0</offset>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_Account_Id_to_Opportunity</name>
         <label>Assign Account Id to Opportunity</label>
-        <locationX>138</locationX>
-        <locationY>647</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>Iterate_through_Opportunities.AccountId</assignToReference>
             <operator>Assign</operator>
@@ -389,8 +389,8 @@
     <assignments>
         <name>Assign_Recipient_Id</name>
         <label>Assign Recipient Id</label>
-        <locationX>1766</locationX>
-        <locationY>1403</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -402,7 +402,7 @@
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Copy_1_of_Get_New_Opportunity_Info.OwnerId</elementReference>
+                <elementReference>Create_Opportunity_2.OwnerId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -412,8 +412,8 @@
     <assignments>
         <name>Assign_values_to_existing_Lead</name>
         <label>Assign values to existing Lead</label>
-        <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>Get_Existing_Lead.VAT_Number__c</assignToReference>
             <operator>Assign</operator>
@@ -491,8 +491,8 @@
     <assignments>
         <name>Assign_values_to_Lead</name>
         <label>Assign values to Lead</label>
-        <locationX>1634</locationX>
-        <locationY>647</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>$Record.Unique_Id__c</assignToReference>
             <operator>Assign</operator>
@@ -514,8 +514,8 @@
     <assignments>
         <name>Copy_2_of_Assign_Recipient_Id</name>
         <label>Copy 2 of Assign Recipient Id</label>
-        <locationX>1502</locationX>
-        <locationY>1619</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -527,7 +527,7 @@
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Get_New_Opportunity_Info.OwnerId</elementReference>
+                <elementReference>Create_Opportunity.OwnerId</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -537,8 +537,8 @@
     <customErrors>
         <name>Error_message</name>
         <label>Error message</label>
-        <locationX>1370</locationX>
-        <locationY>2351</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -547,8 +547,8 @@
     <customErrors>
         <name>Spam_message</name>
         <label>Spam message</label>
-        <locationX>842</locationX>
-        <locationY>647</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <customErrorMessages>
             <errorMessage>Email in lista nera, sei stato identificato come un bot.</errorMessage>
             <isFieldError>false</isFieldError>
@@ -557,8 +557,8 @@
     <decisions>
         <name>Check_spam</name>
         <label>Check spam</label>
-        <locationX>1238</locationX>
-        <locationY>539</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>Assign_values_to_Lead</targetReference>
         </defaultConnector>
@@ -582,8 +582,8 @@
     <decisions>
         <name>Check_website</name>
         <label>Check website</label>
-        <locationX>1634</locationX>
-        <locationY>2135</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnectorLabel>Default outcome</defaultConnectorLabel>
         <rules>
             <name>Fabiodex</name>
@@ -619,10 +619,10 @@
     <decisions>
         <name>Event_Date_Available</name>
         <label>Event Date Available?</label>
-        <locationX>1634</locationX>
-        <locationY>971</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Copy_1_of_Create_Opportunity</targetReference>
+            <targetReference>Create_Opportunity_2</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -644,8 +644,8 @@
     <decisions>
         <name>New_or_Converted</name>
         <label>New or Converted</label>
-        <locationX>644</locationX>
-        <locationY>323</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>Get_spam_lead</targetReference>
         </defaultConnector>
@@ -767,14 +767,14 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;TE&quot; &
         <dataType>String</dataType>
         <expression>IF (
 ISPICKVAL({!$Record.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
-TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_Opportunity_Info.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Get_New_Opportunity_Info.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName} &amp; &quot; &quot; &amp; {!$Record.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Create_Opportunity.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Create_Opportunity.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName} &amp; &quot; &quot; &amp; {!$Record.LastName} ,
 IF(
 ISPICKVAL({!$Record.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} = {!$Record.Event_End_Date__c},
-TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_Opportunity_Info.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Get_New_Opportunity_Info.Location__c}  &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName}  &amp; &quot; &quot; &amp; {!$Record.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Create_Opportunity.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Create_Opportunity.Location__c}  &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName}  &amp; &quot; &quot; &amp; {!$Record.LastName} ,
 IF(
 ISPICKVAL({!$Record.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
-TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_Opportunity_Info.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Get_New_Opportunity_Info.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName}  &amp; &quot; &quot; &amp; {!$Record.LastName} ,
-TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_Opportunity_Info.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Get_New_Opportunity_Info.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName}  &amp; &quot; &quot; &amp; {!$Record.LastName}
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Create_Opportunity.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Create_Opportunity.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName}  &amp; &quot; &quot; &amp; {!$Record.LastName} ,
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Create_Opportunity.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!Create_Opportunity.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.FirstName}  &amp; &quot; &quot; &amp; {!$Record.LastName}
 )
 )
 )</expression>
@@ -784,8 +784,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <loops>
         <name>Iterate_through_Opportunities</name>
         <label>Iterate through Opportunities</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <collectionReference>Get_Opportunity_from_Lead</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -815,101 +815,24 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Copy_1_of_Create_Opportunity</name>
-        <label>Create Opportunity</label>
-        <locationX>1766</locationX>
-        <locationY>1079</locationY>
-        <assignRecordIdToReference>NewOpportunityId</assignRecordIdToReference>
-        <connector>
-            <targetReference>Copy_1_of_Get_New_Opportunity_Info</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CloseDate</field>
-            <value>
-                <elementReference>OpportunityCloseDate2</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Event_End_Date__c</field>
-            <value>
-                <elementReference>$Record.Event_End_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Event_Start_Date__c</field>
-            <value>
-                <elementReference>$Record.Event_Start_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>LeadSource</field>
-            <value>
-                <elementReference>LeadSource</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Lead__c</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Location__c</field>
-            <value>
-                <elementReference>$Record.Location__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>OpportunityName</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Opp_automatica_da_web__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>OwnerId</field>
-            <value>
-                <elementReference>OpportunityOwner</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Reference__c</field>
-            <value>
-                <elementReference>$Record.Where_did_you_hear_about_us__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>StageName</field>
-            <value>
-                <stringValue>Richiesta</stringValue>
-            </value>
-        </inputAssignments>
-        <object>Opportunity</object>
-    </recordCreates>
-    <recordCreates>
         <name>Create_Contact_Roles</name>
         <label>Create Contact Roles</label>
-        <locationX>50</locationX>
-        <locationY>947</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <inputReference>ContactsList</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Event</name>
         <label>Create Event</label>
-        <locationX>1502</locationX>
-        <locationY>1403</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Copy_2_of_Get_Notification</targetReference>
         </connector>
         <inputAssignments>
             <field>EndDateTime</field>
             <value>
-                <elementReference>Get_New_Opportunity_Info.Event_End_Date__c</elementReference>
+                <elementReference>Create_Opportunity.Event_End_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -933,7 +856,7 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
         <inputAssignments>
             <field>StartDateTime</field>
             <value>
-                <elementReference>Get_New_Opportunity_Info.Event_Start_Date__c</elementReference>
+                <elementReference>Create_Opportunity.Event_Start_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -945,7 +868,7 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
         <inputAssignments>
             <field>WhatId</field>
             <value>
-                <elementReference>NewOpportunityId</elementReference>
+                <elementReference>Create_Opportunity.Id</elementReference>
             </value>
         </inputAssignments>
         <object>Event</object>
@@ -954,11 +877,10 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordCreates>
         <name>Create_Opportunity</name>
         <label>Create Opportunity</label>
-        <locationX>1502</locationX>
-        <locationY>1079</locationY>
-        <assignRecordIdToReference>NewOpportunityId</assignRecordIdToReference>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Get_New_Opportunity_Info</targetReference>
+            <targetReference>Get_User</targetReference>
         </connector>
         <inputAssignments>
             <field>CloseDate</field>
@@ -1027,43 +949,100 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
             </value>
         </inputAssignments>
         <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Opportunity_2</name>
+        <label>Create Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Notification</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>OpportunityCloseDate2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Event_End_Date__c</field>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Event_Start_Date__c</field>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadSource</field>
+            <value>
+                <elementReference>LeadSource</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Lead__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Location__c</field>
+            <value>
+                <elementReference>$Record.Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OpportunityName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Opp_automatica_da_web__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>OpportunityOwner</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Reference__c</field>
+            <value>
+                <elementReference>$Record.Where_did_you_hear_about_us__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Richiesta</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordDeletes>
         <name>Delete_New_Lead</name>
         <label>Delete New Lead</label>
-        <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>getEmailTemplate</targetReference>
         </connector>
         <inputReference>$Record</inputReference>
     </recordDeletes>
     <recordLookups>
-        <name>Copy_1_of_Get_New_Opportunity_Info</name>
-        <label>Copy 1 of Get New Opportunity Info</label>
-        <locationX>1766</locationX>
-        <locationY>1187</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Notification</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>NewOpportunityId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Opportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Copy_2_of_Get_Notification</name>
         <label>Copy 2 of Get Notification</label>
-        <locationX>1502</locationX>
-        <locationY>1511</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_2_of_Assign_Recipient_Id</targetReference>
@@ -1083,8 +1062,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>Get_Existing_Lead</name>
         <label>Get Existing Lead</label>
-        <locationX>314</locationX>
-        <locationY>431</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_values_to_existing_Lead</targetReference>
@@ -1111,8 +1090,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>Get_Invito_Video_Call</name>
         <label>Get Invito Video Call</label>
-        <locationX>1634</locationX>
-        <locationY>2027</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_website</targetReference>
@@ -1130,31 +1109,10 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_New_Opportunity_Info</name>
-        <label>Get New Opportunity Info</label>
-        <locationX>1502</locationX>
-        <locationY>1187</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_User</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>NewOpportunityId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Opportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
-        <locationX>1766</locationX>
-        <locationY>1295</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Recipient_Id</targetReference>
@@ -1174,8 +1132,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>Get_Opportunity_from_Lead</name>
         <label>Get Opportunity from Lead</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Iterate_through_Opportunities</targetReference>
@@ -1202,8 +1160,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>Get_spam_lead</name>
         <label>Get spam lead</label>
-        <locationX>1238</locationX>
-        <locationY>431</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_spam</targetReference>
@@ -1223,8 +1181,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>Get_User</name>
         <label>Get User</label>
-        <locationX>1502</locationX>
-        <locationY>1295</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Event</targetReference>
@@ -1251,8 +1209,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>Get_User_Id</name>
         <label>Get User Id</label>
-        <locationX>1634</locationX>
-        <locationY>863</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Event_Date_Available</targetReference>
@@ -1274,8 +1232,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordLookups>
         <name>getEmailTemplate</name>
         <label>getEmailTemplate</label>
-        <locationX>314</locationX>
-        <locationY>863</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>LeadNotification</targetReference>
@@ -1295,8 +1253,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordUpdates>
         <name>Update_Account_Id_on_Opportunities</name>
         <label>Update Account Id on Opportunities</label>
-        <locationX>50</locationX>
-        <locationY>839</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Create_Contact_Roles</targetReference>
         </connector>
@@ -1305,8 +1263,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordUpdates>
         <name>Update_Existing_Lead</name>
         <label>Update Existing Lead</label>
-        <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Delete_New_Lead</targetReference>
         </connector>
@@ -1315,8 +1273,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordUpdates>
         <name>Update_Extended_Event_Date_1</name>
         <label>Update Extended Event Date</label>
-        <locationX>578</locationX>
-        <locationY>431</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <inputAssignments>
             <field>Tech_Extended_Event_Date__c</field>
             <value>
@@ -1328,15 +1286,15 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Get_New_
     <recordUpdates>
         <name>Update_Lead</name>
         <label>Update Lead</label>
-        <locationX>1634</locationX>
-        <locationY>755</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Get_User_Id</targetReference>
         </connector>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>518</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>New_or_Converted</targetReference>
@@ -1406,13 +1364,6 @@ ISCHANGED ({!$Record.Event_Start_Date__c})</filterFormula>
         <value>
             <stringValue>Website</stringValue>
         </value>
-    </variables>
-    <variables>
-        <name>NewOpportunityId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>OpportunitiesToUpdate</name>
