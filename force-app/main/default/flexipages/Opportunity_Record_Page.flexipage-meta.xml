@@ -384,6 +384,12 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldItem>Record.Lead__r.Phone</fieldItem>
+                <identifier>RecordLead_rPhoneField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
                 <fieldItem>Record.Lead__r.Email</fieldItem>
                 <identifier>RecordLead_rEmailField</identifier>
             </fieldInstance>

@@ -49,6 +49,10 @@
                 <behavior>Edit</behavior>
                 <field>Ultima_chiamata_visita_vendita__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Fase_rapporto__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

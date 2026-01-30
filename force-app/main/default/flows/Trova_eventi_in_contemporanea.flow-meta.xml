@@ -316,31 +316,8 @@
         <allowPause>false</allowPause>
         <backButtonLabel>Indietro</backButtonLabel>
         <fields>
-            <name>EventoInContemporanea</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(240, 7, 45);&quot;&gt;Attenzione, c&apos;è {!recordId.Eventi_in_contemporanea__c} evento in contemporanea&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>recordId.Eventi_in_contemporanea__c</leftValueReference>
-                    <operator>EqualTo</operator>
-                    <rightValue>
-                        <numberValue>1.0</numberValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
-        </fields>
-        <fields>
             <name>EventiInContemporanea</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(240, 7, 45);&quot;&gt;Attenzione, ci sono {!recordId.Eventi_in_contemporanea__c} eventi in contemporanea&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(240, 7, 45);&quot;&gt;Attention, there are {!recordId.Eventi_in_contemporanea__c} events going on at the same time.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -350,16 +327,6 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
-            <visibilityRule>
-                <conditionLogic>and</conditionLogic>
-                <conditions>
-                    <leftValueReference>recordId.Eventi_in_contemporanea__c</leftValueReference>
-                    <operator>GreaterThan</operator>
-                    <rightValue>
-                        <numberValue>1.0</numberValue>
-                    </rightValue>
-                </conditions>
-            </visibilityRule>
         </fields>
         <fields>
             <name>Opportunities</name>
@@ -414,7 +381,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-758e&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Event_Start_Date__c&quot;,&quot;guid&quot;:&quot;column-e638&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Event Start Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;Event_End_Date__c&quot;,&quot;guid&quot;:&quot;column-bf62&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Event End Date&quot;,&quot;type&quot;:&quot;date-local&quot;}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-758e&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;StageName&quot;,&quot;guid&quot;:&quot;column-b377&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Stage&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Event_Start_Date__c&quot;,&quot;guid&quot;:&quot;column-e638&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Event Start Date&quot;,&quot;type&quot;:&quot;date-local&quot;},{&quot;apiName&quot;:&quot;Event_End_Date__c&quot;,&quot;guid&quot;:&quot;column-bf62&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:3,&quot;label&quot;:&quot;Event End Date&quot;,&quot;type&quot;:&quot;date-local&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>

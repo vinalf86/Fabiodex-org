@@ -3,7 +3,7 @@
     <fullName>Guadagno_Netto__c</fullName>
     <formula>SyncedQuote.TotalPrice  -  Tot_Gest_Econ__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Guadagno Netto</label>
+    <label>Guadagno Netto Iva Esclusa</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>
