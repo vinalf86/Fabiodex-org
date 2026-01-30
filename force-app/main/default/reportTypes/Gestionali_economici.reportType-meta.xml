@@ -971,6 +971,16 @@
             <field>Opportunity__c.IsWon</field>
             <table>Gestionale_Economico__c</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Coinvolgimento_fornitore_inizio__c</field>
+            <table>Gestionale_Economico__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Coinvolgimento_fornitore_fine__c</field>
+            <table>Gestionale_Economico__c</table>
+        </columns>
         <masterLabel>Gestionali Economici</masterLabel>
     </sections>
 </ReportType>

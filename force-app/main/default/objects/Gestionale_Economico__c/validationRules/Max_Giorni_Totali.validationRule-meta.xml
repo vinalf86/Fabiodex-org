@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_Giorni_Totali</fullName>
+    <active>true</active>
+    <description>Se i giorni di coinvolgimento di un fornitore sono maggiori dei giorni totali dell&apos;evento compare un messaggio d&apos;errore</description>
+    <errorConditionFormula>OR(
+				(!ISBLANK(Coinvolgimento_fornitore_fine__c) &amp;&amp; ISBLANK(Coinvolgimento_fornitore_inizio__c)),
+					Coinvolgimento_fornitore_fine__c &lt; Coinvolgimento_fornitore_fine__c,
+					Coinvolgimento_fornitore_inizio__c &lt;  Opportunity__r.Event_Start_Date__c,
+					Coinvolgimento_fornitore_inizio__c &gt;  Opportunity__r.Event_End_Date__c,
+					Coinvolgimento_fornitore_fine__c &lt;  Opportunity__r.Event_Start_Date__c,
+					Coinvolgimento_fornitore_fine__c &gt;  Opportunity__r.Event_End_Date__c
+					)</errorConditionFormula>
+    <errorMessage>Ricontrolla le date: devono essere comprese nelle date dell&apos;evento; la fine coinvolgimento non può essere precedente all&apos;inizio; se c&apos;è una data di fine deve esserci una data di inizio.</errorMessage>
+</ValidationRule>

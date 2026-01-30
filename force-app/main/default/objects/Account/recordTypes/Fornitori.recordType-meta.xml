@@ -193,6 +193,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Sassofonista da discoteca</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Soprano</fullName>
             <default>false</default>
         </values>
@@ -221,7 +225,70 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Violinista da discoteca</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Violoncellista</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Fase_rapporto__c</picklist>
+        <values>
+            <fullName>Alto potenziale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Avvio del dialogo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basso Potenziale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blacklist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Champion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cliente di un nostro champion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consolidata</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contatti rallentati</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ha cambiato lavoro%2Fsettore</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non in target</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non pervenuto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rapporto in costruzione</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saltuaria</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ex champion</fullName>
             <default>false</default>
         </values>
     </picklistValues>
