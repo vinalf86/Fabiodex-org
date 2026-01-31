@@ -19,5 +19,10 @@
         <operation>lessOrEqual</operation>
         <value>NEXT_N_MONTHS:9</value>
     </filters>
+    <filters>
+        <field>Event_Start_Date__c</field>
+        <operation>greaterOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
     <label>Eventi da vendere prossimi 9 mesi</label>
 </ListView>
