@@ -25,6 +25,9 @@
                             <value>ChangeOwnerOne</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.Quote.Aggiorna_nomi_file</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
                     </valueList>
