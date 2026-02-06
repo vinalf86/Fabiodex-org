@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Notify_Won_Opportunity</name>
         <label>Notify Won Opportunity</label>
-        <locationX>50</locationX>
-        <locationY>1463</locationY>
+        <locationX>182</locationX>
+        <locationY>2351</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -46,8 +46,8 @@
     <assignments>
         <name>Assign_recipient</name>
         <label>Assign recipient</label>
-        <locationX>50</locationX>
-        <locationY>1355</locationY>
+        <locationX>182</locationX>
+        <locationY>2243</locationY>
         <assignmentItems>
             <assignToReference>recipientId</assignToReference>
             <operator>Add</operator>
@@ -62,8 +62,8 @@
     <assignments>
         <name>Assign_Subject</name>
         <label>Assign Subject</label>
-        <locationX>534</locationX>
-        <locationY>647</locationY>
+        <locationX>402</locationX>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>Events.Subject</assignToReference>
             <operator>Assign</operator>
@@ -85,8 +85,8 @@
     <assignments>
         <name>Assign_Subject_T_O</name>
         <label>Assign Subject T.O.</label>
-        <locationX>270</locationX>
-        <locationY>647</locationY>
+        <locationX>138</locationX>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>Events.Subject</assignToReference>
             <operator>Assign</operator>
@@ -105,11 +105,46 @@
             <targetReference>Events</targetReference>
         </connector>
     </assignments>
+    <customErrors>
+        <name>Error_Message</name>
+        <label>Error Message</label>
+        <locationX>314</locationX>
+        <locationY>1139</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_list</name>
+        <label>Check list</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_name_and_close_date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Empty</defaultConnectorLabel>
+        <rules>
+            <name>Not_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Events</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Events</targetReference>
+            </connector>
+            <label>Not empty</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Check_Stage</name>
         <label>Check Stage</label>
-        <locationX>182</locationX>
-        <locationY>1031</locationY>
+        <locationX>314</locationX>
+        <locationY>1919</locationY>
         <defaultConnectorLabel>Other</defaultConnectorLabel>
         <rules>
             <name>Closed_Won</name>
@@ -129,10 +164,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_synced_Quote</name>
+        <label>Check synced Quote</label>
+        <locationX>314</locationX>
+        <locationY>1571</locationY>
+        <defaultConnector>
+            <targetReference>Check_Stage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Synced Quote</defaultConnectorLabel>
+        <rules>
+            <name>Has_Synced_Quote</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.SyncedQuoteId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Quote</targetReference>
+            </connector>
+            <label>Has Synced Quote</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Tutto_Organizzato</name>
         <label>Check Tutto Organizzato</label>
-        <locationX>402</locationX>
-        <locationY>539</locationY>
+        <locationX>270</locationX>
+        <locationY>647</locationY>
         <defaultConnector>
             <targetReference>Assign_Subject</targetReference>
         </defaultConnector>
@@ -160,8 +220,31 @@
             <label>Tutto Organizzato</label>
         </rules>
     </decisions>
-    <description>Quando viene creata l&apos;Opportunità o quando cambia lo Stage, l&apos;oggetto degli eventi associati si aggiorna per mostrare anche lo Stage attuale.</description>
+    <description>Quando viene creata l&apos;Opportunità o quando cambia lo Stage, l&apos;oggetto degli eventi associati si aggiorna per mostrare anche lo Stage attuale.
+Se cambiano le date, la location o il Lead associati all&apos;Opportunità, si aggiorna il nome dell&apos;Opp, dell&apos;evento e del Quote principale associato.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>CloseDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>{!$Flow.CurrentDate} + (FLOOR({!$Record.Event_Start_Date__c}-{!$Flow.CurrentDate})/2)</expression>
+    </formulas>
+    <formulas>
+        <name>OppName</name>
+        <dataType>String</dataType>
+        <expression>IF (
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp;&quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName},
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} = {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp;&quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName},
+IF(
+ISPICKVAL({!$Record.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!$Record.Event_Start_Date__c} &lt;&gt; {!$Record.Event_End_Date__c},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.Event_End_Date__c}) &amp; &quot; &quot; &amp;&quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName},
+TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName}
+)
+)
+)</expression>
+    </formulas>
     <formulas>
         <name>Subject</name>
         <dataType>String</dataType>
@@ -202,12 +285,12 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.
         <expression>TODAY()</expression>
     </formulas>
     <interviewLabel>Aggiorna nome evento al cambio Stage {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Aggiorna oggetto evento al cambio Stage</label>
+    <label>Sincronizza Opp, Evento e Quote</label>
     <loops>
         <name>Events</name>
         <label>Events</label>
-        <locationX>182</locationX>
-        <locationY>431</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <collectionReference>Get_Events</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -239,11 +322,11 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.
     <recordLookups>
         <name>Get_Events</name>
         <label>Get Events</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Events</targetReference>
+            <targetReference>Check_list</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -267,8 +350,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.
     <recordLookups>
         <name>Get_group</name>
         <label>Get group</label>
-        <locationX>50</locationX>
-        <locationY>1247</locationY>
+        <locationX>182</locationX>
+        <locationY>2135</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_recipient</targetReference>
@@ -288,8 +371,8 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.
     <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
-        <locationX>50</locationX>
-        <locationY>1139</locationY>
+        <locationX>182</locationX>
+        <locationY>2027</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_group</targetReference>
@@ -309,27 +392,92 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.
     <recordUpdates>
         <name>Update_Events</name>
         <label>Update Events</label>
-        <locationX>182</locationX>
-        <locationY>923</locationY>
+        <locationX>50</locationX>
+        <locationY>1031</locationY>
+        <connector>
+            <targetReference>Update_name_and_close_date</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_Message</targetReference>
+        </faultConnector>
+        <inputReference>EventsList</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_name_and_close_date</name>
+        <label>Update name and close date</label>
+        <locationX>314</locationX>
+        <locationY>1463</locationY>
+        <connector>
+            <targetReference>Check_synced_Quote</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Message</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>CloseDate</field>
+            <value>
+                <elementReference>CloseDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>OppName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Quote</name>
+        <label>Update Quote</label>
+        <locationX>50</locationX>
+        <locationY>1679</locationY>
         <connector>
             <targetReference>Check_Stage</targetReference>
         </connector>
-        <inputReference>EventsList</inputReference>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Message</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SyncedQuoteId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Events</targetReference>
         </connector>
-        <filterFormula>OR (
+        <filterFormula>AND (
+!ISNULL({!$Record.Lead__c}),
+OR (
 ISNEW(),
 AND (
 ISCHANGED ({!$Record.StageName}),
 !ISPICKVAL({!$Record.StageName}, &apos;Chiuse/Perse&apos;),
 !ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;)
           ),
-ISCHANGED ({!$Record.Tutto_Organizzato__c})
+ISCHANGED ({!$Record.Tutto_Organizzato__c}),
+
+ISCHANGED ({!$Record.Event_Start_Date__c}),
+ISCHANGED ({!$Record.Event_End_Date__c}),
+ISCHANGED ({!$Record.Location__c}),
+ISCHANGED({!$Record.Lead__c})
+       )
 )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
