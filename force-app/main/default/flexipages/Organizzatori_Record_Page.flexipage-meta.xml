@@ -121,6 +121,12 @@
                 <identifier>RecordWhere_did_you_hear_about_us_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Fase_rapporto__c</fieldItem>
+                <identifier>RecordFase_rapporto__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-523a3a2e-19dc-49b8-8be3-912bd3ff56ef</name>
         <type>Facet</type>
     </flexiPageRegions>

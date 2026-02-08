@@ -277,7 +277,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>Copy_2_of_Error</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(238, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Si è verificato un errore nella cancellazione delle Opportunità, ma i Lead selezionati sono stati spostati nella blacklist.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;Di seguito l&apos;errore:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(238, 0, 0);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>

@@ -201,12 +201,13 @@ ISPICKVAL({!$Record.Lead__r.LeadSource}, &apos;Website&apos;),
 OR (
 ISCHANGED ({!$Record.Event_Start_Date__c}),
 ISCHANGED ({!$Record.Event_End_Date__c}),
-ISCHANGED ({!$Record.Location__c})
+ISCHANGED ({!$Record.Location__c}),
+ISCHANGED({!$Record.Lead__c})
        )
            )</filterFormula>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
 </Flow>

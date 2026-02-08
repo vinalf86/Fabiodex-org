@@ -25,14 +25,14 @@
                 <label>Banjoista</label>
             </value>
             <value>
-                <fullName>Batterista</fullName>
-                <default>false</default>
-                <label>Batterista</label>
-            </value>
-            <value>
                 <fullName>Bassista</fullName>
                 <default>false</default>
                 <label>Bassista</label>
+            </value>
+            <value>
+                <fullName>Batterista</fullName>
+                <default>false</default>
+                <label>Batterista</label>
             </value>
             <value>
                 <fullName>Burlesque, Boylesque</fullName>
@@ -110,14 +110,14 @@
                 <label>Mandolinista</label>
             </value>
             <value>
-                <fullName>Mariachi</fullName>
-                <default>false</default>
-                <label>Mariachi</label>
-            </value>
-            <value>
                 <fullName>Mangiafuoco</fullName>
                 <default>false</default>
                 <label>Mangiafuoco</label>
+            </value>
+            <value>
+                <fullName>Mariachi</fullName>
+                <default>false</default>
+                <label>Mariachi</label>
             </value>
             <value>
                 <fullName>Percussionista</fullName>
@@ -138,6 +138,11 @@
                 <fullName>Sassofonista</fullName>
                 <default>false</default>
                 <label>Sassofonista</label>
+            </value>
+            <value>
+                <fullName>Sassofonista da discoteca</fullName>
+                <default>false</default>
+                <label>Sassofonista da discoteca</label>
             </value>
             <value>
                 <fullName>Soprano</fullName>
@@ -173,6 +178,11 @@
                 <fullName>Violinista</fullName>
                 <default>false</default>
                 <label>Violinista</label>
+            </value>
+            <value>
+                <fullName>Violinista da discoteca</fullName>
+                <default>false</default>
+                <label>Violinista da discoteca</label>
             </value>
             <value>
                 <fullName>Violoncellista</fullName>

@@ -595,6 +595,9 @@
             <label>Less or equal 2</label>
         </rules>
     </decisions>
+    <description>A 30 giorni dall&apos;evento manda una mail al cliente se il saldo non è stato ancora versato per ricordarglielo, inoltre invia una notifica a Fabio e Sabrina per definire i dettagli.
+A 7 giorni dall&apos;evento avvisa Fabio tramite una notifica.
+Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
     <environments>Default</environments>
     <formulas>
         <name>EventPlus7</name>
@@ -821,7 +824,9 @@
     <textTemplates>
         <name>BodyAll</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>Attenzione, mancano 30 giorni all&apos;evento relativo all&apos;Opportunità {!$Record.Name}, clicca qui per vederla.</text>
+        <text>Attenzione, mancano 30 giorni all&apos;evento relativo all&apos;Opportunità {!$Record.Name}.
+Per Sabrina: richiesta saldo, comunicazione ispettorato del lavoro, seguire l&apos;evento.
+Per Fabio: preparare pernotto, inviare richieste musicali agli artisti e verificare altre attività.</text>
     </textTemplates>
     <textTemplates>
         <name>BodyNotificationFabio</name>
@@ -851,7 +856,7 @@
     <textTemplates>
         <name>TitleAll</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
-        <text>30 giorni all&apos;evento</text>
+        <text>30 giorni all&apos;evento, manca il saldo</text>
     </textTemplates>
     <textTemplates>
         <name>TitleNotificationFabio</name>
