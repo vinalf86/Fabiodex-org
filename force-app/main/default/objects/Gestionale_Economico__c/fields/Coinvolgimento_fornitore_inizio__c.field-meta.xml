@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coinvolgimento_fornitore_inizio__c</fullName>
+    <inlineHelpText>Data in cui inizia il coinvolgimento del fornitore nell&apos;evento, deve essere compresa tra le date dell&apos;evento. Se coinvolto un solo giorno basta la data di inizio.</inlineHelpText>
+    <label>Coinvolgimento fornitore - inizio</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

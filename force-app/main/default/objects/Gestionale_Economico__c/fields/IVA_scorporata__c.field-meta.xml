@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Guadagno_Netto__c</fullName>
-    <formula>SyncedQuote.TotalPrice  -  Tot_Gest_Econ__c</formula>
+    <fullName>IVA_scorporata__c</fullName>
+    <formula>IF (
+ISPICKVAL ( IVA_Applicata__c, &apos;IVA Esente&apos;) || ISBLANK (TEXT(IVA_Applicata__c)), 0,
+
+IF (
+ISPICKVAL ( IVA_Applicata__c, &apos;IVA al 10%&apos;), Prezzo_con_IVA__c - (Prezzo_con_IVA__c / 1.1),
+Prezzo_con_IVA__c - (Prezzo_con_IVA__c / 1.22)
+)
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>Guadagno Netto Iva Esclusa</label>
+    <label>IVA scorporata</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>

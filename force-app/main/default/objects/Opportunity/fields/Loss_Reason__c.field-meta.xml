@@ -21,24 +21,34 @@
                 <label>Mal gestita</label>
             </value>
             <value>
-                <fullName>No Budget / Lost Funding</fullName>
+                <fullName>No Budget</fullName>
                 <default>false</default>
-                <label>No Budget / Lost Funding</label>
+                <label>No Budget</label>
             </value>
             <value>
-                <fullName>No Decision / Non-Responsive</fullName>
+                <fullName>Non-Responsive</fullName>
                 <default>false</default>
-                <label>No Decision / Non-Responsive</label>
-            </value>
-            <value>
-                <fullName>Other</fullName>
-                <default>false</default>
-                <label>Other</label>
+                <label>Non-Responsive</label>
             </value>
             <value>
                 <fullName>Price</fullName>
                 <default>false</default>
                 <label>Price</label>
+            </value>
+            <value>
+                <fullName>Double requests</fullName>
+                <default>false</default>
+                <label>Double requests</label>
+            </value>
+            <value>
+                <fullName>Non si fa più l&apos;evento</fullName>
+                <default>false</default>
+                <label>Non si fa più l&apos;evento</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
             </value>
         </valueSetDefinition>
     </valueSet>
