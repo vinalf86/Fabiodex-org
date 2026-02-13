@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fase_rapporto__c</fullName>
+    <label>Fase rapporto</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Champion</fullName>
+                <default>false</default>
+                <label>Champion</label>
+            </value>
+            <value>
+                <fullName>Consolidata</fullName>
+                <default>false</default>
+                <label>Consolidata</label>
+            </value>
+            <value>
+                <fullName>Rapporto in costruzione</fullName>
+                <default>false</default>
+                <label>Rapporto in costruzione</label>
+            </value>
+            <value>
+                <fullName>Avvio del dialogo</fullName>
+                <default>false</default>
+                <label>Avvio del dialogo</label>
+            </value>
+            <value>
+                <fullName>ex champion</fullName>
+                <default>false</default>
+                <label>ex champion</label>
+            </value>
+            <value>
+                <fullName>Cliente di un nostro champion</fullName>
+                <default>false</default>
+                <label>Cliente di un nostro champion</label>
+            </value>
+            <value>
+                <fullName>Non in target</fullName>
+                <default>false</default>
+                <label>Non in target</label>
+            </value>
+            <value>
+                <fullName>Basso Potenziale</fullName>
+                <default>false</default>
+                <label>Basso Potenziale</label>
+            </value>
+            <value>
+                <fullName>Alto potenziale</fullName>
+                <default>false</default>
+                <label>Alto potenziale</label>
+            </value>
+            <value>
+                <fullName>Saltuaria</fullName>
+                <default>false</default>
+                <label>Saltuaria</label>
+            </value>
+            <value>
+                <fullName>Blacklist</fullName>
+                <default>false</default>
+                <label>Blacklist</label>
+            </value>
+            <value>
+                <fullName>Contatti rallentati</fullName>
+                <default>false</default>
+                <label>Contatti rallentati</label>
+            </value>
+            <value>
+                <fullName>Non pervenuto</fullName>
+                <default>false</default>
+                <label>Non pervenuto</label>
+            </value>
+            <value>
+                <fullName>Ha cambiato lavoro/settore</fullName>
+                <default>false</default>
+                <label>Ha cambiato lavoro/settore</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

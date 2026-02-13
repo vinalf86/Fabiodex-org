@@ -19,11 +19,6 @@
                 <default>false</default>
                 <label>Tuscany Entertainement</label>
             </value>
-            <value>
-                <fullName>”Fabiodex”</fullName>
-                <default>false</default>
-                <label>”Fabiodex”</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

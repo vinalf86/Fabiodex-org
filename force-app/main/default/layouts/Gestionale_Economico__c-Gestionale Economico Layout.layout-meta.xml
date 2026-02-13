@@ -55,6 +55,7 @@
                 <behavior>Edit</behavior>
                 <field>Coinvolgimento_fornitore_fine__c</field>
             </layoutItems>
+<<<<<<< HEAD
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Prezzo_con_IVA__c</field>
@@ -63,6 +64,8 @@
                 <behavior>Readonly</behavior>
                 <field>IVA_scorporata__c</field>
             </layoutItems>
+=======
+>>>>>>> 42312c2b137ea544fb10a7917b761e74d5e318cd
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

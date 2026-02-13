@@ -193,6 +193,40 @@
                 <identifier>RecordOpportunity_rEvent_End_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Totale_Iva_inclusa__c</fieldItem>
+                <identifier>RecordTotale_Iva_inclusa_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Opportunity__r.Event_Start_Date__c</fieldItem>
+                <identifier>RecordOpportunity_rEvent_Start_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Opportunity__r.Event_End_Date__c</fieldItem>
+                <identifier>RecordOpportunity_rEvent_End_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-70a2beac-c907-497a-999b-e35ac5b264ae</name>
         <type>Facet</type>
     </flexiPageRegions>
