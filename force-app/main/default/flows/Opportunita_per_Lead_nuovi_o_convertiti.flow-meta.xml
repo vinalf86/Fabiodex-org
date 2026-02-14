@@ -489,29 +489,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Assign_values_to_Lead</name>
-        <label>Assign values to Lead</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>$Record.Unique_Id__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>formNewUniqueId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>$Record.Tech_Extended_Event_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>ExtendedEventDate</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Lead</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Copy_2_of_Assign_Recipient_Id</name>
         <label>Copy 2 of Assign Recipient Id</label>
         <locationX>0</locationX>
@@ -560,7 +537,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Assign_values_to_Lead</targetReference>
+            <targetReference>Update_Lead</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Not spam</defaultConnectorLabel>
         <rules>
@@ -763,6 +740,11 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;TE&quot; &
 )</expression>
     </formulas>
     <formulas>
+        <name>phoneWithPrefix</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Country_Code__c} &amp; {!$Record.Phone}</expression>
+    </formulas>
+    <formulas>
         <name>Subject</name>
         <dataType>String</dataType>
         <expression>IF (
@@ -963,18 +945,6 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Create_O
             <field>CloseDate</field>
             <value>
                 <elementReference>OpportunityCloseDate2</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Event_End_Date__c</field>
-            <value>
-                <elementReference>$Record.Event_End_Date__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Event_Start_Date__c</field>
-            <value>
-                <elementReference>$Record.Event_Start_Date__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1291,6 +1261,24 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!Create_O
         <connector>
             <targetReference>Get_User_Id</targetReference>
         </connector>
+        <inputAssignments>
+            <field>Phone</field>
+            <value>
+                <elementReference>phoneWithPrefix</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Tech_Extended_Event_Date__c</field>
+            <value>
+                <elementReference>ExtendedEventDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Unique_Id__c</field>
+            <value>
+                <elementReference>formNewUniqueId</elementReference>
+            </value>
+        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
