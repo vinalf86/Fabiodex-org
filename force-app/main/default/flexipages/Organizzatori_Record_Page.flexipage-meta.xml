@@ -123,6 +123,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Fase_rapporto__c</fieldItem>
                 <identifier>RecordFase_rapporto__cField</identifier>
             </fieldInstance>
@@ -189,6 +193,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Note__c</fieldItem>
                 <identifier>RecordNote_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.RecordTypeId</fieldItem>
+                <identifier>RecordRecordTypeIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-561ae515-3603-422f-a3ce-c51c1042a8d8</name>
