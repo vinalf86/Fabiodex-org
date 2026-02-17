@@ -8,16 +8,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <controllingField>IVA_Applicata__c</controllingField>
         <restricted>true</restricted>
         <valueSetName>Ritenuta</valueSetName>
-        <valueSettings>
-            <controllingFieldValue>IVA Esente</controllingFieldValue>
-            <valueName>No Ritenuta</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>IVA Esente</controllingFieldValue>
-            <valueName>Ritenuta d&apos;acconto 20%</valueName>
-        </valueSettings>
     </valueSet>
 </CustomField>

@@ -4,6 +4,10 @@
         <field>ToAddress</field>
         <formula>Opportunity.Lead__r.Email</formula>
     </fieldOverrides>
+    <fieldOverrides>
+        <field>ValidatedFromAddress</field>
+        <literalValue>info@fabiodex.com</literalValue>
+    </fieldOverrides>
     <label>New Email</label>
     <optionsCreateFeedItem>true</optionsCreateFeedItem>
     <quickActionLayout>

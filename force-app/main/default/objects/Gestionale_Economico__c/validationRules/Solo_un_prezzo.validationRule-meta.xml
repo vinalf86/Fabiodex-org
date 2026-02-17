@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Solo_un_prezzo</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+				!ISBLANK(Prezzo_lordo_fornitore__c),  
+				!ISBLANK( Prezzo_con_IVA__c)
+				)</errorConditionFormula>
+    <errorMessage>Puoi compilare solo un campo a scelta tra prezzo con IVA e prezzo senza IVA</errorMessage>
+</ValidationRule>

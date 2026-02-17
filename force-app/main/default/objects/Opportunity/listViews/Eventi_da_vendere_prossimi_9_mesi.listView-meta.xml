@@ -24,13 +24,10 @@
         <operation>greaterOrEqual</operation>
         <value>TODAY</value>
     </filters>
-<<<<<<< HEAD
     <filters>
         <field>OPPORTUNITY.STAGE_NAME</field>
         <operation>notEqual</operation>
         <value>Chiuse/Conseguite</value>
     </filters>
-=======
->>>>>>> 42312c2b137ea544fb10a7917b761e74d5e318cd
     <label>Eventi da vendere prossimi 9 mesi</label>
 </ListView>

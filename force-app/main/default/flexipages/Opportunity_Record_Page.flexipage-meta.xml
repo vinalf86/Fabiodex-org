@@ -946,6 +946,12 @@
                             <value>IVA__c</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Prezzo_con_IVA__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>IVA_scorporata__c</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Ritenuta__c</value>
                         </valueListItems>
                         <valueListItems>

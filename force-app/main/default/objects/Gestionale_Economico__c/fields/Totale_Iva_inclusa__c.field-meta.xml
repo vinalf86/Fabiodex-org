@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Totale_Iva_inclusa__c</fullName>
-    <formula>Prezzo_lordo_fornitore__c + IVA__c</formula>
+    <formula>IF (
+				Prezzo_lordo_fornitore__c + IVA__c != 0, Prezzo_lordo_fornitore__c + IVA__c, Prezzo_con_IVA__c
+				)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Totale Iva inclusa</label>
     <precision>18</precision>
