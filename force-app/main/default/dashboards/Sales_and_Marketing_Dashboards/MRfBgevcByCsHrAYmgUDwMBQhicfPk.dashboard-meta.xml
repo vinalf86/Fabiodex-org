@@ -103,12 +103,12 @@
                 </chartSummary>
                 <componentChartTheme>dark</componentChartTheme>
                 <componentType>Donut</componentType>
-                <decimalPrecision>-1</decimalPrecision>
+                <decimalPrecision>2</decimalPrecision>
                 <displayUnits>Integer</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
-                <expandOthers>false</expandOthers>
+                <expandOthers>true</expandOthers>
                 <groupingColumn>Opportunity.Event_Start_Date__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
