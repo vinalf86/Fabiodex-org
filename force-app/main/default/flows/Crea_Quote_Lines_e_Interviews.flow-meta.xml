@@ -33,7 +33,7 @@
         <locationX>182</locationX>
         <locationY>542</locationY>
         <defaultConnector>
-            <targetReference>Update_Synced_Quote_on_Opportunity</targetReference>
+            <targetReference>Update_Tax_info_Quote_1</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No VAT</defaultConnectorLabel>
         <rules>
@@ -108,7 +108,7 @@
         <locationY>650</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Update_Tax_on_Quote</targetReference>
+            <targetReference>Update_Tax_info_Quote</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -144,8 +144,8 @@
         <object>Opportunity</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Tax_on_Quote</name>
-        <label>Update Tax on Quote</label>
+        <name>Update_Tax_info_Quote</name>
+        <label>Update Tax info Quote</label>
         <locationX>50</locationX>
         <locationY>758</locationY>
         <connector>
@@ -160,9 +160,39 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Con_Senza_Iva__c</field>
+            <value>
+                <stringValue>IVA 22%</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Tax</field>
             <value>
                 <elementReference>formQuoteVAT</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Quote</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Tax_info_Quote_1</name>
+        <label>Update Tax info Quote</label>
+        <locationX>314</locationX>
+        <locationY>650</locationY>
+        <connector>
+            <targetReference>Update_Synced_Quote_on_Opportunity</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NewQuoteId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Con_Senza_Iva__c</field>
+            <value>
+                <stringValue>IVA esente</stringValue>
             </value>
         </inputAssignments>
         <object>Quote</object>

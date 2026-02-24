@@ -7,5 +7,6 @@
     <fields>GrandTotal</fields>
     <fields>OpportunityId</fields>
     <fields>AccountId</fields>
+    <fields>Con_Senza_Iva__c</fields>
     <label>Quote Compact Layout</label>
 </CompactLayout>
