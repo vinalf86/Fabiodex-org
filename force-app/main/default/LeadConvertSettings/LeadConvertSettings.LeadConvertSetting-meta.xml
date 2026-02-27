@@ -4,6 +4,10 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
+            <inputField>Company_Details__c</inputField>
+            <outputField>Company_Details__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Email_per_fatturazione__c</inputField>
             <outputField>Email_per_fatturazione__c</outputField>
         </mappingFields>

@@ -5,8 +5,8 @@
     <assignments>
         <name>Add_Interviews_to_collection</name>
         <label>Add Interviews to collection</label>
-        <locationX>182</locationX>
-        <locationY>5162</locationY>
+        <locationX>314</locationX>
+        <locationY>3782</locationY>
         <assignmentItems>
             <assignToReference>InterviewsCollection</assignToReference>
             <operator>Add</operator>
@@ -63,8 +63,8 @@
     <assignments>
         <name>Add_Quote_Lines_to_collection</name>
         <label>Add Quote Lines to collection</label>
-        <locationX>402</locationX>
-        <locationY>6866</locationY>
+        <locationX>534</locationX>
+        <locationY>5834</locationY>
         <assignmentItems>
             <assignToReference>TotalQuoteLines</assignToReference>
             <operator>Add</operator>
@@ -79,8 +79,8 @@
     <assignments>
         <name>Assign_Chosen_Products_to_collection</name>
         <label>Assign Chosen Products to collection</label>
-        <locationX>182</locationX>
-        <locationY>5702</locationY>
+        <locationX>314</locationX>
+        <locationY>4322</locationY>
         <assignmentItems>
             <assignToReference>varProdList</assignToReference>
             <operator>Add</operator>
@@ -137,8 +137,8 @@
     <assignments>
         <name>Assign_Prod_Day_1</name>
         <label>Assign Prod Day 1</label>
-        <locationX>182</locationX>
-        <locationY>2570</locationY>
+        <locationX>314</locationX>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>ProdDay1</assignToReference>
             <operator>Add</operator>
@@ -223,8 +223,8 @@
     <assignments>
         <name>Assign_Prod_Day_2</name>
         <label>Assign Prod Day 2</label>
-        <locationX>182</locationX>
-        <locationY>3002</locationY>
+        <locationX>314</locationX>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>ProdDay2</assignToReference>
             <operator>Add</operator>
@@ -309,8 +309,8 @@
     <assignments>
         <name>Assign_Prod_Day_3</name>
         <label>Assign Prod Day 3</label>
-        <locationX>182</locationX>
-        <locationY>3434</locationY>
+        <locationX>314</locationX>
+        <locationY>2054</locationY>
         <assignmentItems>
             <assignToReference>ProdDay3</assignToReference>
             <operator>Add</operator>
@@ -395,8 +395,8 @@
     <assignments>
         <name>Assign_Prod_Day_4</name>
         <label>Assign Prod Day 4</label>
-        <locationX>182</locationX>
-        <locationY>3866</locationY>
+        <locationX>314</locationX>
+        <locationY>2486</locationY>
         <assignmentItems>
             <assignToReference>ProdDay4</assignToReference>
             <operator>Add</operator>
@@ -481,8 +481,8 @@
     <assignments>
         <name>Assign_Prod_Day_5</name>
         <label>Assign Prod Day 5</label>
-        <locationX>182</locationX>
-        <locationY>4298</locationY>
+        <locationX>314</locationX>
+        <locationY>2918</locationY>
         <assignmentItems>
             <assignToReference>ProdDay5</assignToReference>
             <operator>Add</operator>
@@ -567,8 +567,8 @@
     <assignments>
         <name>Assign_Prod_Day_6</name>
         <label>Assign Prod Day 6</label>
-        <locationX>182</locationX>
-        <locationY>4730</locationY>
+        <locationX>314</locationX>
+        <locationY>3350</locationY>
         <assignmentItems>
             <assignToReference>ProdDay6</assignToReference>
             <operator>Add</operator>
@@ -653,8 +653,8 @@
     <assignments>
         <name>Assign_Prod_Day_7</name>
         <label>Assign Prod Day 7</label>
-        <locationX>182</locationX>
-        <locationY>5378</locationY>
+        <locationX>314</locationX>
+        <locationY>3998</locationY>
         <assignmentItems>
             <assignToReference>ProdDay7</assignToReference>
             <operator>Add</operator>
@@ -739,8 +739,8 @@
     <assignments>
         <name>Assign_values_Interview_1</name>
         <label>Assign values Interview 1</label>
-        <locationX>182</locationX>
-        <locationY>2462</locationY>
+        <locationX>314</locationX>
+        <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>varInterview1.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1091,8 +1091,8 @@
     <assignments>
         <name>Assign_values_Interview_2</name>
         <label>Assign values Interview 2</label>
-        <locationX>182</locationX>
-        <locationY>2894</locationY>
+        <locationX>314</locationX>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>varInterview2.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1443,8 +1443,8 @@
     <assignments>
         <name>Assign_values_Interview_3</name>
         <label>Assign values Interview 3</label>
-        <locationX>182</locationX>
-        <locationY>3326</locationY>
+        <locationX>314</locationX>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>varInterview3.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1795,8 +1795,8 @@
     <assignments>
         <name>Assign_values_Interview_4</name>
         <label>Assign values Interview 4</label>
-        <locationX>182</locationX>
-        <locationY>3758</locationY>
+        <locationX>314</locationX>
+        <locationY>2378</locationY>
         <assignmentItems>
             <assignToReference>varInterview4.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2147,8 +2147,8 @@
     <assignments>
         <name>Assign_values_Interview_5</name>
         <label>Assign values Interview 5</label>
-        <locationX>182</locationX>
-        <locationY>4190</locationY>
+        <locationX>314</locationX>
+        <locationY>2810</locationY>
         <assignmentItems>
             <assignToReference>varInterview5.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2499,8 +2499,8 @@
     <assignments>
         <name>Assign_values_Interview_6</name>
         <label>Assign values Interview 6</label>
-        <locationX>182</locationX>
-        <locationY>4622</locationY>
+        <locationX>314</locationX>
+        <locationY>3242</locationY>
         <assignmentItems>
             <assignToReference>varInterview6.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2851,8 +2851,8 @@
     <assignments>
         <name>Assign_values_Interview_7</name>
         <label>Assign values Interview 7</label>
-        <locationX>182</locationX>
-        <locationY>5054</locationY>
+        <locationX>314</locationX>
+        <locationY>3674</locationY>
         <assignmentItems>
             <assignToReference>varInterview7.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -3203,8 +3203,8 @@
     <assignments>
         <name>Assign_values_to_Quote_Lines_English</name>
         <label>Assign values to Quote Lines English</label>
-        <locationX>270</locationX>
-        <locationY>6674</locationY>
+        <locationX>402</locationX>
+        <locationY>5642</locationY>
         <assignmentItems>
             <assignToReference>varQuoteLine.QuoteId</assignToReference>
             <operator>Assign</operator>
@@ -3275,8 +3275,8 @@
     <assignments>
         <name>Assign_values_to_Quote_Lines_Italian</name>
         <label>Assign values to Quote Lines Italian</label>
-        <locationX>534</locationX>
-        <locationY>6674</locationY>
+        <locationX>666</locationX>
+        <locationY>5642</locationY>
         <assignmentItems>
             <assignToReference>varQuoteLine.QuoteId</assignToReference>
             <operator>Assign</operator>
@@ -3361,6 +3361,14 @@
         </value>
     </choices>
     <choices>
+        <name>Foreign_Company</name>
+        <choiceText>Foreign Company</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Foreign Company</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>Italian</name>
         <choiceText>Italian</choiceText>
         <dataType>String</dataType>
@@ -3369,11 +3377,27 @@
         </value>
     </choices>
     <choices>
+        <name>Italian_Company</name>
+        <choiceText>Italian Company</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Italian Company</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>No</name>
         <choiceText>No</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Private</name>
+        <choiceText>Private</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Private</stringValue>
         </value>
     </choices>
     <choices>
@@ -3516,8 +3540,8 @@
         <name>Filter_day_6</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter day 6</label>
-        <locationX>182</locationX>
-        <locationY>4838</locationY>
+        <locationX>314</locationX>
+        <locationY>3458</locationY>
         <assignNextValueToReference>currentItem_Filter_day_6</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay6</collectionReference>
@@ -3537,8 +3561,8 @@
         <name>Filter_Prod_Day_1</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 1</label>
-        <locationX>182</locationX>
-        <locationY>2678</locationY>
+        <locationX>314</locationX>
+        <locationY>1298</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_1</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay1</collectionReference>
@@ -3558,8 +3582,8 @@
         <name>Filter_Prod_Day_2</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 2</label>
-        <locationX>182</locationX>
-        <locationY>3110</locationY>
+        <locationX>314</locationX>
+        <locationY>1730</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_2</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay2</collectionReference>
@@ -3579,8 +3603,8 @@
         <name>Filter_Prod_Day_3</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 3</label>
-        <locationX>182</locationX>
-        <locationY>3542</locationY>
+        <locationX>314</locationX>
+        <locationY>2162</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_2</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay3</collectionReference>
@@ -3600,8 +3624,8 @@
         <name>Filter_Prod_Day_4</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 4</label>
-        <locationX>182</locationX>
-        <locationY>3974</locationY>
+        <locationX>314</locationX>
+        <locationY>2594</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_4</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay4</collectionReference>
@@ -3621,8 +3645,8 @@
         <name>Filter_Prod_Day_5</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 5</label>
-        <locationX>182</locationX>
-        <locationY>4406</locationY>
+        <locationX>314</locationX>
+        <locationY>3026</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_5</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay5</collectionReference>
@@ -3642,8 +3666,8 @@
         <name>Filter_Prod_Day_7</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 7</label>
-        <locationX>182</locationX>
-        <locationY>5486</locationY>
+        <locationX>314</locationX>
+        <locationY>4106</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_7</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay7</collectionReference>
@@ -3663,8 +3687,8 @@
         <name>Interviews_with_day_requested</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Interviews with day requested</label>
-        <locationX>182</locationX>
-        <locationY>5270</locationY>
+        <locationX>314</locationX>
+        <locationY>3890</locationY>
         <assignNextValueToReference>currentItem_Remove_nulle_Interviews</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>InterviewsCollection</collectionReference>
@@ -3684,8 +3708,8 @@
         <name>Products_to_Iterate</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Products to Iterate</label>
-        <locationX>182</locationX>
-        <locationY>6350</locationY>
+        <locationX>314</locationX>
+        <locationY>5318</locationY>
         <assignNextValueToReference>currentItem_Products_to_Iterate</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>FinalProdList</collectionReference>
@@ -3719,8 +3743,8 @@
         <name>Remove_Null_Values</name>
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Remove Null Values</label>
-        <locationX>182</locationX>
-        <locationY>5810</locationY>
+        <locationX>314</locationX>
+        <locationY>4430</locationY>
         <assignNextValueToReference>currentItem_Remove_Null_Values</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>varProdList</collectionReference>
@@ -3771,10 +3795,35 @@
         </value>
     </customProperties>
     <decisions>
+        <name>Check_customer</name>
+        <label>Check customer</label>
+        <locationX>314</locationX>
+        <locationY>4646</locationY>
+        <defaultConnector>
+            <targetReference>Update_Lead_with_company_info</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Company</defaultConnectorLabel>
+        <rules>
+            <name>Private_customer</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Private</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_with_private_customer_info</targetReference>
+            </connector>
+            <label>Private customer</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_language</name>
         <label>Check language</label>
-        <locationX>402</locationX>
-        <locationY>6566</locationY>
+        <locationX>534</locationX>
+        <locationY>5534</locationY>
         <defaultConnector>
             <targetReference>Assign_values_to_Quote_Lines_Italian</targetReference>
         </defaultConnector>
@@ -3798,7 +3847,7 @@
     <decisions>
         <name>Check_Lead_status</name>
         <label>Check Lead status</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>458</locationY>
         <defaultConnector>
             <targetReference>Interview_1st_day</targetReference>
@@ -3823,7 +3872,7 @@
     <decisions>
         <name>Check_number_of_days</name>
         <label>Check number of days</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>974</locationY>
         <defaultConnector>
             <targetReference>Interview_2nd_day</targetReference>
@@ -3848,8 +3897,8 @@
     <decisions>
         <name>Quote_Lines_available</name>
         <label>Quote Lines available?</label>
-        <locationX>182</locationX>
-        <locationY>7058</locationY>
+        <locationX>314</locationX>
+        <locationY>6026</locationY>
         <defaultConnector>
             <targetReference>No_Products_Selected</targetReference>
         </defaultConnector>
@@ -3922,6 +3971,16 @@
         <expression>{!Iterate_Products_List.Details__c} &amp; &apos; &apos; &amp; &apos;/&apos; &amp; &apos; &apos; &amp; {!Iterate_Products_List.Product2.DescriptionIT__c}</expression>
     </formulas>
     <formulas>
+        <name>formulaVatApplicable</name>
+        <dataType>String</dataType>
+        <expression>IF (
+{!Type} = &apos;Private&apos;,  &apos;Yes&apos;, 
+      IF (
+{!Type} = &apos;Foreign Company&apos;, &apos;No&apos;, &apos; &apos;
+          )
+      )</expression>
+    </formulas>
+    <formulas>
         <name>Giorno1</name>
         <dataType>String</dataType>
         <expression>TEXT ({!recordId.Event_Start_Date__c})</expression>
@@ -3957,6 +4016,11 @@
         <expression>TEXT ({!recordId.Event_Start_Date__c} + 6)</expression>
     </formulas>
     <formulas>
+        <name>GoogleSearch</name>
+        <dataType>String</dataType>
+        <expression>&apos;Google Search&apos;</expression>
+    </formulas>
+    <formulas>
         <name>numberOfDays</name>
         <dataType>Number</dataType>
         <expression>({!recordId.Event_End_Date__c} - {!recordId.Event_Start_Date__c}) + 1</expression>
@@ -3982,8 +4046,8 @@
     <loops>
         <name>Iterate_Products_List</name>
         <label>Iterate Products List</label>
-        <locationX>182</locationX>
-        <locationY>6458</locationY>
+        <locationX>314</locationX>
+        <locationY>5426</locationY>
         <collectionReference>Products_to_Iterate</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -4015,8 +4079,8 @@
     <recordCreates>
         <name>Create_Interviews</name>
         <label>Create Interviews</label>
-        <locationX>182</locationX>
-        <locationY>6026</locationY>
+        <locationX>314</locationX>
+        <locationY>4994</locationY>
         <connector>
             <targetReference>Create_Quote</targetReference>
         </connector>
@@ -4025,15 +4089,15 @@
     <recordCreates>
         <name>Create_Interviews_2</name>
         <label>Create Interviews 2</label>
-        <locationX>314</locationX>
-        <locationY>7274</locationY>
+        <locationX>446</locationX>
+        <locationY>6242</locationY>
         <inputReference>Interviews_with_day_requested</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Quote</name>
         <label>Create Quote</label>
-        <locationX>182</locationX>
-        <locationY>6134</locationY>
+        <locationX>314</locationX>
+        <locationY>5102</locationY>
         <assignRecordIdToReference>NewQuoteId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Event</targetReference>
@@ -4112,8 +4176,8 @@
     <recordCreates>
         <name>Create_Task</name>
         <label>Create Task</label>
-        <locationX>50</locationX>
-        <locationY>7382</locationY>
+        <locationX>182</locationX>
+        <locationY>6350</locationY>
         <connector>
             <targetReference>Thank_you_screen</targetReference>
         </connector>
@@ -4171,7 +4235,7 @@
     <recordLookups>
         <name>Get_Interview_Record_Type</name>
         <label>Get Interview Record Type</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -4199,7 +4263,7 @@
     <recordLookups>
         <name>Get_Price_Book</name>
         <label>Get Price Book</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -4221,7 +4285,7 @@
     <recordLookups>
         <name>Get_Price_Book_Entries</name>
         <label>Get Price Book Entries</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -4251,8 +4315,8 @@
     <recordLookups>
         <name>Get_User</name>
         <label>Get User</label>
-        <locationX>50</locationX>
-        <locationY>7274</locationY>
+        <locationX>182</locationX>
+        <locationY>6242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Task</targetReference>
@@ -4272,8 +4336,8 @@
     <recordRollbacks>
         <name>Roll_Back_Quote</name>
         <label>Roll Back Quote</label>
-        <locationX>578</locationX>
-        <locationY>6242</locationY>
+        <locationX>1106</locationX>
+        <locationY>5210</locationY>
         <connector>
             <targetReference>Fault_Message_Screen_2</targetReference>
         </connector>
@@ -4281,8 +4345,8 @@
     <recordUpdates>
         <name>Update_Event</name>
         <label>Update Event</label>
-        <locationX>182</locationX>
-        <locationY>6242</locationY>
+        <locationX>314</locationX>
+        <locationY>5210</locationY>
         <connector>
             <targetReference>Products_to_Iterate</targetReference>
         </connector>
@@ -4311,7 +4375,7 @@
     <recordUpdates>
         <name>Update_Lead_Status</name>
         <label>Update Lead Status</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>566</locationY>
         <connector>
             <targetReference>Interview_1st_day</targetReference>
@@ -4332,11 +4396,193 @@
         </inputAssignments>
         <object>Lead</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Lead_with_company_info</name>
+        <label>Update Lead with company info</label>
+        <locationX>578</locationX>
+        <locationY>4754</locationY>
+        <connector>
+            <targetReference>Create_Interviews</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fault_Message_Screen_2</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Lead__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>City</field>
+            <value>
+                <elementReference>BillingAddress.city</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Company</field>
+            <value>
+                <elementReference>Company_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Company_Details__c</field>
+            <value>
+                <elementReference>Company_Details</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Country</field>
+            <value>
+                <elementReference>BillingAddress.country</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PostalCode</field>
+            <value>
+                <elementReference>BillingAddress.postalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>State</field>
+            <value>
+                <elementReference>BillingAddress.province</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Street</field>
+            <value>
+                <elementReference>BillingAddress.street</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>VAT_Number__c</field>
+            <value>
+                <elementReference>VAT_Number</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Lead_with_private_customer_info</name>
+        <label>Update Lead with private customer info</label>
+        <locationX>50</locationX>
+        <locationY>4754</locationY>
+        <connector>
+            <targetReference>Create_Interviews</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Fault_Message_Screen_2</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Lead__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Birthdate__c</field>
+            <value>
+                <elementReference>Date_of_birth</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Birthplace_Customer_2__c</field>
+            <value>
+                <elementReference>Nation_of_birth_Customer_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Birthplace__c</field>
+            <value>
+                <elementReference>Nation_of_birth</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CitizenshipCustomer1__c</field>
+            <value>
+                <elementReference>Citizenship_Customer_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>CitizenshipCustomer2__c</field>
+            <value>
+                <elementReference>Citizenship_Customer_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>City</field>
+            <value>
+                <elementReference>Address.city</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Country</field>
+            <value>
+                <elementReference>Address.country</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Date_of_birth_customer_2__c</field>
+            <value>
+                <elementReference>Date_of_birth_Customer_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>First_Name_Customer_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>First_Name_Customer_2__c</field>
+            <value>
+                <elementReference>First_Name_Customer_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>Last_Name_Customer_1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Last_Name_Customer_2__c</field>
+            <value>
+                <elementReference>Last_Name_Customer_2</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PostalCode</field>
+            <value>
+                <elementReference>Address.postalCode</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>State</field>
+            <value>
+                <elementReference>Address.province</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Street</field>
+            <value>
+                <elementReference>Address.street</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
     <screens>
         <name>Fault_Message_Screen_2</name>
         <label>Fault Message Screen 2</label>
-        <locationX>578</locationX>
-        <locationY>6350</locationY>
+        <locationX>1106</locationX>
+        <locationY>5318</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4359,7 +4605,7 @@
     <screens>
         <name>Interview_1st_day</name>
         <label>Interview 1st day</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>758</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -6206,7 +6452,7 @@
     <screens>
         <name>Interview_2nd_day</name>
         <label>Interview 2nd day</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -8163,7 +8409,7 @@
     <screens>
         <name>Interview_3rd_day</name>
         <label>Interview 3rd day</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1298</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -10120,7 +10366,7 @@
     <screens>
         <name>Interview_4th_day</name>
         <label>Interview 4th day</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1514</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -12077,7 +12323,7 @@
     <screens>
         <name>Interview_5th_day</name>
         <label>Interview 5th day</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1730</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -14034,7 +14280,7 @@
     <screens>
         <name>Interview_6th_day</name>
         <label>Interview 6th day</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1946</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -15991,7 +16237,7 @@
     <screens>
         <name>Interview_7th_day</name>
         <label>Interview 7th day</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>2162</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -17948,8 +18194,8 @@
     <screens>
         <name>No_Products_Selected</name>
         <label>No Products Selected</label>
-        <locationX>314</locationX>
-        <locationY>7166</locationY>
+        <locationX>446</locationX>
+        <locationY>6134</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -17976,13 +18222,13 @@
     <screens>
         <name>Products_Recap</name>
         <label>Products Recap</label>
-        <locationX>182</locationX>
-        <locationY>5918</locationY>
+        <locationX>314</locationX>
+        <locationY>4538</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Interviews</targetReference>
+            <targetReference>Check_customer</targetReference>
         </connector>
         <fields>
             <name>Final_Product_Recap</name>
@@ -18075,10 +18321,32 @@
                 <name>Final_Product_Recap_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>Type</name>
+                    <choiceReferences>Private</choiceReferences>
+                    <choiceReferences>Foreign_Company</choiceReferences>
+                    <choiceReferences>Italian_Company</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Type of Customer</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
                     <name>VAT_Applicable</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>formulaVatApplicable</elementReference>
+                    </defaultValue>
                     <fieldText>VAT Applicable?</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -18131,6 +18399,460 @@
                     <stringValue>12</stringValue>
                 </width>
             </styleProperties>
+        </fields>
+        <fields>
+            <name>Private_customer_info</name>
+            <fieldText>Private customer info</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Private_customer_info_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>First_Name_Customer_1</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Lead__r.FirstName</elementReference>
+                    </defaultValue>
+                    <fieldText>First Name Customer 1</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Last_Name_Customer_1</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Lead__r.LastName</elementReference>
+                    </defaultValue>
+                    <fieldText>Last Name Customer 1</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>First_Name_Customer_2</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Lead__r.First_Name_Customer_2__c</elementReference>
+                    </defaultValue>
+                    <fieldText>First Name Customer 2</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Last_Name_Customer_2</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Lead__r.Last_Name_Customer_2__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Last Name Customer 2</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Date_of_birth</name>
+                    <dataType>Date</dataType>
+                    <fieldText>Date of birth Customer 1</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Date_of_birth_Customer_2</name>
+                    <dataType>Date</dataType>
+                    <fieldText>Date of birth Customer 2</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Nation_of_birth</name>
+                    <dataType>String</dataType>
+                    <fieldText>Nation of birth Customer 1</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Nation_of_birth_Customer_2</name>
+                    <dataType>String</dataType>
+                    <fieldText>Nation of birth Customer 2</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Citizenship_Customer_1</name>
+                    <dataType>String</dataType>
+                    <fieldText>Citizenship Customer 1</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Citizenship_Customer_2</name>
+                    <dataType>String</dataType>
+                    <fieldText>Citizenship Customer 2</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Private_customer_info_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Address</name>
+                    <extensionName>flowruntime:address</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>street</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.Street</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>city</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.City</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>country</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.Country</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>showAddressLookup</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>postalCode</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.PostalCode</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>province</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.State</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>addressLabel</name>
+                        <value>
+                            <stringValue>Address</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>addressLookupLabel</name>
+                        <value>
+                            <elementReference>GoogleSearch</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Type</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Private</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>Company_Info</name>
+            <fieldText>Company Info</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Company_Info_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Company_Name</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Lead__r.Company</elementReference>
+                    </defaultValue>
+                    <fieldText>Company Name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>VAT_Number</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>recordId.Lead__r.VAT_Number__c</elementReference>
+                    </defaultValue>
+                    <fieldText>VAT Number</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>Company_Details</name>
+                    <fieldText>Company Details</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Company_Info_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>BillingAddress</name>
+                    <extensionName>flowruntime:address</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>addressLabel</name>
+                        <value>
+                            <stringValue>Address</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>street</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.Street</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>city</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.City</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>province</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.State</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>postalCode</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.PostalCode</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>country</name>
+                        <value>
+                            <elementReference>recordId.Lead__r.Country</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>showAddressLookup</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>addressLookupLabel</name>
+                        <value>
+                            <elementReference>GoogleSearch</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>6</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>or</conditionLogic>
+                <conditions>
+                    <leftValueReference>Type</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Foreign_Company</elementReference>
+                    </rightValue>
+                </conditions>
+                <conditions>
+                    <leftValueReference>Type</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Italian_Company</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Additional_Event_Information</name>
@@ -18223,8 +18945,8 @@
     <screens>
         <name>Thank_you_screen</name>
         <label>Thank you screen</label>
-        <locationX>50</locationX>
-        <locationY>7490</locationY>
+        <locationX>182</locationX>
+        <locationY>6458</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -18303,7 +19025,7 @@
         <stageOrder>80</stageOrder>
     </stages>
     <start>
-        <locationX>56</locationX>
+        <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Price_Book</targetReference>
@@ -18313,7 +19035,7 @@
     <subflows>
         <name>Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>866</locationY>
         <connector>
             <targetReference>Check_number_of_days</targetReference>
@@ -18469,7 +19191,7 @@
     <subflows>
         <name>Copy_1_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1190</locationY>
         <connector>
             <targetReference>Interview_3rd_day</targetReference>
@@ -18625,7 +19347,7 @@
     <subflows>
         <name>Copy_2_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1406</locationY>
         <connector>
             <targetReference>Interview_4th_day</targetReference>
@@ -18787,7 +19509,7 @@
     <subflows>
         <name>Copy_3_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1622</locationY>
         <connector>
             <targetReference>Interview_5th_day</targetReference>
@@ -18943,7 +19665,7 @@
     <subflows>
         <name>Copy_4_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>1838</locationY>
         <connector>
             <targetReference>Interview_6th_day</targetReference>
@@ -19099,7 +19821,7 @@
     <subflows>
         <name>Copy_5_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>2054</locationY>
         <connector>
             <targetReference>Interview_7th_day</targetReference>
@@ -19255,7 +19977,7 @@
     <subflows>
         <name>Copy_6_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
-        <locationX>270</locationX>
+        <locationX>402</locationX>
         <locationY>2270</locationY>
         <connector>
             <targetReference>Assign_values_Interview_1</targetReference>
@@ -19411,8 +20133,8 @@
     <subflows>
         <name>Create_Quote_Lines</name>
         <label>Create Quote Lines</label>
-        <locationX>50</locationX>
-        <locationY>7166</locationY>
+        <locationX>182</locationX>
+        <locationY>6134</locationY>
         <connector>
             <targetReference>Get_User</targetReference>
         </connector>
@@ -19451,8 +20173,8 @@
     <transforms>
         <name>Transform_Day_5</name>
         <label>Transform Day 5</label>
-        <locationX>182</locationX>
-        <locationY>4514</locationY>
+        <locationX>314</locationX>
+        <locationY>3134</locationY>
         <connector>
             <targetReference>Assign_values_Interview_6</targetReference>
         </connector>
@@ -19600,8 +20322,8 @@
     <transforms>
         <name>Transform_Day_6</name>
         <label>Transform Day 6</label>
-        <locationX>182</locationX>
-        <locationY>4946</locationY>
+        <locationX>314</locationX>
+        <locationY>3566</locationY>
         <connector>
             <targetReference>Assign_values_Interview_7</targetReference>
         </connector>
@@ -19749,8 +20471,8 @@
     <transforms>
         <name>Transform_Day_7</name>
         <label>Transform Day 7</label>
-        <locationX>182</locationX>
-        <locationY>5594</locationY>
+        <locationX>314</locationX>
+        <locationY>4214</locationY>
         <connector>
             <targetReference>Assign_Chosen_Products_to_collection</targetReference>
         </connector>
@@ -19898,8 +20620,8 @@
     <transforms>
         <name>Transform_Prod_Day_1</name>
         <label>Transform Prod Day 1</label>
-        <locationX>182</locationX>
-        <locationY>2786</locationY>
+        <locationX>314</locationX>
+        <locationY>1406</locationY>
         <connector>
             <targetReference>Assign_values_Interview_2</targetReference>
         </connector>
@@ -20047,8 +20769,8 @@
     <transforms>
         <name>Transform_Prod_Day_2</name>
         <label>Transform Prod Day 2</label>
-        <locationX>182</locationX>
-        <locationY>3218</locationY>
+        <locationX>314</locationX>
+        <locationY>1838</locationY>
         <connector>
             <targetReference>Assign_values_Interview_3</targetReference>
         </connector>
@@ -20196,8 +20918,8 @@
     <transforms>
         <name>Transform_Prod_Day_3</name>
         <label>Transform Prod Day 3</label>
-        <locationX>182</locationX>
-        <locationY>3650</locationY>
+        <locationX>314</locationX>
+        <locationY>2270</locationY>
         <connector>
             <targetReference>Assign_values_Interview_4</targetReference>
         </connector>
@@ -20345,8 +21067,8 @@
     <transforms>
         <name>Transform_Prod_Day_4</name>
         <label>Transform Prod Day 4</label>
-        <locationX>182</locationX>
-        <locationY>4082</locationY>
+        <locationX>314</locationX>
+        <locationY>2702</locationY>
         <connector>
             <targetReference>Assign_values_Interview_5</targetReference>
         </connector>
