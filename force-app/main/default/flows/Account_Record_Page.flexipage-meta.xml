@@ -141,6 +141,16 @@
                 <identifier>RecordFase_rapporto__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Company_Details__c</fieldItem>
+                <identifier>RecordCompany_Details_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-523a3a2e-19dc-49b8-8be3-912bd3ff56ef</name>
         <type>Facet</type>
     </flexiPageRegions>
