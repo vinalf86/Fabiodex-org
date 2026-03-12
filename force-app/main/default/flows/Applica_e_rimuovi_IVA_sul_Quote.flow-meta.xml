@@ -14,6 +14,13 @@
                 <elementReference>Tax22</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.Con_Senza_Iva__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>IVA 22%</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Tax_on_Quote</targetReference>
         </connector>
@@ -28,6 +35,13 @@
             <operator>Assign</operator>
             <value>
                 <numberValue>0.0</numberValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.Con_Senza_Iva__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>IVA esente</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -135,7 +149,7 @@
         </connector>
         <fields>
             <name>DecidiIva</name>
-            <fieldText>&lt;p&gt;Vuoi applicare o rimuovere l&apos;IVA da questo preventivo?&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;L&apos;Iva attuale su questo preventivo è di&lt;strong&gt; € {!recordId.Tax} &lt;/strong&gt;ed il preventivo è stato contrassegnato con il valore &lt;strong&gt;{!recordId.Con_Senza_Iva__c}&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Vuoi applicare o rimuovere l&apos;IVA da questo preventivo?&lt;/p&gt;&lt;p&gt;La tua scelta aggiornerà anche il campo &lt;strong&gt;Con/Senza Iva&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -174,13 +188,12 @@
         <label>Confirmation Screen</label>
         <locationX>182</locationX>
         <locationY>650</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
-        <backButtonLabel>Indietro</backButtonLabel>
         <fields>
             <name>ConfirmationMessage</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(93, 176, 0);&quot;&gt;L&apos;IVA è stata aggiornata correttamente. Per apportare ulteriori modifiche, cliccare su Fine e avviare nuovamente il flusso.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(93, 176, 0);&quot;&gt;IVA aggiornata correttamente, nuovo importo: &lt;/span&gt;&lt;strong style=&quot;color: rgb(93, 176, 0);&quot;&gt;€ {!recordId.Tax}&lt;/strong&gt;&lt;span style=&quot;color: rgb(93, 176, 0);&quot;&gt;. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(93, 176, 0);&quot;&gt;Per modificare la scelta cliccare su Fine e avviare nuovamente il flusso.&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
