@@ -72,6 +72,20 @@
             </value>
         </assignmentItems>
         <assignmentItems>
+            <assignToReference>Events.StartDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Events.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
             <assignToReference>EventsList</assignToReference>
             <operator>Add</operator>
             <value>
@@ -92,6 +106,20 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Subject_TO</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Events.StartDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Event_Start_Date__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Events.EndDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Event_End_Date__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
