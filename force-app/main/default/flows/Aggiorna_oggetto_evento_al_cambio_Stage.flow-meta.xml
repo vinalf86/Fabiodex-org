@@ -79,7 +79,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Events.EndDate</assignToReference>
+            <assignToReference>Events.EndDateTime</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Event_End_Date__c</elementReference>
@@ -116,7 +116,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Events.EndDate</assignToReference>
+            <assignToReference>Events.EndDateTime</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Event_End_Date__c</elementReference>
