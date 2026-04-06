@@ -2,6 +2,112 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>60.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Build_text_collection</name>
+        <label>Build text collection</label>
+        <locationX>402</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>productLines</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>textFormula</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>number</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Quote_Lines</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_collection</name>
+        <label>Check collection</label>
+        <locationX>710</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Empty</defaultConnectorLabel>
+        <rules>
+            <name>Not_empty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Quote_Lines</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Quote_Lines</targetReference>
+            </connector>
+            <label>Not empty</label>
+        </rules>
+        <rules>
+            <name>Empty_and_tax_not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Quote_Lines</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Tax</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Tax</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_only_tax</targetReference>
+            </connector>
+            <label>Empty and tax not null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Tax</name>
+        <label>Check Tax</label>
+        <locationX>314</locationX>
+        <locationY>839</locationY>
+        <defaultConnector>
+            <targetReference>Update_Product_Lines</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
+        <rules>
+            <name>Not_null_and_not_equals_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Tax</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Tax</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Tax_and_Product_Lines</targetReference>
+            </connector>
+            <label>Not null and not equals 0</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>TaxAmount</name>
@@ -9,8 +115,43 @@
         <expression>{!$Record.TotalPrice} * 0.22</expression>
         <scale>2</scale>
     </formulas>
+    <formulas>
+        <name>textFormula</name>
+        <dataType>String</dataType>
+        <expression>IF (
+ISPICKVAL({!$Record.Customer_Language__c}, &apos;English&apos;),
+
+TEXT({!number}) 
+&amp; &quot;) &quot; 
+&amp; &quot;Product Name: &quot; &amp;{!Quote_Lines.Product2.Name} 
+&amp; &quot; | Quantity: &quot; &amp; TEXT({!Quote_Lines.Quantity})
+&amp; &quot; | Price: €&quot; &amp; TEXT({!Quote_Lines.TotalPrice})
+&amp; BR(),
+
+TEXT({!number}) 
+&amp; &quot;) &quot; 
+&amp; &quot;Prodotto: &quot; &amp;{!Quote_Lines.Product2.Name} 
+&amp; &quot; | Quantità: &quot; &amp; TEXT({!Quote_Lines.Quantity})
+&amp; &quot; | Prezzo: €&quot; &amp; TEXT({!Quote_Lines.TotalPrice})
+&amp; BR()
+)</expression>
+    </formulas>
     <interviewLabel>Update Tax on Quote {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Update Tax on Quote</label>
+    <label>Update Tax and Product Lines on Quote</label>
+    <loops>
+        <name>Quote_Lines</name>
+        <label>Quote Lines</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <collectionReference>Get_Quote_Lines</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Build_text_collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Tax</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -30,11 +171,82 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Update_Tax</name>
-        <label>Update Tax</label>
-        <locationX>176</locationX>
+    <recordLookups>
+        <name>Get_Quote_Lines</name>
+        <label>Get Quote Lines</label>
+        <locationX>710</locationX>
         <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_collection</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>QuoteId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>QuoteLineItem</object>
+        <sortField>Day_Text__c</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_only_tax</name>
+        <label>Update only tax</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Tax</field>
+            <value>
+                <elementReference>TaxAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_only_tax_1</name>
+        <label>Update only tax</label>
+        <locationX>314</locationX>
+        <locationY>1055</locationY>
+        <inputAssignments>
+            <field>Tax</field>
+            <value>
+                <elementReference>TaxAmount</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Product_Lines</name>
+        <label>Update Product Lines</label>
+        <locationX>578</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Righe_prodotti__c</field>
+            <value>
+                <elementReference>productLines</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Tax_and_Product_Lines</name>
+        <label>Update Tax and Product Lines</label>
+        <locationX>50</locationX>
+        <locationY>947</locationY>
+        <faultConnector>
+            <targetReference>Update_only_tax_1</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>Righe_prodotti__c</field>
+            <value>
+                <elementReference>productLines</elementReference>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Tax</field>
             <value>
@@ -44,10 +256,10 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>584</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Tax</targetReference>
+            <targetReference>Get_Quote_Lines</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -57,23 +269,34 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
-        <filters>
-            <field>Tax</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Tax</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </filters>
         <object>Quote</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>number</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>productLines</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varRigheProdotti</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>
