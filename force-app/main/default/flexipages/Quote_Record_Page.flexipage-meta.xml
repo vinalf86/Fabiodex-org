@@ -111,6 +111,12 @@
                 <identifier>RecordNote__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Righe_prodotti__c</fieldItem>
+                <identifier>RecordRighe_prodotti__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-1aa21fad-857d-4034-8dbb-9d93d17b2392</name>
         <type>Facet</type>
     </flexiPageRegions>

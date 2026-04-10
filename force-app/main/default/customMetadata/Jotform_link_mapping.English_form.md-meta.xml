@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>English form</label>
+    <protected>false</protected>
+    <values>
+        <field>Form_Link__c</field>
+        <value xsi:type="xsd:string">https://form.jotform.com/260992321657059/prefill/019d76d8a54b75818dc0c7c0847cb0186c70?opportunityId=</value>
+    </values>
+    <values>
+        <field>Language__c</field>
+        <value xsi:type="xsd:string">English</value>
+    </values>
+</CustomMetadata>

@@ -19,7 +19,7 @@
                             <value>Opportunity.Conferma_Disdici</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.Opportunity.Contratto_ENG</value>
+                            <value>Opportunity.Genera_Contratto</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
