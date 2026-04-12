@@ -163,6 +163,16 @@
                 <identifier>RecordNote_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Righe_prodotti__c</fieldItem>
+                <identifier>RecordRighe_prodotti__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-f46c637b-8a9a-4ed7-874a-076419a1e612</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -217,6 +227,16 @@
             <fieldInstance>
                 <fieldItem>Record.Opportunity.Event_End_Date__c</fieldItem>
                 <identifier>RecordOpportunityEvent_End_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Customer_Language__c</fieldItem>
+                <identifier>RecordCustomer_Language_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-77747482-bb07-4dff-a9ae-bbe87723d4d2</name>
