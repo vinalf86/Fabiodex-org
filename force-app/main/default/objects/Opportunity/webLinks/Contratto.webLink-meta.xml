@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contratto</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Contratto</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://form.jotform.com/260961979256069/prefill/019d67e7d765725685b55534cd4bf5ff6c70?opportunityId={!Opportunity.Id}</url>
+</WebLink>
