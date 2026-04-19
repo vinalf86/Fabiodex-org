@@ -33,6 +33,26 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.IVA__c</fieldItem>
+                <identifier>RecordIVA_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Totale_Iva_inclusa__c</fieldItem>
+                <identifier>RecordTotale_Iva_inclusa_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.N_preventivo_fornitore_accettato__c</fieldItem>
                 <identifier>RecordN_preventivo_fornitore_accettato_cField</identifier>
             </fieldInstance>
@@ -112,6 +132,26 @@
             </fieldInstance>
         </itemInstances>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Prezzo_con_IVA__c</fieldItem>
+                <identifier>RecordPrezzo_con_IVA__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.IVA_scorporata__c</fieldItem>
+                <identifier>RecordIVA_scorporata__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentName>flexipage:blankSpace</componentName>
                 <identifier>flexipage_blankSpace7</identifier>
@@ -130,13 +170,27 @@
             </componentInstance>
         </itemInstances>
         <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace11</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>flexipage:blankSpace</componentName>
+                <identifier>flexipage_blankSpace10</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
             <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.IVA__c</fieldItem>
-                <identifier>RecordIVA_cField</identifier>
+                <fieldItem>Record.Opportunity__r.Event_Start_Date__c</fieldItem>
+                <identifier>RecordOpportunity_rEvent_Start_Date_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Opportunity__r.Event_End_Date__c</fieldItem>
+                <identifier>RecordOpportunity_rEvent_End_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
