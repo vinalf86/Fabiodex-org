@@ -7,29 +7,30 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Assign_stage_to_Opp</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Error_screen</targetReference>
         </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
-            <value>
-                <collectionElements>
-                    <elementReference>emailAddress</elementReference>
-                </collectionElements>
-            </value>
+            <value/>
+        </inputParameters>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value/>
         </inputParameters>
         <inputParameters>
             <name>senderType</name>
             <value>
-                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>OrgWideEmailAddress</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderAddress</name>
             <value>
-                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>info@fabiodex.com</stringValue>
             </value>
         </inputParameters>
@@ -49,7 +50,6 @@
             <name>emailBody</name>
             <value>
                 <elementReference>bodyEnglish</elementReference>
-                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
@@ -68,7 +68,6 @@
             <name>relatedRecordId</name>
             <value>
                 <elementReference>recordId.Id</elementReference>
-                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
@@ -88,6 +87,9 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Assign_stage_to_Opp</targetReference>
+        </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Error_screen</targetReference>
@@ -95,23 +97,21 @@
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
-            <value>
-                <collectionElements>
-                    <elementReference>emailAddress</elementReference>
-                </collectionElements>
-            </value>
+            <value/>
+        </inputParameters>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value/>
         </inputParameters>
         <inputParameters>
             <name>senderType</name>
             <value>
-                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>OrgWideEmailAddress</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderAddress</name>
             <value>
-                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>info@fabiodex.com</stringValue>
             </value>
         </inputParameters>
@@ -131,7 +131,6 @@
             <name>emailBody</name>
             <value>
                 <elementReference>bodyItalian</elementReference>
-                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
@@ -150,7 +149,6 @@
             <name>relatedRecordId</name>
             <value>
                 <elementReference>recordId.Id</elementReference>
-                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
@@ -165,22 +163,6 @@
     </actionCalls>
     <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <assignments>
-        <name>Add_Opp_Id_to_link</name>
-        <label>Add Opp Id to link</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>Get_custom_metadata.Form_Link__c</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>recordId.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Select_email</targetReference>
-        </connector>
-    </assignments>
     <assignments>
         <name>Assign_email</name>
         <label>Assign email</label>
@@ -211,6 +193,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Get_custom_metadata</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_stage_to_Opp</name>
+        <label>Assign stage to Opp</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>recordId.StageName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Inviato contratto</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opp_stage</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -297,7 +295,7 @@
             <name>English</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>recordId.SyncedQuote.Customer_Language__c</leftValueReference>
+                <leftValueReference>language</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>English</stringValue>
@@ -329,12 +327,17 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Add_Opp_Id_to_link</targetReference>
+                <targetReference>Select_email</targetReference>
             </connector>
             <label>Record found</label>
         </rules>
     </decisions>
     <environments>Default</environments>
+    <formulas>
+        <name>contractLink</name>
+        <dataType>String</dataType>
+        <expression>{!Get_custom_metadata.Form_Link__c} + {!recordId.Id}</expression>
+    </formulas>
     <interviewLabel>Genera contratto cliente {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Genera contratto cliente</label>
     <processMetadataValues>
@@ -400,6 +403,44 @@
         <queriedFields>Customer_Language__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Opp_stage</name>
+        <label>Update Opp stage</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Confirmation</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_screen</targetReference>
+        </faultConnector>
+        <inputReference>recordId</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Confirmation</name>
+        <label>Confirmation</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ConfirmationMessage</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(103, 186, 15);&quot;&gt;Il contratto è stato correttamente inviato al cliente&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <screens>
         <name>Error_screen</name>
         <label>Error screen</label>
@@ -461,7 +502,7 @@
         </connector>
         <fields>
             <name>Lingua</name>
-            <fieldText>&lt;p&gt;Il link al contratto è il seguente: &lt;a href=&quot;{!Get_custom_metadata.Form_Link__c}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(35, 112, 199);&quot;&gt;&lt;strong&gt;&lt;u&gt;Link contratto&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;L&apos;email a cui verrà inviato il contratto è &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!recordId.Lead__r.Email}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;. Vuoi confermarla o modificarla?&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Il link al contratto è il seguente: &lt;a href=&quot;{!contractLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;u&gt;Link contratto&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;L&apos;email a cui verrà inviato il contratto è &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!recordId.Lead__r.Email}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;. Vuoi confermarla o modificarla?&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -583,12 +624,12 @@
     <textTemplates>
         <name>bodyEnglish</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Hello {!recordId.First_Name_Customer_1__c} and {!recordId.First_Name_Customer_2__c}, we are almost there!&lt;/p&gt;&lt;p&gt;The only thing left to do is to sign your contract.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please click on the &lt;a href=&quot;https://fabiodex2023--uat.sandbox.lightning.force.com/builder_platform_interaction/%7B!Get_custom_metadata.Form_Link__c%7D&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211);&quot;&gt;&lt;strong&gt;&lt;u&gt;following link&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt; to review the contract and sign it. The contract also contains the original Italian version for read only purpose.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Many thanks and speak soon!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 36px; font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;Hello {!recordId.First_Name_Customer_1__c} and {!recordId.First_Name_Customer_2__c}, we are almost there!&lt;/p&gt;&lt;p&gt;The only thing left to do is to sign your contract.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please click on the &lt;a href=&quot;{!contractLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;u&gt;following link&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt; to review the contract and sign it. The contract also contains the original Italian version for read only purpose.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Many thanks and speak soon!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; font-size: 36px;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>bodyItalian</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
-        <text>&lt;p&gt;Ciao {!recordId.First_Name_Customer_1__c} e {!recordId.First_Name_Customer_2__c}, ci siamo quasi!&lt;/p&gt;&lt;p&gt;L&apos;unica cosa che resta da fare è firmare il contratto.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Clicca sul &lt;a href=&quot;{!Get_custom_metadata.Form_Link__c}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;u&gt;seguente link&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt; per rivederlo e firmarlo digitalmente.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Grazie mille e a presto!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; font-size: 36px;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211); font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211); font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
+        <text>&lt;p&gt;Ciao {!recordId.First_Name_Customer_1__c} e {!recordId.First_Name_Customer_2__c}, ci siamo quasi!&lt;/p&gt;&lt;p&gt;L&apos;unica cosa che resta da fare è firmare il contratto.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Clicca sul &lt;a href=&quot;{!contractLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;u&gt;seguente link&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt; per rivederlo e firmarlo digitalmente.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Grazie mille e a presto!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 36px; font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
     </textTemplates>
     <textTemplates>
         <name>subjectEnglish</name>
