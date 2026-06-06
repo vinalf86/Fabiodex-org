@@ -24,6 +24,10 @@
     <objectMapping>
         <inputObject>Lead</inputObject>
         <mappingFields>
+            <inputField>Codice_Fiscale__c</inputField>
+            <outputField>Codice_fiscale__c</outputField>
+        </mappingFields>
+        <mappingFields>
             <inputField>Country_Code__c</inputField>
             <outputField>Country_Code__c</outputField>
         </mappingFields>

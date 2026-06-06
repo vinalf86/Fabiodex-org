@@ -52,6 +52,10 @@
                 <behavior>Edit</behavior>
                 <field>Where_did_you_hear_about_us__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Codice_fiscale__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
