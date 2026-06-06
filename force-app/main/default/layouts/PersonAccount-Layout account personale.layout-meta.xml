@@ -38,7 +38,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Fase_rapporto__c</field>
+                <field>Codice_fiscale__pc</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
