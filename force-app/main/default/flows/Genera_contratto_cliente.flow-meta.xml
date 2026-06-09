@@ -78,7 +78,8 @@
         <inputParameters>
             <name>recipientId</name>
             <value>
-                <elementReference>recordId.Id</elementReference>
+                <elementReference>recordId.Lead__c</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
@@ -86,12 +87,6 @@
             <value>
                 <elementReference>recordId.Id</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>logEmailOnSend</name>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
@@ -177,7 +172,8 @@
         <inputParameters>
             <name>recipientId</name>
             <value>
-                <elementReference>recordId.Id</elementReference>
+                <elementReference>recordId.Lead__c</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <inputParameters>
@@ -185,12 +181,6 @@
             <value>
                 <elementReference>recordId.Id</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>logEmailOnSend</name>
-            <value>
-                <booleanValue>true</booleanValue>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
@@ -555,8 +545,7 @@
             <choiceReferences>Modifica</choiceReferences>
             <dataType>String</dataType>
             <fieldText>Conferma o modifica email</fieldText>
-            <fieldType>RadioButtons</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <fieldType>RadioButtonGroup</fieldType>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
