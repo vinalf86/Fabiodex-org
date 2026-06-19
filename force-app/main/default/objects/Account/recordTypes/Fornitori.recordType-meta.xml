@@ -303,6 +303,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>IVA al 21%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>IVA al 22%25</fullName>
             <default>false</default>
         </values>
@@ -446,6 +450,10 @@
         </values>
         <values>
             <fullName>Fattura con IVA 10%25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fattura con IVA 21%25</fullName>
             <default>false</default>
         </values>
         <values>

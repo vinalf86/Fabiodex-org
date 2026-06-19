@@ -5,8 +5,12 @@
 				ISPICKVAL ( IVA_Applicata__c, &apos;IVA Esente&apos;) || ISBLANK (TEXT(IVA_Applicata__c)), 0,
 				
 				IF (
-								ISPICKVAL ( IVA_Applicata__c, &apos;IVA al 10%&apos;),  Prezzo_lordo_fornitore__c * 0.1,
-								Prezzo_lordo_fornitore__c * 0.22
+								ISPICKVAL ( IVA_Applicata__c, &apos;IVA al 10%&apos;), Prezzo_lordo_fornitore__c * 0.1,
+								
+								IF (ISPICKVAL ( IVA_Applicata__c, &apos;IVA al 21%&apos;), 
+											Prezzo_lordo_fornitore__c * 0.21,
+												Prezzo_lordo_fornitore__c * 0.22
+												)
 								)
 				)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

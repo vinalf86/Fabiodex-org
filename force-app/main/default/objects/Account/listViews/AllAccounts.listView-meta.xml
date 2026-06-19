@@ -9,6 +9,7 @@
     <columns>CORE.USERS.ALIAS</columns>
     <columns>Competenze__c</columns>
     <columns>ACCOUNT.ADDRESS1_STATE_CODE</columns>
+    <columns>ACCOUNT.RATING</columns>
     <filterScope>Everything</filterScope>
     <label>All Accounts</label>
 </ListView>
