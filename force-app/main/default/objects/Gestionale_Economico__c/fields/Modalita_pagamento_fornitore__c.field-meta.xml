@@ -35,5 +35,9 @@
             <controllingFieldValue>IVA al 22%</controllingFieldValue>
             <valueName>Fattura con IVA 22%</valueName>
         </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVA al 21%</controllingFieldValue>
+            <valueName>Fattura con IVA 21%</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

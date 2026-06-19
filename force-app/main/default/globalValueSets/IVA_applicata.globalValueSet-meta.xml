@@ -11,6 +11,11 @@
         <label>IVA al 10%</label>
     </customValue>
     <customValue>
+        <fullName>IVA al 21%</fullName>
+        <default>false</default>
+        <label>IVA al 21%</label>
+    </customValue>
+    <customValue>
         <fullName>IVA al 22%</fullName>
         <default>false</default>
         <label>IVA al 22%</label>

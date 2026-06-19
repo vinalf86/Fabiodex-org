@@ -30,6 +30,11 @@
         <default>false</default>
         <label>Altro (Specificare)</label>
     </customValue>
+    <customValue>
+        <fullName>Fattura con IVA 21%</fullName>
+        <default>false</default>
+        <label>Fattura con IVA 21%</label>
+    </customValue>
     <masterLabel>Modalità pagamento fornitore</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
