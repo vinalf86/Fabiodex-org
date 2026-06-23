@@ -303,14 +303,8 @@
         </quickActionListItems>
     </quickActionList>
     <relatedLists>
-        <fields>ContactName</fields>
-        <fields>Role</fields>
-        <fields>ContactTitle</fields>
-        <fields>IsPrimary</fields>
-        <fields>ContactPhone</fields>
-        <fields>ContactEmail</fields>
-        <fields>ContactAccountName</fields>
-        <relatedList>RelatedContactRoleList</relatedList>
+        <fields>NAME</fields>
+        <relatedList>Gestionale_Economico__c.Opportunity__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>QUOTE.QUOTENUMBER</fields>
