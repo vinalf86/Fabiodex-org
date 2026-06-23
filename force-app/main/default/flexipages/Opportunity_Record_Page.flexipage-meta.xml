@@ -49,6 +49,10 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>hideSlackAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>5</value>
                 </componentInstanceProperties>
@@ -896,6 +900,10 @@
                 <componentInstanceProperties>
                     <name>accordionSections</name>
                     <value>Facet-9c80da10-62fe-4293-bf20-e75beebb2db9</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>allowMultipleSectionsOpen</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>defaultSectionName</name>
