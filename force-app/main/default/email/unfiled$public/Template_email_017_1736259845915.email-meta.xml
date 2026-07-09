@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>after form compilation but no call fixed - migliorato con chatgpt - link</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template 017 🇬🇧 sollecito dopo form x call vendita xché non prenotata</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>{{{Opportunity.Name}}} let’s lock in your entertainment plan!</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

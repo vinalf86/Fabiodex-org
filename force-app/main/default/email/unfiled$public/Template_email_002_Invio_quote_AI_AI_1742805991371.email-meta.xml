@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>INVIO QUOTE CON CTA URGENZA + CATALOGHI  E LINK SOCIAL</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template email 002 - Invio quote 🇮🇹</name>
+    <relatedEntityType>Quote</relatedEntityType>
+    <style>none</style>
+    <subject>Il Tuo Preventivo Esclusivo Per l’intrattenimento – Ultimi Passi per Bloccare Tutto!   {{{Quote.Name}}}</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

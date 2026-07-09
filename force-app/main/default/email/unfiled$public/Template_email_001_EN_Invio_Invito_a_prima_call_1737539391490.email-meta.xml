@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>SENZA LISTINO - migliorato</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template email 001  EN Invio Invito a prima call</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>&quot;Ciao, let’s jump on a call and bring your entertainment vision to life!&quot; {{{Opportunity.Id}}}</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

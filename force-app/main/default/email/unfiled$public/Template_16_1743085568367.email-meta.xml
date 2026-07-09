@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Last chance dj budget friendly</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template 16 🇬🇧 - Last chance dj budget friendly</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>Budget friendly proposal {{{Opportunity.Name}}}</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

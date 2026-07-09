@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Ciao {{{Opportunity.First_Name_Customer_1__c}}} &amp; {{{Opportunity.First_Name_Customer_2__c}}},</p>
+
+<p>Do you have any questions about the costs?</p>
+
+<p>We wanted to check in—have you made a decision yet? We're still waiting for your response, and in the meantime we've already received two other requests for the same date! I haven’t had any updates from you, and I’d hate for you to miss out. Don’t underestimate the demand—Tuscany hosts around 6000 events per day, and prime dates fill up fast! Let’s not leave this to the last minute.</p>
+
+<p>Here’s my availability so we can lock things in:<br />
+<a href="https://calendar.app.google/M8Fjq5ABRngXrtMr8">https://calendar.app.google/etjBqL5VFZSZH4b89</a></p>
+
+<p>Many thanks and speak soon!</p>
+
+<p>Fabiodex</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>bilingua perchè automatica</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template 006 🇬🇧 🇮🇹 AUTOMATICA -30 gg all&apos;evento richiesta saldo</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>OMG! Only 30 days left to your event {{{Opportunity.Name}}}</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

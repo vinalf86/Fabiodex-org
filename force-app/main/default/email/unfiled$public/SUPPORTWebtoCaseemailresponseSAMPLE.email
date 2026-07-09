@@ -1,0 +1,1 @@
+Gentile {!Case.SuppliedName},     Grazie per aver inoltrato online la domanda. È stato creato il caso n. {!Case.CaseNumber}: "{!Case.Subject}" e un difensore clienti di {!Organization.Name} le risponderà a breve.     Grazie,    il Team per la difesa dei clienti di {!Organization.Name}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifica del nome utente e della password di accesso a un nuovo utente Self-Service</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ASSISTENZA:  Informazioni di accesso per un nuovo utente Self-Service (ESEMPIO)</name>
+    <style>none</style>
+    <subject>Your {!Organization.Name} Self-Service username and password</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template email 003 🇮🇹 - sollecito dopo invio quote 4gg</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>{{{Opportunity.Name}}} 3 giorni per confermare il tuo evento!</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

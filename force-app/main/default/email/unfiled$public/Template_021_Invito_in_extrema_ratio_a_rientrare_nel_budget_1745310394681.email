@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Ciao&nbsp;{{{Opportunity.First_Name_Customer_1__c}}} and&nbsp;{{{Opportunity.First_Name_Customer_2__c}}}&nbsp;<br />
+<br />
+Many thanks for your email – we truly appreciate you taking the time to reply!<br />
+It might sound funny, but these days it's become quite rare... so the fact that you didn’t ghost us (like many do!) really means a lot – and yes, this will definitely be rewarded 😊</p>
+
+<p>As mentioned during our chat, the quote you received was just a starting point – we have plenty of room to tailor things and help you stay within budget, without giving up on the wow factor.</p>
+
+<p>Now there’s just one tiny step left – a quick call to align and start shaping the magic together.<br />
+You can book it here:</p>
+
+<p>Many Grazie and speak soon</p>
+</body>
+</html>

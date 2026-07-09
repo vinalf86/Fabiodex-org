@@ -1,0 +1,1 @@
+*** NOTIFICA DI ASSEGNAZIONE NUOVO CASO ***    Il seguente caso è stato assegnato all'utente.   Società:  Nome referente {!Account.Name}:  N. caso {!Contact.Name}:  Oggetto {!Case.CaseNumber}:  Descrizione {!Case.Subject}: {!Case.Description}    Per accedere al caso, fare clic sul link:  {!Case.Link}

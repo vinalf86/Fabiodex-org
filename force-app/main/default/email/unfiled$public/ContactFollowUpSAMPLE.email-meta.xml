@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Follow up sulla riunione</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Referente: follow up (ESEMPIO)</name>
+    <style>none</style>
+    <subject>Following up on our discussion today</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
