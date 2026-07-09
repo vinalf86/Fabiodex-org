@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>nvito per upsell e controllo di tutto</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template email 022 🇬🇧 -Invito per upsell e controllo di tutto</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>{{{Opportunity.Name}}} Quick check-in – Final tweaks?</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

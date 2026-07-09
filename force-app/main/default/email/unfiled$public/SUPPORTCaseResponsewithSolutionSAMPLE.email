@@ -1,0 +1,1 @@
+Gentile {!Contact.FirstName},     {!Case.Solution_Description}     Grazie,    {!User.Name}  {!Organization.Name}     Commenti:    {!Case.Description}   {!Case.Solution_Attachments}

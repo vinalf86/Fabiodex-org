@@ -1,0 +1,1 @@
+*** AVVISO DI INOLTRO CASO AL LIVELLO SUPERIORE***    Il seguente caso è stato inoltrato al livello superiore:   Società:  Caso {!Account.Name}:  {!Case.CaseNumber}:  {!Case.Subject}  Titolare:  {!CaseOwner.FullName}    Per accedere al caso, fare clic sul link:  {!Case.Link}

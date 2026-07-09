@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Risposta automatica in caso di inoltro online di un nuovo caso.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ASSISTENZA:  messaggio di posta elettronica di risposta Web a caso (ESEMPIO)</name>
+    <style>none</style>
+    <subject>{!Organization.Name} Case # {!Case.CaseNumber}:  {!Case.Subject}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

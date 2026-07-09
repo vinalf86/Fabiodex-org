@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Mail di presentazione a nuovi partner commerciali con link</name>
+    <relatedEntityType>Account</relatedEntityType>
+    <style>none</style>
+    <subject>Listini Dj artisti e allestimenti Fabiodex &amp; Tuscany Entertainment</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

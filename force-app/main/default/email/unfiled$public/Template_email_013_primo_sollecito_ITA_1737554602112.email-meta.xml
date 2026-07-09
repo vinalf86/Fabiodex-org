@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>dopo invio quote</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template 013 🇮🇹 primo sollecito dopo invio quote</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>{{{Opportunity.Name}}} ti manca solo un piccolo passo alla conferma dell&apos;intrattenimento del tuo evento!</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

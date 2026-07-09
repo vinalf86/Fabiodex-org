@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifica interna al titolare lead quando viene assegnato un nuovo lead.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lead:  notifica nuova assegnazione (ESEMPIO)</name>
+    <style>none</style>
+    <subject>New lead assigned to you:  {!Lead.Name} from {!Lead.Company}</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

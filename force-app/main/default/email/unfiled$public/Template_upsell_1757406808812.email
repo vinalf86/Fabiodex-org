@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Ciao {{{Quote.First_Name_Customer_1__c}}} and&nbsp; {{{Quote.First_Name_Customer_2__c}}}<br />
+<br />
+​​​​​Thank you for confirming the update to your previous contract. To speed up the process, you can sign the attached quote and transfer the balance to the same IBAN.<br />
+<br />
+Beneficiary: FABIODEX SRL<br />
+Beneficiary address: Del Poggio Agli Uccellini 794, Florence, 50036, Vaglia, Italy<br />
+<br />
+Transaction sent from a bank in the European Economic Area?<br />
+<br />
+IBAN: LT64 3250 0474 3621 6795<br />
+BIC: REVOLT21<br />
+&nbsp;</p>
+
+<p>Looking forward to making your dream event a reality!</p>
+
+<p>Many grazie and speak soon</p>
+</body>
+</html>

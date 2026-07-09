@@ -1,0 +1,11 @@
+Dear {!Lead.Name},    
+
+Thank you very much for your interest towards {!Organization.Name}, we have correctly received your request .  
+
+We kindly invite you to book your first call through the following link: 
+
+We look forward to talking to you.
+
+Regards,
+
+{!Organization.Name}'s team

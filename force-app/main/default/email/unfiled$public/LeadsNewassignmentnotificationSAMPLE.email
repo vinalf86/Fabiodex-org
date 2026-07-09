@@ -1,0 +1,1 @@
+*** NOTIFICA DI ASSEGNAZIONE NUOVO LEAD ***    Il seguente lead è stato assegnato all'utente.   Società:  Nome lead {!Lead.Company}:  {!Lead.Name}    Per accedere direttamente al lead, fare clic sul link:  {!Lead.Link}

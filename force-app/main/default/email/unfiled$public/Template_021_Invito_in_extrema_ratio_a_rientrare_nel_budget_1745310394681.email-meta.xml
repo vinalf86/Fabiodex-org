@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invito in extrema ratio a rientrare nel budget</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Template 021 🇬🇧 Invito in extrema ratio a rientrare nel budget</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>{{{Opportunity.Name}}} Just One Last Step to Move Forward Together</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

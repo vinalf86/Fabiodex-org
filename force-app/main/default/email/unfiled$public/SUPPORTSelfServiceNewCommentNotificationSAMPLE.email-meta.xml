@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Modello di posta elettronica di esempio da inviare ai clienti Self-Service per notificare l&apos;aggiunta di un commento pubblico al rispettivo caso.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ASSISTENZA:  notifica nuovo commento Self-Service (ESEMPIO)</name>
+    <style>none</style>
+    <subject>Your case {!Case.CaseNumber} has been updated</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">
+<p>Ciao&nbsp;{{{Opportunity.First_Name_Customer_1__c}}} and&nbsp;{{{Opportunity.First_Name_Customer_2__c}}}</p>
+
+<p>Now that everything’s officially booked, it’s a great time to double-check the details and see if there’s anything else you might want to add now that the ful picture is coming together.</p>
+
+<p>Book a quick call at the usual link so we can go over everything&nbsp;<a href="https://calendar.app.google/etjBqL5VFZSZH4b89">https://calendar.app.google/etjBqL5VFZSZH4b89 </a><br />
+Our Agenda link is always updated and ideal for different timezones</p>
+
+<p>Fabiodex</p>
+</body>
+</html>
