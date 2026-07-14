@@ -8,7 +8,7 @@
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Assign_stage_to_Opp</targetReference>
+            <targetReference>Check_Opp_Stage</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_screen</targetReference>
@@ -101,7 +101,7 @@
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Assign_stage_to_Opp</targetReference>
+            <targetReference>Check_Opp_Stage</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -187,7 +187,7 @@
         <offset>0</offset>
         <versionString>2.0.1</versionString>
     </actionCalls>
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assign_email</name>
@@ -331,6 +331,31 @@
                 <targetReference>Send_English_Contract</targetReference>
             </connector>
             <label>English</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Opp_Stage</name>
+        <label>Check Opp Stage</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assign_stage_to_Opp</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Else</defaultConnectorLabel>
+        <rules>
+            <name>Closed_Won</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>recordId.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Chiuse/Conseguite</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Confirmation</targetReference>
+            </connector>
+            <label>Closed Won</label>
         </rules>
     </decisions>
     <decisions>
