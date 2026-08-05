@@ -6,7 +6,7 @@
         <name>Add_Interviews_to_collection</name>
         <label>Add Interviews to collection</label>
         <locationX>314</locationX>
-        <locationY>3590</locationY>
+        <locationY>3782</locationY>
         <assignmentItems>
             <assignToReference>InterviewsCollection</assignToReference>
             <operator>Add</operator>
@@ -64,7 +64,7 @@
         <name>Add_Quote_Lines_to_collection</name>
         <label>Add Quote Lines to collection</label>
         <locationX>534</locationX>
-        <locationY>5642</locationY>
+        <locationY>5834</locationY>
         <assignmentItems>
             <assignToReference>TotalQuoteLines</assignToReference>
             <operator>Add</operator>
@@ -80,7 +80,7 @@
         <name>Assign_Chosen_Products_to_collection</name>
         <label>Assign Chosen Products to collection</label>
         <locationX>314</locationX>
-        <locationY>4130</locationY>
+        <locationY>4322</locationY>
         <assignmentItems>
             <assignToReference>varProdList</assignToReference>
             <operator>Add</operator>
@@ -138,7 +138,7 @@
         <name>Assign_Prod_Day_1</name>
         <label>Assign Prod Day 1</label>
         <locationX>314</locationX>
-        <locationY>998</locationY>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>ProdDay1</assignToReference>
             <operator>Add</operator>
@@ -224,7 +224,7 @@
         <name>Assign_Prod_Day_2</name>
         <label>Assign Prod Day 2</label>
         <locationX>314</locationX>
-        <locationY>1430</locationY>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>ProdDay2</assignToReference>
             <operator>Add</operator>
@@ -310,7 +310,7 @@
         <name>Assign_Prod_Day_3</name>
         <label>Assign Prod Day 3</label>
         <locationX>314</locationX>
-        <locationY>1862</locationY>
+        <locationY>2054</locationY>
         <assignmentItems>
             <assignToReference>ProdDay3</assignToReference>
             <operator>Add</operator>
@@ -396,7 +396,7 @@
         <name>Assign_Prod_Day_4</name>
         <label>Assign Prod Day 4</label>
         <locationX>314</locationX>
-        <locationY>2294</locationY>
+        <locationY>2486</locationY>
         <assignmentItems>
             <assignToReference>ProdDay4</assignToReference>
             <operator>Add</operator>
@@ -482,7 +482,7 @@
         <name>Assign_Prod_Day_5</name>
         <label>Assign Prod Day 5</label>
         <locationX>314</locationX>
-        <locationY>2726</locationY>
+        <locationY>2918</locationY>
         <assignmentItems>
             <assignToReference>ProdDay5</assignToReference>
             <operator>Add</operator>
@@ -568,7 +568,7 @@
         <name>Assign_Prod_Day_6</name>
         <label>Assign Prod Day 6</label>
         <locationX>314</locationX>
-        <locationY>3158</locationY>
+        <locationY>3350</locationY>
         <assignmentItems>
             <assignToReference>ProdDay6</assignToReference>
             <operator>Add</operator>
@@ -654,7 +654,7 @@
         <name>Assign_Prod_Day_7</name>
         <label>Assign Prod Day 7</label>
         <locationX>314</locationX>
-        <locationY>3806</locationY>
+        <locationY>3998</locationY>
         <assignmentItems>
             <assignToReference>ProdDay7</assignToReference>
             <operator>Add</operator>
@@ -740,7 +740,7 @@
         <name>Assign_values_Interview_1</name>
         <label>Assign values Interview 1</label>
         <locationX>314</locationX>
-        <locationY>890</locationY>
+        <locationY>1082</locationY>
         <assignmentItems>
             <assignToReference>varInterview1.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1092,7 +1092,7 @@
         <name>Assign_values_Interview_2</name>
         <label>Assign values Interview 2</label>
         <locationX>314</locationX>
-        <locationY>1322</locationY>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>varInterview2.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1444,7 +1444,7 @@
         <name>Assign_values_Interview_3</name>
         <label>Assign values Interview 3</label>
         <locationX>314</locationX>
-        <locationY>1754</locationY>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>varInterview3.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1796,7 +1796,7 @@
         <name>Assign_values_Interview_4</name>
         <label>Assign values Interview 4</label>
         <locationX>314</locationX>
-        <locationY>2186</locationY>
+        <locationY>2378</locationY>
         <assignmentItems>
             <assignToReference>varInterview4.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2148,7 +2148,7 @@
         <name>Assign_values_Interview_5</name>
         <label>Assign values Interview 5</label>
         <locationX>314</locationX>
-        <locationY>2618</locationY>
+        <locationY>2810</locationY>
         <assignmentItems>
             <assignToReference>varInterview5.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2500,7 +2500,7 @@
         <name>Assign_values_Interview_6</name>
         <label>Assign values Interview 6</label>
         <locationX>314</locationX>
-        <locationY>3050</locationY>
+        <locationY>3242</locationY>
         <assignmentItems>
             <assignToReference>varInterview6.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2852,7 +2852,7 @@
         <name>Assign_values_Interview_7</name>
         <label>Assign values Interview 7</label>
         <locationX>314</locationX>
-        <locationY>3482</locationY>
+        <locationY>3674</locationY>
         <assignmentItems>
             <assignToReference>varInterview7.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -3201,10 +3201,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Assign_values_to_Opp</name>
+        <label>Assign values to Opp</label>
+        <locationX>50</locationX>
+        <locationY>5750</locationY>
+        <assignmentItems>
+            <assignToReference>updatedOpp.Caparra__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>formDeposit</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Opp</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assign_values_to_Quote_Lines_English</name>
         <label>Assign values to Quote Lines English</label>
         <locationX>402</locationX>
-        <locationY>5450</locationY>
+        <locationY>5642</locationY>
         <assignmentItems>
             <assignToReference>varQuoteLine.QuoteId</assignToReference>
             <operator>Assign</operator>
@@ -3276,7 +3292,7 @@
         <name>Assign_values_to_Quote_Lines_Italian</name>
         <label>Assign values to Quote Lines Italian</label>
         <locationX>666</locationX>
-        <locationY>5450</locationY>
+        <locationY>5642</locationY>
         <assignmentItems>
             <assignToReference>varQuoteLine.QuoteId</assignToReference>
             <operator>Assign</operator>
@@ -3350,6 +3366,30 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Altro (Specificare)</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c100</name>
+        <choiceText>100%</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c30</name>
+        <choiceText>30%</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>0.3</numberValue>
+        </value>
+    </choices>
+    <choices>
+        <name>c50</name>
+        <choiceText>50%</choiceText>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>0.5</numberValue>
         </value>
     </choices>
     <choices>
@@ -3541,7 +3581,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter day 6</label>
         <locationX>314</locationX>
-        <locationY>3266</locationY>
+        <locationY>3458</locationY>
         <assignNextValueToReference>currentItem_Filter_day_6</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay6</collectionReference>
@@ -3562,7 +3602,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 1</label>
         <locationX>314</locationX>
-        <locationY>1106</locationY>
+        <locationY>1298</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_1</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay1</collectionReference>
@@ -3583,7 +3623,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 2</label>
         <locationX>314</locationX>
-        <locationY>1538</locationY>
+        <locationY>1730</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_2</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay2</collectionReference>
@@ -3604,7 +3644,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 3</label>
         <locationX>314</locationX>
-        <locationY>1970</locationY>
+        <locationY>2162</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_2</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay3</collectionReference>
@@ -3625,7 +3665,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 4</label>
         <locationX>314</locationX>
-        <locationY>2402</locationY>
+        <locationY>2594</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_4</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay4</collectionReference>
@@ -3646,7 +3686,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 5</label>
         <locationX>314</locationX>
-        <locationY>2834</locationY>
+        <locationY>3026</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_5</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay5</collectionReference>
@@ -3667,7 +3707,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 7</label>
         <locationX>314</locationX>
-        <locationY>3914</locationY>
+        <locationY>4106</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_7</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay7</collectionReference>
@@ -3688,7 +3728,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Interviews with day requested</label>
         <locationX>314</locationX>
-        <locationY>3698</locationY>
+        <locationY>3890</locationY>
         <assignNextValueToReference>currentItem_Remove_nulle_Interviews</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>InterviewsCollection</collectionReference>
@@ -3709,7 +3749,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Products to Iterate</label>
         <locationX>314</locationX>
-        <locationY>5126</locationY>
+        <locationY>5318</locationY>
         <assignNextValueToReference>currentItem_Products_to_Iterate</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>FinalProdList</collectionReference>
@@ -3744,7 +3784,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Remove Null Values</label>
         <locationX>314</locationX>
-        <locationY>4238</locationY>
+        <locationY>4430</locationY>
         <assignNextValueToReference>currentItem_Remove_Null_Values</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>varProdList</collectionReference>
@@ -3798,7 +3838,7 @@
         <name>Check_customer</name>
         <label>Check customer</label>
         <locationX>314</locationX>
-        <locationY>4454</locationY>
+        <locationY>4646</locationY>
         <defaultConnector>
             <targetReference>Update_Lead_with_company_info</targetReference>
         </defaultConnector>
@@ -3823,7 +3863,7 @@
         <name>Check_language</name>
         <label>Check language</label>
         <locationX>534</locationX>
-        <locationY>5342</locationY>
+        <locationY>5534</locationY>
         <defaultConnector>
             <targetReference>Assign_values_to_Quote_Lines_Italian</targetReference>
         </defaultConnector>
@@ -3873,7 +3913,7 @@
         <name>Check_number_of_days</name>
         <label>Check number of days</label>
         <locationX>314</locationX>
-        <locationY>782</locationY>
+        <locationY>974</locationY>
         <defaultConnector>
             <targetReference>Interview_2nd_day</targetReference>
         </defaultConnector>
@@ -3898,7 +3938,7 @@
         <name>Quote_Lines_available</name>
         <label>Quote Lines available?</label>
         <locationX>314</locationX>
-        <locationY>5834</locationY>
+        <locationY>5534</locationY>
         <defaultConnector>
             <targetReference>No_Products_Selected</targetReference>
         </defaultConnector>
@@ -3959,6 +3999,12 @@
         <name>formBillingName</name>
         <dataType>String</dataType>
         <expression>{!recordId.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!recordId.Lead__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>formDeposit</name>
+        <dataType>Currency</dataType>
+        <expression>{!updatedOpp.Amount} * {!Importo_caparra}</expression>
+        <scale>2</scale>
     </formulas>
     <formulas>
         <name>FormDescriptionEN</name>
@@ -4047,7 +4093,7 @@
         <name>Iterate_Products_List</name>
         <label>Iterate Products List</label>
         <locationX>314</locationX>
-        <locationY>5234</locationY>
+        <locationY>5426</locationY>
         <collectionReference>Products_to_Iterate</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -4080,7 +4126,7 @@
         <name>Create_Interviews</name>
         <label>Create Interviews</label>
         <locationX>314</locationX>
-        <locationY>4802</locationY>
+        <locationY>4994</locationY>
         <connector>
             <targetReference>Create_Quote</targetReference>
         </connector>
@@ -4094,7 +4140,7 @@
         <name>Create_Interviews_2</name>
         <label>Create Interviews 2</label>
         <locationX>578</locationX>
-        <locationY>6050</locationY>
+        <locationY>5750</locationY>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Fault_Message_Screen_2</targetReference>
@@ -4105,7 +4151,7 @@
         <name>Create_Quote</name>
         <label>Create Quote</label>
         <locationX>314</locationX>
-        <locationY>4910</locationY>
+        <locationY>5102</locationY>
         <assignRecordIdToReference>NewQuoteId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Event</targetReference>
@@ -4185,7 +4231,7 @@
         <name>Create_Task</name>
         <label>Create Task</label>
         <locationX>50</locationX>
-        <locationY>6158</locationY>
+        <locationY>6074</locationY>
         <connector>
             <targetReference>Thank_you_screen</targetReference>
         </connector>
@@ -4335,7 +4381,7 @@
         <name>Get_User</name>
         <label>Get User</label>
         <locationX>50</locationX>
-        <locationY>6050</locationY>
+        <locationY>5966</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Task</targetReference>
@@ -4356,7 +4402,7 @@
         <name>Roll_Back_Quote</name>
         <label>Roll Back Quote</label>
         <locationX>1370</locationX>
-        <locationY>5018</locationY>
+        <locationY>5210</locationY>
         <connector>
             <targetReference>Fault_Message_Screen_2</targetReference>
         </connector>
@@ -4365,7 +4411,7 @@
         <name>Update_Event</name>
         <label>Update Event</label>
         <locationX>314</locationX>
-        <locationY>5018</locationY>
+        <locationY>5210</locationY>
         <connector>
             <targetReference>Products_to_Iterate</targetReference>
         </connector>
@@ -4423,7 +4469,7 @@
         <name>Update_Lead_with_company_info</name>
         <label>Update Lead with company info</label>
         <locationX>578</locationX>
-        <locationY>4562</locationY>
+        <locationY>4754</locationY>
         <connector>
             <targetReference>Create_Interviews</targetReference>
         </connector>
@@ -4493,7 +4539,7 @@
         <name>Update_Lead_with_private_customer_info</name>
         <label>Update Lead with private customer info</label>
         <locationX>50</locationX>
-        <locationY>4562</locationY>
+        <locationY>4754</locationY>
         <connector>
             <targetReference>Create_Interviews</targetReference>
         </connector>
@@ -4607,11 +4653,21 @@
         </inputAssignments>
         <object>Lead</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opp</name>
+        <label>Update Opp</label>
+        <locationX>50</locationX>
+        <locationY>5858</locationY>
+        <connector>
+            <targetReference>Get_User</targetReference>
+        </connector>
+        <inputReference>updatedOpp</inputReference>
+    </recordUpdates>
     <screens>
         <name>Fault_Message_Screen_2</name>
         <label>Fault Message Screen 2</label>
         <locationX>1370</locationX>
-        <locationY>5126</locationY>
+        <locationY>5318</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4635,7 +4691,7 @@
         <name>Interview_1st_day</name>
         <label>Interview 1st day</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>758</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -4685,6 +4741,7 @@
             <dataType>String</dataType>
             <fieldText>Customer Language</fieldText>
             <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4704,6 +4761,7 @@
             <fieldText>Tipo Evento del giorno</fieldText>
             <fieldType>InputField</fieldType>
             <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4722,6 +4780,7 @@
             </defaultValue>
             <fieldText>Venue Name e Responsabile Location</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -4744,6 +4803,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -4771,6 +4831,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4812,6 +4873,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4827,6 +4889,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4842,6 +4905,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4859,6 +4923,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -4956,6 +5021,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5042,6 +5108,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5056,6 +5123,7 @@
                     <name>MusicLinks_Lunch1</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5097,6 +5165,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5112,6 +5181,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5131,6 +5201,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5146,6 +5217,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5161,6 +5233,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5178,6 +5251,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5275,6 +5349,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5361,6 +5436,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5375,6 +5451,7 @@
                     <name>MusicLinks_Ceremony1</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5416,6 +5493,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5431,6 +5509,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5446,6 +5525,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5463,6 +5543,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5560,6 +5641,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5646,6 +5728,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5660,6 +5743,7 @@
                     <name>MusicLinks_Cocktail1</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5701,6 +5785,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5716,6 +5801,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5731,6 +5817,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5748,6 +5835,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5845,6 +5933,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5931,6 +6020,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5945,6 +6035,7 @@
                     <name>MusicLinks_Dinner1</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -5962,6 +6053,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6072,6 +6164,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6097,6 +6190,7 @@
                     <name>Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6138,6 +6232,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6153,6 +6248,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6168,6 +6264,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6185,6 +6282,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6282,6 +6380,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6368,6 +6467,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6382,6 +6482,7 @@
                     <name>MusicLinks_Party1</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6415,6 +6516,7 @@
             <name>Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -6436,7 +6538,7 @@
         <name>Interview_2nd_day</name>
         <label>Interview 2nd day</label>
         <locationX>402</locationX>
-        <locationY>890</locationY>
+        <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -6461,6 +6563,7 @@
             <dataType>Boolean</dataType>
             <fieldText>2nd day requested?</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -6486,6 +6589,7 @@
                     <fieldText>Tipo Evento del giorno</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6514,6 +6618,7 @@
                     </defaultValue>
                     <fieldText>Venue Name e Responsabile Location</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6575,6 +6680,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -6602,6 +6708,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6653,6 +6760,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6668,6 +6776,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6683,6 +6792,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6700,6 +6810,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6797,6 +6908,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6883,6 +6995,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6897,6 +7010,7 @@
                     <name>MusicLinks_Lunch2</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6948,6 +7062,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6963,6 +7078,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6982,6 +7098,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -6997,6 +7114,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7012,6 +7130,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7029,6 +7148,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7126,6 +7246,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7212,6 +7333,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7226,6 +7348,7 @@
                     <name>MusicLinks_Ceremony2</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7277,6 +7400,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7292,6 +7416,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7307,6 +7432,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7324,6 +7450,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7421,6 +7548,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7507,6 +7635,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7521,6 +7650,7 @@
                     <name>MusicLinks_Cocktail2</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7572,6 +7702,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7587,6 +7718,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7602,6 +7734,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7619,6 +7752,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7716,6 +7850,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7802,6 +7937,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7816,6 +7952,7 @@
                     <name>MusicLinks_Dinner2</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7833,6 +7970,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7953,6 +8091,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -7978,6 +8117,7 @@
                     <name>Copy_1_of_Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8029,6 +8169,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8044,6 +8185,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8059,6 +8201,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8076,6 +8219,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8173,6 +8317,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8259,6 +8404,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8273,6 +8419,7 @@
                     <name>MusicLinks_Party2</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8316,6 +8463,7 @@
             <name>Copy_1_of_Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -8347,7 +8495,7 @@
         <name>Interview_3rd_day</name>
         <label>Interview 3rd day</label>
         <locationX>402</locationX>
-        <locationY>1106</locationY>
+        <locationY>1298</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -8372,6 +8520,7 @@
             <dataType>Boolean</dataType>
             <fieldText>3rd day requested?</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -8397,6 +8546,7 @@
                     <fieldText>Tipo Evento del giorno</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8425,6 +8575,7 @@
                     </defaultValue>
                     <fieldText>Venue Name e Responsabile Location</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8486,6 +8637,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -8513,6 +8665,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8564,6 +8717,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8579,6 +8733,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8594,6 +8749,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8611,6 +8767,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8708,6 +8865,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8794,6 +8952,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8808,6 +8967,7 @@
                     <name>MusicLinks_Lunch3</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8859,6 +9019,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8874,6 +9035,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8893,6 +9055,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8908,6 +9071,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8923,6 +9087,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -8940,6 +9105,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9037,6 +9203,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9123,6 +9290,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9137,6 +9305,7 @@
                     <name>MusicLinks_Ceremony3</name>
                     <fieldText>Music Links and Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9188,6 +9357,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9203,6 +9373,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9218,6 +9389,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9235,6 +9407,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9332,6 +9505,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9418,6 +9592,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9432,6 +9607,7 @@
                     <name>MusicLinks_Cocktail3</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9483,6 +9659,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9498,6 +9675,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9513,6 +9691,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9530,6 +9709,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9627,6 +9807,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9713,6 +9894,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9727,6 +9909,7 @@
                     <name>MusicLinks_Dinner3</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9744,6 +9927,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9864,6 +10048,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9889,6 +10074,7 @@
                     <name>Copy_1_of_Copy_1_of_Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9940,6 +10126,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9955,6 +10142,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9970,6 +10158,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -9987,6 +10176,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10084,6 +10274,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10170,6 +10361,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10184,6 +10376,7 @@
                     <name>MusicLinks_Party3</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10227,6 +10420,7 @@
             <name>Copy_1_of_Copy_1_of_Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -10258,7 +10452,7 @@
         <name>Interview_4th_day</name>
         <label>Interview 4th day</label>
         <locationX>402</locationX>
-        <locationY>1322</locationY>
+        <locationY>1514</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -10283,6 +10477,7 @@
             <dataType>Boolean</dataType>
             <fieldText>4th day requested?</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -10308,6 +10503,7 @@
                     <fieldText>Tipo Evento del giorno</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10336,6 +10532,7 @@
                     </defaultValue>
                     <fieldText>Venue Name e Responsabile Location</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10397,6 +10594,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -10424,6 +10622,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10475,6 +10674,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10490,6 +10690,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10505,6 +10706,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10522,6 +10724,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10619,6 +10822,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10705,6 +10909,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10719,6 +10924,7 @@
                     <name>MusicLinks_Lunch4</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10770,6 +10976,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10785,6 +10992,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10804,6 +11012,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10819,6 +11028,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10834,6 +11044,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10851,6 +11062,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -10948,6 +11160,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11034,6 +11247,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11048,6 +11262,7 @@
                     <name>MusicLinks_Ceremony4</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11099,6 +11314,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11114,6 +11330,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11129,6 +11346,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11146,6 +11364,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11243,6 +11462,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11329,6 +11549,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11343,6 +11564,7 @@
                     <name>MusicLinks_Cocktail4</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11394,6 +11616,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11409,6 +11632,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11424,6 +11648,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11441,6 +11666,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11538,6 +11764,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11624,6 +11851,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11638,6 +11866,7 @@
                     <name>MusicLinks_Dinner4</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11655,6 +11884,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11775,6 +12005,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11800,6 +12031,7 @@
                     <name>Copy_2_of_Copy_1_of_Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11851,6 +12083,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11866,6 +12099,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11881,6 +12115,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11898,6 +12133,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -11995,6 +12231,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12081,6 +12318,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12095,6 +12333,7 @@
                     <name>MusicLinks_Party4</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12138,6 +12377,7 @@
             <name>Copy_2_of_Copy_1_of_Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -12169,7 +12409,7 @@
         <name>Interview_5th_day</name>
         <label>Interview 5th day</label>
         <locationX>402</locationX>
-        <locationY>1538</locationY>
+        <locationY>1730</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -12194,6 +12434,7 @@
             <dataType>Boolean</dataType>
             <fieldText>5th day requested?</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -12219,6 +12460,7 @@
                     <fieldText>Tipo Evento del giorno</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12247,6 +12489,7 @@
                     </defaultValue>
                     <fieldText>Venue Name e Responsabile Location</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12308,6 +12551,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -12335,6 +12579,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12386,6 +12631,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12401,6 +12647,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12416,6 +12663,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12433,6 +12681,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12530,6 +12779,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12616,6 +12866,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12630,6 +12881,7 @@
                     <name>MusicLinks_Lunch5</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12681,6 +12933,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12696,6 +12949,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12715,6 +12969,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12730,6 +12985,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12745,6 +13001,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12762,6 +13019,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12859,6 +13117,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12945,6 +13204,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -12959,6 +13219,7 @@
                     <name>MusicLinks_Ceremony5</name>
                     <fieldText>Music Links and Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13010,6 +13271,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13025,6 +13287,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13040,6 +13303,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13057,6 +13321,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13154,6 +13419,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13240,6 +13506,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13254,6 +13521,7 @@
                     <name>MusicLinks_Cocktail5</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13305,6 +13573,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13320,6 +13589,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13335,6 +13605,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13352,6 +13623,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13449,6 +13721,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13535,6 +13808,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13549,6 +13823,7 @@
                     <name>MusicLinks_Dinner5</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13566,6 +13841,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13686,6 +13962,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13711,6 +13988,7 @@
                     <name>Copy_3_of_Copy_1_of_Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13762,6 +14040,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13777,6 +14056,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13792,6 +14072,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13809,6 +14090,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13906,6 +14188,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -13992,6 +14275,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14006,6 +14290,7 @@
                     <name>MusicLinks_Party5</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14049,6 +14334,7 @@
             <name>Copy_3_of_Copy_1_of_Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -14080,7 +14366,7 @@
         <name>Interview_6th_day</name>
         <label>Interview 6th day</label>
         <locationX>402</locationX>
-        <locationY>1754</locationY>
+        <locationY>1946</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -14105,6 +14391,7 @@
             <dataType>Boolean</dataType>
             <fieldText>6th day requested?</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -14130,6 +14417,7 @@
                     <fieldText>Tipo Evento del giorno</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14158,6 +14446,7 @@
                     </defaultValue>
                     <fieldText>Venue Name e Responsabile Location</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14219,6 +14508,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -14246,6 +14536,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14297,6 +14588,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14312,6 +14604,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14327,6 +14620,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14344,6 +14638,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14441,6 +14736,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14527,6 +14823,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14541,6 +14838,7 @@
                     <name>MusicLinks_Lunch6</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14592,6 +14890,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14607,6 +14906,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14626,6 +14926,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14641,6 +14942,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14656,6 +14958,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14673,6 +14976,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14770,6 +15074,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14856,6 +15161,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14870,6 +15176,7 @@
                     <name>MusicLinks_Ceremony6</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14921,6 +15228,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14936,6 +15244,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14951,6 +15260,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -14968,6 +15278,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15065,6 +15376,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15151,6 +15463,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15165,6 +15478,7 @@
                     <name>MusicLinks_Cocktail6</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15216,6 +15530,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15231,6 +15546,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15246,6 +15562,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15263,6 +15580,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15360,6 +15678,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15446,6 +15765,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15460,6 +15780,7 @@
                     <name>MusicLinks_Dinner6</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15477,6 +15798,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15597,6 +15919,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15622,6 +15945,7 @@
                     <name>Copy_4_of_Copy_1_of_Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15673,6 +15997,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15688,6 +16013,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15703,6 +16029,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15720,6 +16047,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15817,6 +16145,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15903,6 +16232,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15917,6 +16247,7 @@
                     <name>MusicLinks_Party6</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -15960,6 +16291,7 @@
             <name>Copy_4_of_Copy_1_of_Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -15991,7 +16323,7 @@
         <name>Interview_7th_day</name>
         <label>Interview 7th day</label>
         <locationX>402</locationX>
-        <locationY>1970</locationY>
+        <locationY>2162</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -16016,6 +16348,7 @@
             <dataType>Boolean</dataType>
             <fieldText>7th day requested?</fieldText>
             <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -16041,6 +16374,7 @@
                     <fieldText>Tipo Evento del giorno</fieldText>
                     <fieldType>InputField</fieldType>
                     <helpText>&lt;p&gt;{!EsempioTipoEvento}&lt;/p&gt;</helpText>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16069,6 +16403,7 @@
                     </defaultValue>
                     <fieldText>Venue Name e Responsabile Location</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16130,6 +16465,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Number of guests</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>0</scale>
                     <styleProperties>
@@ -16157,6 +16493,7 @@
                     <dataType>String</dataType>
                     <fieldText>Guests Nationality</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16208,6 +16545,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Lunch</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16223,6 +16561,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16238,6 +16577,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16255,6 +16595,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16352,6 +16693,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16438,6 +16780,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16452,6 +16795,7 @@
                     <name>MusicLinks_Lunch7</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16503,6 +16847,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Ceremony</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16518,6 +16863,7 @@
                     <dataType>String</dataType>
                     <fieldText>Ceremony Type</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16537,6 +16883,7 @@
                     <dataType>String</dataType>
                     <fieldText>Celebrant Number</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16552,6 +16899,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16567,6 +16915,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16584,6 +16933,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our ceremony sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16681,6 +17031,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16767,6 +17118,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music for ceremony?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16781,6 +17133,7 @@
                     <name>MusicLinks_Ceremony7</name>
                     <fieldText>Music Links and Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16832,6 +17185,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cocktail</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16847,6 +17201,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16862,6 +17217,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16879,6 +17235,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -16976,6 +17333,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17062,6 +17420,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17076,6 +17435,7 @@
                     <name>MusicLinks_Cocktail7</name>
                     <fieldText>Music Links and Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17127,6 +17487,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Dinner</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17142,6 +17503,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17157,6 +17519,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17174,6 +17537,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17271,6 +17635,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17357,6 +17722,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17371,6 +17737,7 @@
                     <name>MusicLinks_Dinner7</name>
                     <fieldText>Music Links and Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17388,6 +17755,7 @@
                     <dataType>String</dataType>
                     <fieldText>Lights for Dinner?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17508,6 +17876,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Cake</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17533,6 +17902,7 @@
                     <name>Copy_5_of_Copy_1_of_Details_Cake_1</name>
                     <fieldText>Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17584,6 +17954,7 @@
                     <dataType>String</dataType>
                     <fieldText>Hour Party</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17599,6 +17970,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan A</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17614,6 +17986,7 @@
                     <dataType>String</dataType>
                     <fieldText>Area Name Plan B</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17631,6 +18004,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our sound system?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17728,6 +18102,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our musician?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17814,6 +18189,7 @@
                     <dataType>String</dataType>
                     <fieldText>Do you want our recorded music?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17828,6 +18204,7 @@
                     <name>MusicLinks_Party7</name>
                     <fieldText>Music links and details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -17871,6 +18248,7 @@
             <name>Copy_5_of_Copy_1_of_Notes_1</name>
             <fieldText>Notes</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -17902,7 +18280,7 @@
         <name>No_Products_Selected</name>
         <label>No Products Selected</label>
         <locationX>578</locationX>
-        <locationY>5942</locationY>
+        <locationY>5642</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -17930,7 +18308,7 @@
         <name>Products_Recap</name>
         <label>Products Recap</label>
         <locationX>314</locationX>
-        <locationY>4346</locationY>
+        <locationY>4538</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -18016,6 +18394,26 @@
                         </width>
                     </styleProperties>
                 </fields>
+                <fields>
+                    <name>Importo_caparra</name>
+                    <choiceReferences>c30</choiceReferences>
+                    <choiceReferences>c50</choiceReferences>
+                    <choiceReferences>c100</choiceReferences>
+                    <dataType>Number</dataType>
+                    <fieldText>Importo caparra</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <scale>2</scale>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -18035,6 +18433,7 @@
                     <dataType>String</dataType>
                     <fieldText>Type of Customer</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18055,6 +18454,7 @@
                     </defaultValue>
                     <fieldText>VAT Applicable?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18074,6 +18474,7 @@
                     <dataType>Number</dataType>
                     <fieldText>Discount</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <scale>2</scale>
                     <styleProperties>
@@ -18119,6 +18520,7 @@
                     </defaultValue>
                     <fieldText>First Name Customer 1</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18137,6 +18539,7 @@
                     </defaultValue>
                     <fieldText>Last Name Customer 1</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18155,6 +18558,7 @@
                     </defaultValue>
                     <fieldText>First Name Customer 2</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18173,6 +18577,7 @@
                     </defaultValue>
                     <fieldText>Last Name Customer 2</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18191,6 +18596,7 @@
                     </defaultValue>
                     <fieldText>Date of birth Customer 1</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18209,6 +18615,7 @@
                     </defaultValue>
                     <fieldText>Date of birth Customer 2</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18227,6 +18634,7 @@
                     </defaultValue>
                     <fieldText>Nation of birth Customer 1</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18245,6 +18653,7 @@
                     </defaultValue>
                     <fieldText>Nation of birth Customer 2</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18263,6 +18672,7 @@
                     </defaultValue>
                     <fieldText>Citizenship Customer 1</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18281,6 +18691,7 @@
                     </defaultValue>
                     <fieldText>Citizenship Customer 2</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18299,6 +18710,7 @@
                     </defaultValue>
                     <fieldText>Codice fiscale</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18428,6 +18840,7 @@
                     </defaultValue>
                     <fieldText>Company Name</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18446,6 +18859,7 @@
                     </defaultValue>
                     <fieldText>VAT Number</fieldText>
                     <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18463,6 +18877,7 @@
                     </defaultValue>
                     <fieldText>Company Details</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18599,6 +19014,7 @@
                     <dataType>String</dataType>
                     <fieldText>Fabio presente all&apos;evento?</fieldText>
                     <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18624,6 +19040,7 @@
                     <name>Descrizione_Evento</name>
                     <fieldText>Specificare Altro</fieldText>
                     <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                     <styleProperties>
                         <verticalAlignment>
@@ -18674,7 +19091,7 @@
         <name>Thank_you_screen</name>
         <label>Thank you screen</label>
         <locationX>50</locationX>
-        <locationY>6266</locationY>
+        <locationY>6182</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -18764,7 +19181,7 @@
         <name>Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>314</locationX>
-        <locationY>674</locationY>
+        <locationY>866</locationY>
         <connector>
             <targetReference>Check_number_of_days</targetReference>
         </connector>
@@ -18920,7 +19337,7 @@
         <name>Copy_1_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>402</locationX>
-        <locationY>998</locationY>
+        <locationY>1190</locationY>
         <connector>
             <targetReference>Interview_3rd_day</targetReference>
         </connector>
@@ -19076,7 +19493,7 @@
         <name>Copy_2_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>402</locationX>
-        <locationY>1214</locationY>
+        <locationY>1406</locationY>
         <connector>
             <targetReference>Interview_4th_day</targetReference>
         </connector>
@@ -19238,7 +19655,7 @@
         <name>Copy_3_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>402</locationX>
-        <locationY>1430</locationY>
+        <locationY>1622</locationY>
         <connector>
             <targetReference>Interview_5th_day</targetReference>
         </connector>
@@ -19394,7 +19811,7 @@
         <name>Copy_4_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>402</locationX>
-        <locationY>1646</locationY>
+        <locationY>1838</locationY>
         <connector>
             <targetReference>Interview_6th_day</targetReference>
         </connector>
@@ -19550,7 +19967,7 @@
         <name>Copy_5_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>402</locationX>
-        <locationY>1862</locationY>
+        <locationY>2054</locationY>
         <connector>
             <targetReference>Interview_7th_day</targetReference>
         </connector>
@@ -19706,7 +20123,7 @@
         <name>Copy_6_of_Assign_Days_and_Details</name>
         <label>Assign Days and Details</label>
         <locationX>402</locationX>
-        <locationY>2078</locationY>
+        <locationY>2270</locationY>
         <connector>
             <targetReference>Assign_values_Interview_1</targetReference>
         </connector>
@@ -19862,9 +20279,9 @@
         <name>Create_Quote_Lines</name>
         <label>Create Quote Lines</label>
         <locationX>50</locationX>
-        <locationY>5942</locationY>
+        <locationY>5642</locationY>
         <connector>
-            <targetReference>Get_User</targetReference>
+            <targetReference>Assign_values_to_Opp</targetReference>
         </connector>
         <flowName>Crea_Quote_Lines_e_Interviews</flowName>
         <inputAssignments>
@@ -19897,12 +20314,16 @@
                 <elementReference>VAT_Applicable</elementReference>
             </value>
         </inputAssignments>
+        <outputAssignments>
+            <assignToReference>updatedOpp</assignToReference>
+            <name>updateOpp</name>
+        </outputAssignments>
     </subflows>
     <transforms>
         <name>Transform_Day_5</name>
         <label>Transform Day 5</label>
         <locationX>314</locationX>
-        <locationY>2942</locationY>
+        <locationY>3134</locationY>
         <connector>
             <targetReference>Assign_values_Interview_6</targetReference>
         </connector>
@@ -20051,7 +20472,7 @@
         <name>Transform_Day_6</name>
         <label>Transform Day 6</label>
         <locationX>314</locationX>
-        <locationY>3374</locationY>
+        <locationY>3566</locationY>
         <connector>
             <targetReference>Assign_values_Interview_7</targetReference>
         </connector>
@@ -20200,7 +20621,7 @@
         <name>Transform_Day_7</name>
         <label>Transform Day 7</label>
         <locationX>314</locationX>
-        <locationY>4022</locationY>
+        <locationY>4214</locationY>
         <connector>
             <targetReference>Assign_Chosen_Products_to_collection</targetReference>
         </connector>
@@ -20349,7 +20770,7 @@
         <name>Transform_Prod_Day_1</name>
         <label>Transform Prod Day 1</label>
         <locationX>314</locationX>
-        <locationY>1214</locationY>
+        <locationY>1406</locationY>
         <connector>
             <targetReference>Assign_values_Interview_2</targetReference>
         </connector>
@@ -20498,7 +20919,7 @@
         <name>Transform_Prod_Day_2</name>
         <label>Transform Prod Day 2</label>
         <locationX>314</locationX>
-        <locationY>1646</locationY>
+        <locationY>1838</locationY>
         <connector>
             <targetReference>Assign_values_Interview_3</targetReference>
         </connector>
@@ -20647,7 +21068,7 @@
         <name>Transform_Prod_Day_3</name>
         <label>Transform Prod Day 3</label>
         <locationX>314</locationX>
-        <locationY>2078</locationY>
+        <locationY>2270</locationY>
         <connector>
             <targetReference>Assign_values_Interview_4</targetReference>
         </connector>
@@ -20796,7 +21217,7 @@
         <name>Transform_Prod_Day_4</name>
         <label>Transform Prod Day 4</label>
         <locationX>314</locationX>
-        <locationY>2510</locationY>
+        <locationY>2702</locationY>
         <connector>
             <targetReference>Assign_values_Interview_5</targetReference>
         </connector>
@@ -21187,6 +21608,14 @@
         <isInput>false</isInput>
         <isOutput>true</isOutput>
         <objectType>QuoteLineItem</objectType>
+    </variables>
+    <variables>
+        <name>updatedOpp</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
     </variables>
     <variables>
         <name>varInterview1</name>

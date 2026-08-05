@@ -344,7 +344,7 @@ TEXT ({!$Record.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!$Record.
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <triggerOrder>100</triggerOrder>
     <variables>
         <name>RecipientId</name>

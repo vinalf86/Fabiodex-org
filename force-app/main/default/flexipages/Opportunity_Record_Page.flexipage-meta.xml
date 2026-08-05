@@ -165,7 +165,7 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Caparra_50__c</fieldItem>
+                <fieldItem>Record.Caparra__c</fieldItem>
                 <identifier>RecordCaparra_50__cField</identifier>
             </fieldInstance>
         </itemInstances>
@@ -197,6 +197,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Data_ricezione_saldo__c</fieldItem>
                 <identifier>RecordData_ricezione_saldo__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Data_inserita_automaticamente__c</fieldItem>
+                <identifier>RecordData_inserita_automaticamente__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -363,6 +373,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Data_ricevuta_contratto_firmato_esteso__c</fieldItem>
                 <identifier>RecordData_ricevuta_contratto_firmato_esteso__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Link_pagamento__c</fieldItem>
+                <identifier>RecordLink_pagamento__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7fc6fc81-975f-44f8-b274-413b00cdeb09</name>

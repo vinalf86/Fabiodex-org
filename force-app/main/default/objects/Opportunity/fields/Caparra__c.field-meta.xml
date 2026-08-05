@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Caparra_50__c</fullName>
-    <label>Caparra 50%</label>
+    <fullName>Caparra__c</fullName>
+    <label>Caparra</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>

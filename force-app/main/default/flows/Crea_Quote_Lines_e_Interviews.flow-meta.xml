@@ -122,11 +122,34 @@
         <object>Quote</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity</name>
+        <label>Get Opportunity</label>
+        <locationX>182</locationX>
+        <locationY>1058</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <outputReference>updateOpp</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Amount</queriedFields>
+        <queriedFields>Caparra__c</queriedFields>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Synced_Quote_on_Opportunity</name>
         <label>Update Synced Quote on Opportunity</label>
         <locationX>182</locationX>
         <locationY>950</locationY>
+        <connector>
+            <targetReference>Get_Opportunity</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -392,6 +415,14 @@
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>QuoteLineItem</objectType>
+    </variables>
+    <variables>
+        <name>updateOpp</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
     </variables>
     <variables>
         <name>VAT</name>
