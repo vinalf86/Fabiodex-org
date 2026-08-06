@@ -591,7 +591,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Lead_or_Account</targetReference>
+            <targetReference>Check_Lead_or_Account</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Form</defaultConnectorLabel>
         <rules>
@@ -648,7 +648,7 @@
             <name>Lead_chosen</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Lead_Account</leftValueReference>
+                <leftValueReference>LeadAccount</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Lead</elementReference>
@@ -670,7 +670,7 @@
             <name>Account_chosen</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Lead_Account</leftValueReference>
+                <leftValueReference>LeadAccount</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Account</elementReference>
@@ -849,7 +849,11 @@
     <formulas>
         <name>formLink</name>
         <dataType>String</dataType>
-        <expression>{!Get_form_custom_metadata.Form_Link__c} + {!recordId.Id}</expression>
+        <expression>IF (
+{!LeadAccount} = &apos;Lead&apos;,
+{!Get_form_custom_metadata.Form_Link__c} + {!recordId.Id} + &apos;&amp;leadId=&apos; + {!recordId.Lead__c},
+{!Get_form_custom_metadata.Form_Link__c} + {!recordId.Id} + &apos;&amp;accountId=&apos; + {!recordId.AccountId}
+)</expression>
     </formulas>
     <interviewLabel>Genera contratto cliente {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Genera contratto o modulo dati</label>
@@ -993,6 +997,73 @@
                 </width>
             </styleProperties>
         </fields>
+        <fields>
+            <name>Info_destinatario</name>
+            <fieldText>Info destinatario</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Info_destinatario_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>InfoMessageRecipient</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;A chi vuoi mandare il modulo?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>LeadAccount</name>
+                    <choiceReferences>Lead</choiceReferences>
+                    <choiceReferences>Account</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Lead or Account</fieldText>
+                    <fieldType>RadioButtonGroup</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Choose_form</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Modulo_dati</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
@@ -1032,51 +1103,6 @@
             <name>ErrorMessage</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(247, 14, 14);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Lead_or_Account</name>
-        <label>Lead or Account</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <connector>
-            <targetReference>Check_Lead_or_Account</targetReference>
-        </connector>
-        <fields>
-            <name>InfoMessageRecipient</name>
-            <fieldText>&lt;p&gt;A chi vuoi mandare il modulo?&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-            <styleProperties>
-                <verticalAlignment>
-                    <stringValue>top</stringValue>
-                </verticalAlignment>
-                <width>
-                    <stringValue>12</stringValue>
-                </width>
-            </styleProperties>
-        </fields>
-        <fields>
-            <name>Lead_Account</name>
-            <choiceReferences>Lead</choiceReferences>
-            <choiceReferences>Account</choiceReferences>
-            <dataType>String</dataType>
-            <fieldText>Lead / Account</fieldText>
-            <fieldType>RadioButtonGroup</fieldType>
-            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -1257,7 +1283,7 @@
         </connector>
         <fields>
             <name>InfoMessageEmail</name>
-            <fieldText>&lt;p&gt;Il link al modulo di richiesta dati è il seguente: &lt;a href=&quot;{!formLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;u&gt;Link modulo&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;L&apos;email a cui verrà inviato il contratto è &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!emailAddress}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;. Vuoi confermarla o modificarla?&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;Il link al modulo di richiesta dati è il seguente: &lt;a href=&quot;{!formLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(22, 122, 208);&quot;&gt;&lt;strong&gt;&lt;u&gt;Link modulo&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;L&apos;email a cui verrà inviato il contratto è &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!emailAddress}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;. Vuoi confermarla o modificarla?&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -1381,7 +1407,7 @@
             <targetReference>Get_primary_Quote</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>body2English</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
