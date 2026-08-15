@@ -4,9 +4,14 @@
         <members>Log__c.ResultCode__c</members>
         <members>Log__c.StackTrace__c</members>
         <members>Log__c.SystemException__c</members>
+        <members>Log__c.Origin__c</members>
+        <members>Log__c.Status__c</members>
+        <members>Log__c.FailedRecordId__c</members>
+        <members>Log__c.Retry__c</members>
         <members>Opportunity.Caparra__c</members>
         <members>Opportunity.Data_inserita_automaticamente__c</members>
         <members>Opportunity.Link_pagamento__c</members>
+        <members>UserIds__c.IntegrationRetry__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -22,6 +27,9 @@
         <members>Genera_contratto_cliente</members>
         <members>Opportunity_After_Save</members>
         <members>Opportunity_After_Save_Logic</members>
+        <members>Reminder_secondo_pagamento</members>
+        <members>Aggiorna_a_Contratto_Firmato</members>
+        <members>Genera_link_pagamento</members>
         <name>Flow</name>
     </types>
     <types>
@@ -40,9 +48,33 @@
         <members>Jotform_link_mapping.Required_data_form</members>
         <name>CustomMetadata</name>
     </types>
+    <types>
+        <members>PaymentLinkProvider</members>
+        <members>PaymentLinkRequest</members>
+        <members>PaymentLinkResult</members>
+        <members>PaymentLinkProviderException</members>
+        <members>RevolutPaymentLinkProvider</members>
+        <name>ApexClass</name>
+    </types>
      <types>
         <members>Opportunity.Genera_Contratto</members>
         <name>QuickAction</name>
+    </types>
+    <types>
+        <members>unfiled$public/X30_giorni_all_evento_1724940641784</members>
+        <name>EmailTemplate</name>
+    </types>
+      <types>
+        <members>Revolut_credential</members>
+        <name>ExternalCredential</name>
+    </types>
+    <types>
+        <members>Revolut_Merchant</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>Revolut</members>
+        <name>RemoteSiteSetting</name>
     </types>
     <version>64.0</version>
 </Package>

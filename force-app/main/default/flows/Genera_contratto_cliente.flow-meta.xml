@@ -100,6 +100,9 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
@@ -282,6 +285,9 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
@@ -366,15 +372,31 @@
     <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Assign_Account</name>
-        <label>Assign Account</label>
+        <name>Assign_alternative_email</name>
+        <label>Assign alternative email</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId.Account.PersonEmail</elementReference>
+                <elementReference>EmailAlternativa.value</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Quote_language</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Business_Account</name>
+        <label>Assign Business Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>emailAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.Email_per_fatturazione__c</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -391,24 +413,15 @@
                 <elementReference>recordId.Account.Name</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>Get_form_custom_metadata</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_alternative_email</name>
-        <label>Assign alternative email</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>emailAddress</assignToReference>
+            <assignToReference>recordId.DestinatarioPagamento__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>EmailAlternativa.value</elementReference>
+                <stringValue>Account</stringValue>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Check_Quote_language</targetReference>
+            <targetReference>Get_form_custom_metadata</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -460,6 +473,50 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>recordId.Lead__r.FirstName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.DestinatarioPagamento__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Lead</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_form_custom_metadata</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Person_Account</name>
+        <label>Assign Person Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>emailAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.PersonEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recipientId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>customerName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.DestinatarioPagamento__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -645,7 +702,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Lead_chosen</name>
+            <name>Is_Lead</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>LeadAccount</leftValueReference>
@@ -664,10 +721,10 @@
             <connector>
                 <targetReference>Assign_Lead</targetReference>
             </connector>
-            <label>Lead chosen</label>
+            <label>Is Lead</label>
         </rules>
         <rules>
-            <name>Account_chosen</name>
+            <name>Is_Person_Account</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>LeadAccount</leftValueReference>
@@ -683,10 +740,46 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>recordId.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Assign_Account</targetReference>
+                <targetReference>Assign_Person_Account</targetReference>
             </connector>
-            <label>Account chosen</label>
+            <label>Is Person Account</label>
+        </rules>
+        <rules>
+            <name>Is_Business_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LeadAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Account</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Business_Account</targetReference>
+            </connector>
+            <label>Is Business Account</label>
         </rules>
     </decisions>
     <decisions>
@@ -955,6 +1048,13 @@
         </faultConnector>
         <inputReference>recordId</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>recordId</inputReference>
+    </recordUpdates>
     <screens>
         <name>Choose_action</name>
         <label>Choose action</label>
@@ -1125,7 +1225,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>InfoMessage</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(202, 17, 17);&quot;&gt;Non è stato trovato alcun modulo.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(202, 17, 17);&quot;&gt;Non è stato trovato alcun modulo da inviare, si prega di riprovare.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
