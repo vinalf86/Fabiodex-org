@@ -878,7 +878,7 @@ ISCHANGED ({!$Record.Location__c})
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <triggerOrder>300</triggerOrder>
     <variables>
         <name>RecipientId</name>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Generic_DML_Error</name>
+        <label>Generic DML Error</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>{!Call_Opportunity_After_Save_Logic.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>This Error should manage missing fields on Account</description>
+        <name>Manage_Error_From_Account_Event</name>
+        <label>Manage Error From Account Event</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se le date di inizio e fine evento sono correttamente compilate sull&apos;Opportunità</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>This Error should manage missing fields on the future Events synced from the Opportunity</description>
+        <name>Manage_Error_From_Event_Sync</name>
+        <label>Manage Error From Event Sync</label>
+        <locationX>1106</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se le date di inizio e fine evento sono correttamente compilate sull&apos;Opportunità</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>This Error should manage missing fields on Lead</description>
+        <name>Manage_Error_From_Lead_Event</name>
+        <label>Manage Error From Lead Event</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se le date di inizio e fine evento sono correttamente compilate sull&apos;Opportunità</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>Manage Error From Opportunity Update</description>
+        <name>Manage_Error_From_Opportunity_Update</name>
+        <label>Manage Error From Opportunity Update</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName} controlla se la data dell&apos;evento è correttamente compilata sul tuo {!ErrorManagementText}.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>Blocca il salvataggio se Event_Start_Date__c/Event_End_Date__c non sono compilate o End &lt; Start</description>
+        <name>Manage_Error_Invalid_Event_Dates</name>
+        <label>Manage Error Invalid Event Dates</label>
+        <locationX>1362</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>Hey {!$User.FirstName}, {!Call_Opportunity_After_Save_Logic.FaultMessage} sull&apos;Opportunità. La Data Fine Evento deve essere compilata ed essere uguale o successiva alla Data Inizio Evento.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_Fault_Stage</name>
+        <label>Check Fault Stage</label>
+        <locationX>710</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>No Fault</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Event_Fault</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Call_Opportunity_After_Save_Logic.FaultStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>LeadEvent</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Manage_Error_From_Lead_Event</targetReference>
+            </connector>
+            <label>Lead Event Fault</label>
+        </rules>
+        <rules>
+            <name>Account_Event_Fault</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Call_Opportunity_After_Save_Logic.FaultStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AccountEvent</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Manage_Error_From_Account_Event</targetReference>
+            </connector>
+            <label>Account Event Fault</label>
+        </rules>
+        <rules>
+            <name>Opportunity_Update_Fault</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Call_Opportunity_After_Save_Logic.FaultStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>OpportunityUpdate</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Manage_Error_From_Opportunity_Update</targetReference>
+            </connector>
+            <label>Opportunity Update Fault</label>
+        </rules>
+        <rules>
+            <name>Generic_Fault</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Call_Opportunity_After_Save_Logic.FaultStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>GenericFault</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Generic_DML_Error</targetReference>
+            </connector>
+            <label>Generic Fault</label>
+        </rules>
+        <rules>
+            <name>Event_Sync_Fault</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Call_Opportunity_After_Save_Logic.FaultStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>EventSync</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Manage_Error_From_Event_Sync</targetReference>
+            </connector>
+            <label>Event Sync Fault</label>
+        </rules>
+        <rules>
+            <name>Invalid_Event_Dates_Fault</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Call_Opportunity_After_Save_Logic.FaultStage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>InvalidEventDates</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Manage_Error_Invalid_Event_Dates</targetReference>
+            </connector>
+            <label>Invalid Event Dates Fault</label>
+        </rules>
+    </decisions>
+    <description>Trigger su Opportunity After Save. Valuta le condizioni di ingresso (unione di quelle di Notifica_nuova_Opportunita e OpportunityAfterInsert, ora disattivati) e richiama il subflow Opportunity_After_Save_Logic con tutta la logica di business.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ContemporaneiChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Eventi_in_contemporanea__c})</expression>
+    </formulas>
+    <formulas>
+        <name>ErrorManagementText</name>
+        <dataType>String</dataType>
+        <expression>IF(!ISNULL({!$Record.AccountId}), &quot;Account &quot; &amp; {!$Record.Account.Name}, &quot;Lead &quot; &amp; {!$Record.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!$Record.Lead__r.LastName})</expression>
+    </formulas>
+    <formulas>
+        <name>EventEndDateChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Event_End_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>EventStartDateChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Event_Start_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>IsCreateFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>LeadChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Lead__c})</expression>
+    </formulas>
+    <formulas>
+        <name>LocationChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Location__c})</expression>
+    </formulas>
+    <formulas>
+        <name>PriorStageClosedLostFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>ReminderSentChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.TECH_ReminderSent__c})</expression>
+    </formulas>
+    <formulas>
+        <name>StageBecameClosedWonFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!$Record.StageName}, &apos;Chiuse/Conseguite&apos;) &amp;&amp;
+(
+ISNEW() ||
+(ISCHANGED({!$Record.StageName}) &amp;&amp; !ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Conseguite&apos;))
+)</expression>
+    </formulas>
+    <formulas>
+        <name>TuttoOrganizzatoChangedFormula</name>
+        <dataType>Boolean</dataType>
+        <expression>ISCHANGED({!$Record.Tutto_Organizzato__c})</expression>
+    </formulas>
+    <interviewLabel>Opportunity After Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity After Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Call_Opportunity_After_Save_Logic</targetReference>
+        </connector>
+        <filterFormula>{!$Record.Opp_automatica_da_web__c} = false &amp;&amp;
+(
+ISNEW() ||
+(
+!ISPICKVAL({!$Record.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
+!ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
+!ISCHANGED({!$Record.TECH_ReminderSent__c}) &amp;&amp;
+!ISCHANGED({!$Record.Eventi_in_contemporanea__c}) &amp;&amp;
+(
+!ISNULL({!$Record.AccountId}) ||
+(!ISNULL({!$Record.Lead__c}) &amp;&amp; !ISPICKVAL({!$Record.Lead__r.LeadSource}, &apos;Website&apos;)) ||
+ISCHANGED({!$Record.Location__c}) ||
+ISCHANGED({!$Record.Tutto_Organizzato__c}) ||
+ISCHANGED({!$Record.Event_Start_Date__c}) ||
+ISCHANGED({!$Record.Event_End_Date__c}) ||
+ISCHANGED({!$Record.Lead__c}) ||
+ISCHANGED({!$Record.StageName})
+)
+)
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_Opportunity_After_Save_Logic</name>
+        <label>Call Opportunity After Save Logic</label>
+        <locationX>710</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Check_Fault_Stage</targetReference>
+        </connector>
+        <flowName>Opportunity_After_Save_Logic</flowName>
+        <inputAssignments>
+            <name>OpportunityRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>IsCreate</name>
+            <value>
+                <elementReference>IsCreateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>LocationChanged</name>
+            <value>
+                <elementReference>LocationChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>ReminderSentChanged</name>
+            <value>
+                <elementReference>ReminderSentChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>ContemporaneiChanged</name>
+            <value>
+                <elementReference>ContemporaneiChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>PriorStageClosedLost</name>
+            <value>
+                <elementReference>PriorStageClosedLostFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>TuttoOrganizzatoChanged</name>
+            <value>
+                <elementReference>TuttoOrganizzatoChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>EventStartDateChanged</name>
+            <value>
+                <elementReference>EventStartDateChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>EventEndDateChanged</name>
+            <value>
+                <elementReference>EventEndDateChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>LeadChanged</name>
+            <value>
+                <elementReference>LeadChangedFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>StageBecameClosedWon</name>
+            <value>
+                <elementReference>StageBecameClosedWonFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <triggerOrder>200</triggerOrder>
+</Flow>

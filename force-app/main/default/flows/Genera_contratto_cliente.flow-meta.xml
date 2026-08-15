@@ -94,6 +94,97 @@
         <versionString>2.0.1</versionString>
     </actionCalls>
     <actionCalls>
+        <name>Send_English_Form</name>
+        <label>Send English Form</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>emailAddress</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value>
+                <collectionElements>
+                    <stringValue>fabiodex@fabiodex.com</stringValue>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>info@fabiodex.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>subject2English</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>body2English</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>recipientId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
         <name>Send_Italian_Contract</name>
         <label>Send Italian Contract</label>
         <locationX>0</locationX>
@@ -187,8 +278,152 @@
         <offset>0</offset>
         <versionString>2.0.1</versionString>
     </actionCalls>
+    <actionCalls>
+        <name>Send_Italian_Form</name>
+        <label>Send Italian Form</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Opportunity</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>emailAddress</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>bccAddresses</name>
+            <value>
+                <collectionElements>
+                    <stringValue>fabiodex@fabiodex.com</stringValue>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>info@fabiodex.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>subject2Italian</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>body2Italian</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useLineBreaks</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>recipientId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>recordId.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>2.0.1</versionString>
+    </actionCalls>
     <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_alternative_email</name>
+        <label>Assign alternative email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>emailAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EmailAlternativa.value</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Quote_language</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Business_Account</name>
+        <label>Assign Business Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>emailAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.Email_per_fatturazione__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recipientId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>customerName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.DestinatarioPagamento__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_form_custom_metadata</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Assign_email</name>
         <label>Assign email</label>
@@ -214,11 +449,78 @@
             <assignToReference>language</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_language_from_Quote.Customer_Language__c</elementReference>
+                <elementReference>Get_primary_Quote.Customer_Language__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_custom_metadata</targetReference>
+            <targetReference>Get_contract_custom_metadata</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Lead</name>
+        <label>Assign Lead</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>recipientId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Lead__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>customerName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Lead__r.FirstName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.DestinatarioPagamento__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Lead</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_form_custom_metadata</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Person_Account</name>
+        <label>Assign Person Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>emailAddress</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.PersonEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recipientId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>customerName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>recordId.Account.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recordId.DestinatarioPagamento__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_form_custom_metadata</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -237,6 +539,14 @@
             <targetReference>Update_Opp_stage</targetReference>
         </connector>
     </assignments>
+    <choices>
+        <name>Account</name>
+        <choiceText>Account</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Account</stringValue>
+        </value>
+    </choices>
     <choices>
         <name>Cambia_lingua</name>
         <choiceText>Cambia lingua</choiceText>
@@ -262,6 +572,22 @@
         </value>
     </choices>
     <choices>
+        <name>Contratto</name>
+        <choiceText>Contratto</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contratto</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Lead</name>
+        <choiceText>Lead</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Lead</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>Modifica</name>
         <choiceText>Modifica</choiceText>
         <dataType>String</dataType>
@@ -275,6 +601,14 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Modifica lingua</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Modulo_dati</name>
+        <choiceText>Modulo dati</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Modulo dati</stringValue>
         </value>
     </choices>
     <customProperties>
@@ -309,6 +643,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_choice_previous_screen</name>
+        <label>Check choice previous screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_Lead_or_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Form</defaultConnectorLabel>
+        <rules>
+            <name>Contract</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Choose_form</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Contratto</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Select_language</targetReference>
+            </connector>
+            <label>Contract</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_language</name>
         <label>Check language</label>
         <locationX>0</locationX>
@@ -331,6 +690,96 @@
                 <targetReference>Send_English_Contract</targetReference>
             </connector>
             <label>English</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Lead_or_Account</name>
+        <label>Check Lead or Account</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Not_valid</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Lead</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LeadAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Lead</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.Lead__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Lead</targetReference>
+            </connector>
+            <label>Is Lead</label>
+        </rules>
+        <rules>
+            <name>Is_Person_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LeadAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Account</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Person_Account</targetReference>
+            </connector>
+            <label>Is Person Account</label>
+        </rules>
+        <rules>
+            <name>Is_Business_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>LeadAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Account</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.AccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>recordId.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Business_Account</targetReference>
+            </connector>
+            <label>Is Business Account</label>
         </rules>
     </decisions>
     <decisions>
@@ -359,6 +808,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_previous_choice</name>
+        <label>Check previous choice</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_Quote_language</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Same email</defaultConnectorLabel>
+        <rules>
+            <name>Modify_email</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Conferma_o_modifica_email_form</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Modifica</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_alternative_email</targetReference>
+            </connector>
+            <label>Modify email</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_query_result</name>
         <label>Check query result</label>
         <locationX>0</locationX>
@@ -371,26 +845,111 @@
             <name>Record_found</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_custom_metadata</leftValueReference>
+                <leftValueReference>Get_contract_custom_metadata</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Select_email</targetReference>
+                <targetReference>Select_email_for_contract</targetReference>
             </connector>
             <label>Record found</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Check_Quote_language</name>
+        <label>Check Quote language</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Send_English_Form</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>English or other</defaultConnectorLabel>
+        <rules>
+            <name>Italian_language</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_primary_Quote.Customer_Language__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Italian</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Italian_Form</targetReference>
+            </connector>
+            <label>Italian language</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Form_found</name>
+        <label>Form found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>No_form_available</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not found</defaultConnectorLabel>
+        <rules>
+            <name>Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_form_custom_metadata</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Select_email_for_form</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Quote_available</name>
+        <label>Quote available?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>No_Quote_screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Available</defaultConnectorLabel>
+        <rules>
+            <name>Available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_primary_Quote</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Choose_action</targetReference>
+            </connector>
+            <label>Available</label>
+        </rules>
+    </decisions>
+    <description>Lo screen flow permette di scegliere se si vuole inviare al cliente il modulo per completare i suoi dati anagrafici, oppure se si vuole generare un contratto che verrà poi inviato via mail.</description>
     <environments>Default</environments>
     <formulas>
         <name>contractLink</name>
         <dataType>String</dataType>
-        <expression>{!Get_custom_metadata.Form_Link__c} + {!recordId.Id}</expression>
+        <expression>{!Get_contract_custom_metadata.Form_Link__c} + {!recordId.Id}</expression>
+    </formulas>
+    <formulas>
+        <name>formLink</name>
+        <dataType>String</dataType>
+        <expression>IF (
+{!LeadAccount} = &apos;Lead&apos;,
+{!Get_form_custom_metadata.Form_Link__c} + {!recordId.Id} + &apos;&amp;leadId=&apos; + {!recordId.Lead__c},
+{!Get_form_custom_metadata.Form_Link__c} + {!recordId.Id} + &apos;&amp;accountId=&apos; + {!recordId.AccountId}
+)</expression>
     </formulas>
     <interviewLabel>Genera contratto cliente {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Genera contratto cliente</label>
+    <label>Genera contratto o modulo dati</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -411,8 +970,8 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
-        <name>Get_custom_metadata</name>
-        <label>Get custom metadata</label>
+        <name>Get_contract_custom_metadata</name>
+        <label>Get contract custom metadata</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -432,13 +991,34 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_language_from_Quote</name>
-        <label>Get language from Quote</label>
+        <name>Get_form_custom_metadata</name>
+        <label>Get form custom metadata</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Select_language</targetReference>
+            <targetReference>Form_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Required_data_form</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Jotform_link_mapping__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_primary_Quote</name>
+        <label>Get primary Quote</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Quote_available</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -468,6 +1048,125 @@
         </faultConnector>
         <inputReference>recordId</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Opportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>recordId</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Choose_action</name>
+        <label>Choose action</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Check_choice_previous_screen</targetReference>
+        </connector>
+        <fields>
+            <name>Question</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;Vuoi inviare il contratto o il modulo per raccogliere i dati mancanti?&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Choose_form</name>
+            <choiceReferences>Contratto</choiceReferences>
+            <choiceReferences>Modulo_dati</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Choose form</fieldText>
+            <fieldType>RadioButtonGroup</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Info_destinatario</name>
+            <fieldText>Info destinatario</fieldText>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Info_destinatario_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>InfoMessageRecipient</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;A chi vuoi mandare il modulo?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <fields>
+                    <name>LeadAccount</name>
+                    <choiceReferences>Lead</choiceReferences>
+                    <choiceReferences>Account</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldText>Lead or Account</fieldText>
+                    <fieldType>RadioButtonGroup</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <styleProperties>
+                        <verticalAlignment>
+                            <stringValue>top</stringValue>
+                        </verticalAlignment>
+                        <width>
+                            <stringValue>12</stringValue>
+                        </width>
+                    </styleProperties>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithHeader</regionContainerType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Choose_form</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Modulo_dati</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <screens>
         <name>Confirmation</name>
         <label>Confirmation</label>
@@ -526,7 +1225,7 @@
         <allowPause>true</allowPause>
         <fields>
             <name>InfoMessage</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(202, 17, 17);&quot;&gt;Non è stato possibile trovare alcun modulo in questa lingua.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(202, 17, 17);&quot;&gt;Non è stato trovato alcun modulo da inviare, si prega di riprovare.&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -541,8 +1240,56 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
-        <name>Select_email</name>
-        <label>Select email</label>
+        <name>No_Quote_screen</name>
+        <label>No Quote screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>NoQuoteMessage</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(231, 19, 19);&quot;&gt;Attenzione, non è stato trovato un Quote sincronizzato con l&apos;Opportunità. Procedere alla creazione del Quote prima di generare il contratto o il modulo dati.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Not_valid</name>
+        <label>Not valid</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>NotValidMessage</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(211, 20, 20);&quot;&gt;Attenzione, la scelta effettuata non è valida!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(211, 20, 20);&quot;&gt;Verifica se esiste un Lead o un Account legato all&apos;Opportunità e riprova.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Select_email_for_contract</name>
+        <label>Select email for contract</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <allowBack>true</allowBack>
@@ -571,6 +1318,7 @@
             <dataType>String</dataType>
             <fieldText>Conferma o modifica email</fieldText>
             <fieldType>RadioButtonGroup</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
@@ -623,6 +1371,95 @@
         <showHeader>true</showHeader>
     </screens>
     <screens>
+        <name>Select_email_for_form</name>
+        <label>Select email for form</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Check_previous_choice</targetReference>
+        </connector>
+        <fields>
+            <name>InfoMessageEmail</name>
+            <fieldText>&lt;p&gt;Il link al modulo di richiesta dati è il seguente: &lt;a href=&quot;{!formLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(22, 122, 208);&quot;&gt;&lt;strong&gt;&lt;u&gt;Link modulo&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;L&apos;email a cui verrà inviato il contratto è &lt;/span&gt;&lt;strong style=&quot;color: rgb(0, 0, 0);&quot;&gt;{!emailAddress}&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;. Vuoi confermarla o modificarla?&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Conferma_o_modifica_email_form</name>
+            <choiceReferences>Conferma</choiceReferences>
+            <choiceReferences>Modifica</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Conferma o modifica email</fieldText>
+            <fieldType>RadioButtonGroup</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>EmailAlternativa</name>
+            <extensionName>flowruntime:email</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>required</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>placeholder</name>
+                <value>
+                    <stringValue></stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Email Alternativa</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Conferma_o_modifica_email_form</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Modifica</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Select_language</name>
         <label>Select language</label>
         <locationX>0</locationX>
@@ -635,7 +1472,7 @@
         </connector>
         <fields>
             <name>infoLanguage</name>
-            <fieldText>&lt;p&gt;La lingua scelta per il cliente è &lt;strong&gt;{!Get_language_from_Quote.Customer_Language__c}&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Se si desidera modificarla, usare il menu a tendina di seguito; il contratto sarà generato nella lingua scelta.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;La lingua scelta per il cliente è &lt;strong&gt;{!Get_primary_Quote.Customer_Language__c}&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;Se si desidera modificarla, usare il menu a tendina di seguito; il contratto sarà generato nella lingua scelta.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
             <styleProperties>
                 <verticalAlignment>
@@ -650,7 +1487,7 @@
             <fieldType>ObjectProvided</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-            <objectFieldReference>Get_language_from_Quote.Customer_Language__c</objectFieldReference>
+            <objectFieldReference>Get_primary_Quote.Customer_Language__c</objectFieldReference>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -667,10 +1504,20 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_language_from_Quote</targetReference>
+            <targetReference>Get_primary_Quote</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>body2English</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Hello {!customerName}, we are getting ready for your event!&lt;/p&gt;&lt;p&gt;We just need a few more information before sending you the contract.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please click on the &lt;a href=&quot;{!formLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;following link&lt;/strong&gt;&lt;/a&gt; to fill in the missing information, it will only take a minute.&lt;/p&gt;&lt;p&gt;You will then receive the contract for you to review and sign.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Many thanks and speak soon!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 36px; font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211); font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211); font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>body2Italian</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Ciao {!customerName}, ci stiamo preparando per il tuo evento!&lt;/p&gt;&lt;p&gt;Ci servono solo alcune informazioni aggiuntive per poterti poi inviare il contratto.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Clicca sul &lt;a href=&quot;{!formLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;seguente link&lt;/strong&gt;&lt;/a&gt; per inserire le informazioni mancanti, ci vorrà solo un minuto.&lt;/p&gt;&lt;p&gt;Successivamente riceverai il contratto da rileggere e firmare.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Grazie mille e a presto!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; font-size: 36px;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211); font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(1, 118, 211); font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
     <textTemplates>
         <name>bodyEnglish</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
@@ -680,6 +1527,16 @@
         <name>bodyItalian</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
         <text>&lt;p&gt;Ciao {!recordId.First_Name_Customer_1__c} e {!recordId.First_Name_Customer_2__c}, ci siamo quasi!&lt;/p&gt;&lt;p&gt;L&apos;unica cosa che resta da fare è firmare il contratto.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Clicca sul &lt;a href=&quot;{!contractLink}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&lt;strong&gt;&lt;u&gt;seguente link&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt; per rivederlo e firmarlo digitalmente.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Grazie mille e a presto!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 36px; font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;fabiodex srl - Tuscany Entertainment&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Luxury DJ,&amp;nbsp;artists - superstar management - audio lights &amp;amp; video rental&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;only private parties&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Limited company in Firenze&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;Let’s talk about your event here with Meet&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;📝&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;→&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;a href=&quot;https://calendar.app.google/1GuhbN9j1zEJb7176&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;&lt;strong&gt;https://calendar.app.google/1GuhbN9j1zEJb7176&lt;/strong&gt;&lt;/a&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;No time zone math&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;🌎&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;— just pick your time, then get your quote!&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;✨&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.www.fabiodex.com/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;www.fabiodex.com&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@djfabiodex&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/fabiodex_tuscanweddingdj/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&amp;nbsp;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.tuscanyentertainment.it/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;www.tuscanyentertainment.it&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.youtube.com/@Tuscanyentertainment&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Youtube&lt;/a&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;&amp;nbsp;-&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/tuscanyentertainmentagency/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif; color: rgb(1, 118, 211);&quot;&gt;Instagram&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;+39 3479050643 -&amp;nbsp;&lt;/span&gt;&lt;strong style=&quot;font-family: Didot, &amp;quot;Hoefler Text&amp;quot;, &amp;quot;Times New Roman&amp;quot;, Times, serif;&quot;&gt;h24/7 -&lt;/strong&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>subject2English</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Please provide required information for your event {!recordId.Name}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>subject2Italian</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Informazioni richieste per il tuo evento {!recordId.Name}</text>
     </textTemplates>
     <textTemplates>
         <name>subjectEnglish</name>
@@ -692,6 +1549,13 @@
         <text>Ecco il contratto per il tuo evento {!recordId.Name}</text>
     </textTemplates>
     <variables>
+        <name>customerName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>emailAddress</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -703,6 +1567,13 @@
     </variables>
     <variables>
         <name>language</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recipientId</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

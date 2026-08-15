@@ -2,7 +2,39 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-    <description>Quando il campo &quot;Contratto Firmato&quot; viene aggiornato a TRUE e l&apos;Opportunità non è già Chiusa Vinta, viene aggiornata alla fase &quot;Contratto Firmato&quot;</description>
+    <decisions>
+        <name>Closed_Won_or_Contract_Signed</name>
+        <label>Closed Won or Contract Signed?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Genera_link_pagamento</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Chiuse/Conseguite</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Contratto firmato</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Stage</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>Aggiorna la fase dell&apos;Opportunità una volta ricevuto il contratto, se non è già Chiusa Vinta o Contratto Firmato, poi chiama il flusso secondario per la generazione del link di pagamento.</description>
     <environments>Default</environments>
     <interviewLabel>Aggiorna a Contratto Firmato se non è Chiusa Vinta {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Aggiorna a Contratto Firmato</label>
@@ -30,6 +62,9 @@
         <label>Update Stage</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Genera_link_pagamento</targetReference>
+        </connector>
         <inputAssignments>
             <field>Data_ricevuta_contratto_firmato__c</field>
             <value>
@@ -48,7 +83,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Update_Stage</targetReference>
+            <targetReference>Closed_Won_or_Contract_Signed</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -81,7 +116,20 @@
         </filters>
         <object>Opportunity</object>
         <recordTriggerType>Update</recordTriggerType>
-        <triggerType>RecordBeforeSave</triggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
+    <subflows>
+        <name>Genera_link_pagamento</name>
+        <label>Genera link pagamento</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <flowName>Genera_link_pagamento</flowName>
+        <inputAssignments>
+            <name>opportunity</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
 </Flow>
