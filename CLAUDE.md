@@ -9,7 +9,7 @@ Integrazione Salesforce ↔ Revolut per generare link di pagamento dinamici da i
    - un campo custom con l'importo da pagare
 2. Salvare il `checkout_url` restituito su un campo dell'Opportunity.
 3. Alla conferma del pagamento (webhook Revolut, evento ORDER_COMPLETED), aggiornare lo Stage dell'Opportunity a Chiusa Vinta.
-4. Oggetto custom di log errori con: gateway, request/response (troncati), status code, record correlato, stato (Nuovo / In retry / Risolto / Fallito definitivo), contatore tentativi, timestamp ultimo tentativo, payload della richiesta per il replay.
+4. Oggetto custom di log errori con: gateway, request/response (troncati), status code, record correlato, stato (Resend / Sent / Failed), contatore tentativi, timestamp ultimo tentativo, payload della richiesta per il replay.
 5. Meccanismo di retry: Scheduled Apex che riprende i log "In retry" con contatore sotto soglia (3) e rilancia la chiamata; oltre soglia marca "Fallito definitivo".
 
 ## Architettura decisa
