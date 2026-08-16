@@ -8,8 +8,8 @@
         <members>Log__c.Status__c</members>
         <members>Log__c.FailedRecordId__c</members>
         <members>Log__c.Retry__c</members>
+        <members>Log__c.Payload__c</members>
         <members>Opportunity.Caparra__c</members>
-        <members>Opportunity.Data_inserita_automaticamente__c</members>
         <members>Opportunity.Link_pagamento__c</members>
         <members>UserIds__c.IntegrationRetry__c</members>
         <name>CustomField</name>
@@ -49,11 +49,10 @@
         <name>CustomMetadata</name>
     </types>
     <types>
-        <members>PaymentLinkProvider</members>
-        <members>PaymentLinkRequest</members>
-        <members>PaymentLinkResult</members>
-        <members>PaymentLinkProviderException</members>
-        <members>RevolutPaymentLinkProvider</members>
+        <members>RevolutPaymentLinkService</members>
+        <members>PaymentLinkUtils</members>
+        <members>RevolutPaymentLinkServiceTest</members>
+        <members>PaymentLinkUtilsTest</members>
         <name>ApexClass</name>
     </types>
      <types>
