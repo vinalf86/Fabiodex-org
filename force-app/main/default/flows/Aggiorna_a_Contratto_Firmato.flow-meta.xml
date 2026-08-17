@@ -8,7 +8,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Genera_link_pagamento</targetReference>
+            <targetReference>Generate_payment_link</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
@@ -63,7 +63,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Genera_link_pagamento</targetReference>
+            <targetReference>Generate_payment_link</targetReference>
         </connector>
         <inputAssignments>
             <field>Data_ricevuta_contratto_firmato__c</field>
@@ -118,15 +118,15 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
-        <name>Genera_link_pagamento</name>
-        <label>Genera link pagamento</label>
+        <name>Generate_payment_link</name>
+        <label>Generate payment link</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <flowName>Genera_link_pagamento</flowName>
         <inputAssignments>
-            <name>opportunity</name>
+            <name>opp</name>
             <value>
                 <elementReference>$Record</elementReference>
             </value>

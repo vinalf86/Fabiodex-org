@@ -1,5 +1,10 @@
 @isTest
-private class RevolutPaymentLinkServiceTest {
+private class RevolutPaymentLinkGenerationTest {
+
+    @TestSetup
+    static void setupUserIdsSetting() {
+        insert new UserIds__c(Fabio__c = UserInfo.getUserId());
+    }
 
     // Mock HTTP configurabile: risponde con uno status/body fissi, oppure lancia un'eccezione
     // per simulare un timeout/CalloutException.
@@ -58,6 +63,7 @@ private class RevolutPaymentLinkServiceTest {
     // Metodo di utilità per creare un'Opportunità valida (stesso pattern di
     // ContentDocumentTriggerHandlerTest: Lead__c soddisfa la validation rule Account_or_Lead)
     private static Opportunity createOpportunity(String uniqueSuffix, Decimal caparra) {
+        UserIds__c uids = UserIds__c.getOrgDefaults();
         Lead l = new Lead(
             FirstName = 'Test',
             LastName = 'Lead ' + uniqueSuffix,
@@ -76,7 +82,8 @@ private class RevolutPaymentLinkServiceTest {
             Event_Start_Date__c = Date.today(),
             Event_End_Date__c = Date.today().addDays(1),
             Lead__c = l.Id,
-            Caparra__c = caparra
+            Caparra__c = caparra,
+            OwnerId = uids.Fabio__c
         );
         insert opp;
         return opp;
@@ -99,7 +106,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, mock);
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         Opportunity updated = [SELECT Link_pagamento__c FROM Opportunity WHERE Id = :opp.Id];
@@ -125,7 +132,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(400, '{"code":"invalid_amount"}'));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         Log__c logRecord = [
@@ -150,7 +157,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(201, 'non è json valido {{{'));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         Log__c logRecord = [SELECT ResultCode__c, SystemException__c FROM Log__c WHERE FailedRecordId__c = :opp.Id];
@@ -166,7 +173,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(201, responseBody));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         Log__c logRecord = [SELECT SystemException__c FROM Log__c WHERE FailedRecordId__c = :opp.Id];
@@ -180,7 +187,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(new CalloutException('Read timed out')));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         Log__c logRecord = [
@@ -202,7 +209,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.startTest();
         for (Integer i = 0; i < invalidAmounts.size(); i++) {
             Opportunity opp = createOpportunity('invalida' + i, invalidAmounts[i]);
-            RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+            RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
 
             Log__c logRecord = [SELECT ResultCode__c, SystemException__c, Payload__c FROM Log__c WHERE FailedRecordId__c = :opp.Id];
             Assert.isTrue(logRecord.ResultCode__c.contains('PaymentLinkException'),
@@ -220,12 +227,12 @@ private class RevolutPaymentLinkServiceTest {
         Opportunity opp = createOpportunity('dedup', 150.00);
 
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(400, '{"message":"Primo errore"}'));
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
 
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(500, '{"message":"Secondo errore"}'));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         List<Log__c> logs = [SELECT ResultCode__c FROM Log__c WHERE FailedRecordId__c = :opp.Id];
@@ -242,7 +249,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, new RevolutApiMock(400, '{"message":"Errore Revolut"}'));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ opp });
         Test.stopTest();
 
         List<Log__c> logs = [SELECT Origin__c FROM Log__c WHERE FailedRecordId__c = :opp.Id];
@@ -257,7 +264,7 @@ private class RevolutPaymentLinkServiceTest {
         Test.setMock(HttpCalloutMock.class, new BulkMixedMock(oppSuccesso.Id));
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>{ oppSuccesso, oppFallimento });
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>{ oppSuccesso, oppFallimento });
         Test.stopTest();
 
         Opportunity updatedSuccesso = [SELECT Link_pagamento__c FROM Opportunity WHERE Id = :oppSuccesso.Id];
@@ -272,8 +279,8 @@ private class RevolutPaymentLinkServiceTest {
     static void testGenerateRevolutPaymentLinks_ListaNullaOVuota_NonFaNulla() {
         Test.startTest();
         try {
-            RevolutPaymentLinkService.generateRevolutPaymentLinks(null);
-            RevolutPaymentLinkService.generateRevolutPaymentLinks(new List<Opportunity>());
+            RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(null);
+            RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(new List<Opportunity>());
             Assert.isTrue(true, 'Nessuna eccezione attesa con lista nulla o vuota');
         } catch (Exception ex) {
             Assert.fail('Non avrebbe dovuto lanciare eccezioni: ' + ex.getMessage());
@@ -293,7 +300,7 @@ private class RevolutPaymentLinkServiceTest {
 
         Test.startTest();
         try {
-            RevolutPaymentLinkService.generateRevolutPaymentLinks(troppe);
+            RevolutPaymentLinkGeneration.generateRevolutPaymentLinks(troppe);
             Assert.fail('Oltre 100 Opportunity dovrebbe lanciare una PaymentLinkException');
         } catch (PaymentLinkUtils.PaymentLinkException ex) {
             Assert.isTrue(ex.getMessage().contains('100'));
@@ -301,17 +308,40 @@ private class RevolutPaymentLinkServiceTest {
         Test.stopTest();
     }
 
-    // Scenario 12: generateRevolutPaymentLink (singolo record) funziona come la versione bulk
+    // Scenario 12: l'entry point da Flow spacchetta i wrapper Request e produce lo stesso
+    // esito della versione bulk diretta
     @isTest
-    static void testGenerateRevolutPaymentLink_SingoloRecord_FunzionaComeLaVersioneBulk() {
-        Opportunity opp = createOpportunity('singolo', 150.00);
-        Test.setMock(HttpCalloutMock.class, new RevolutApiMock(201, successResponseBody('ord_s', 'tok_s')));
+    static void testGenerateRevolutPaymentLinksFromFlow_SpacchettaIWrapperECreaIlLink() {
+        Opportunity opp = createOpportunity('daflow', 150.00);
+        Test.setMock(HttpCalloutMock.class, new RevolutApiMock(201, successResponseBody('ord_f', 'tok_f')));
+
+        RevolutPaymentLinkGeneration.Request request = new RevolutPaymentLinkGeneration.Request();
+        request.opportunity = opp;
 
         Test.startTest();
-        RevolutPaymentLinkService.generateRevolutPaymentLink(opp);
+        RevolutPaymentLinkGeneration.generateRevolutPaymentLinksFromFlow(
+            new List<RevolutPaymentLinkGeneration.Request>{ request });
         Test.stopTest();
 
         Opportunity updated = [SELECT Link_pagamento__c FROM Opportunity WHERE Id = :opp.Id];
-        Assert.areEqual('https://checkout.revolut.com/payment-link/tok_s', updated.Link_pagamento__c);
+        Assert.areEqual('https://checkout.revolut.com/payment-link/tok_f', updated.Link_pagamento__c);
+    }
+
+    // Scenario 13: lista nulla, wrapper nullo o wrapper senza Opportunity vengono ignorati,
+    // nessuna eccezione e nessun callout per le entry vuote
+    @isTest
+    static void testGenerateRevolutPaymentLinksFromFlow_WrapperNulliOSenzaOpportunity_VengonoIgnorati() {
+        RevolutPaymentLinkGeneration.Request emptyRequest = new RevolutPaymentLinkGeneration.Request();
+
+        Test.startTest();
+        try {
+            RevolutPaymentLinkGeneration.generateRevolutPaymentLinksFromFlow(null);
+            RevolutPaymentLinkGeneration.generateRevolutPaymentLinksFromFlow(
+                new List<RevolutPaymentLinkGeneration.Request>{ null, emptyRequest });
+            Assert.isTrue(true, 'Nessuna eccezione attesa con wrapper nulli o senza Opportunity');
+        } catch (Exception ex) {
+            Assert.fail('Non avrebbe dovuto lanciare eccezioni: ' + ex.getMessage());
+        }
+        Test.stopTest();
     }
 }

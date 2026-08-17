@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Create_payment_link</name>
+        <label>Create payment link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>RevolutPaymentLinkGeneration</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>opportunity</name>
+            <value>
+                <elementReference>opp</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>RevolutPaymentLinkGeneration</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
@@ -11,22 +29,28 @@
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>opportunity.Account.Email_per_fatturazione__c</elementReference>
+                <elementReference>opp.Account.Email_per_fatturazione__c</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Create_payment_link</targetReference>
+        </connector>
     </assignments>
     <assignments>
-        <name>Assign_Lead_email</name>
-        <label>Assign Lead email</label>
+        <name>Assign_lead_email</name>
+        <label>Assign lead email</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>opportunity.Lead__r.Email</elementReference>
+                <elementReference>opp.Lead__r.Email</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Create_payment_link</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Person_Account_email</name>
@@ -37,9 +61,12 @@
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>opportunity.Account.PersonEmail</elementReference>
+                <elementReference>opp.Account.PersonEmail</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>Create_payment_link</targetReference>
+        </connector>
     </assignments>
     <decisions>
         <name>Check_recipient</name>
@@ -54,14 +81,14 @@
             <name>Lead</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>opportunity.DestinatarioPagamento__c</leftValueReference>
+                <leftValueReference>opp.DestinatarioPagamento__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Lead</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Lead_email</targetReference>
+                <targetReference>Assign_lead_email</targetReference>
             </connector>
             <label>Lead</label>
         </rules>
@@ -69,14 +96,14 @@
             <name>Person_Account</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>opportunity.DestinatarioPagamento__c</leftValueReference>
+                <leftValueReference>opp.DestinatarioPagamento__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Account</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>opportunity.Account.IsPersonAccount</leftValueReference>
+                <leftValueReference>opp.Account.IsPersonAccount</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -89,7 +116,7 @@
         </rules>
     </decisions>
     <environments>Default</environments>
-    <interviewLabel>Genera link pagamento {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Genera link Pagamento {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Genera link pagamento</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -126,7 +153,7 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>opportunity</name>
+        <name>opp</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>

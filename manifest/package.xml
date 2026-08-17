@@ -49,9 +49,9 @@
         <name>CustomMetadata</name>
     </types>
     <types>
-        <members>RevolutPaymentLinkService</members>
+        <members>RevolutPaymentLinkGeneration</members>
         <members>PaymentLinkUtils</members>
-        <members>RevolutPaymentLinkServiceTest</members>
+        <members>RevolutPaymentLinkGenerationTest</members>
         <members>PaymentLinkUtilsTest</members>
         <name>ApexClass</name>
     </types>
