@@ -12,9 +12,16 @@
         </connector>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
-            <name>opportunities</name>
+            <name>opportunity</name>
             <value>
                 <elementReference>opp</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>orderAmount</name>
+            <value>
+                <elementReference>opp.Caparra__c</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
