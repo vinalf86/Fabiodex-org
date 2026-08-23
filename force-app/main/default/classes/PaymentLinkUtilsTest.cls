@@ -5,8 +5,8 @@ private class PaymentLinkUtilsTest {
     @isTest
     static void testToMinorUnits_ArrotondaEsplicitamenteSenzaTroncare() {
         Assert.areEqual(15000L, PaymentLinkUtils.toMinorUnits(150.00), 'Nessun decimale: conversione diretta');
-        Assert.areEqual(15001L, PaymentLinkUtils.toMinorUnits(150.005), 'HALF_UP: 150.005 arrotonda a 150.01');
-        Assert.areEqual(15000L, PaymentLinkUtils.toMinorUnits(150.004), 'HALF_UP: 150.004 arrotonda a 150.00');
+        Assert.areEqual(15001L, PaymentLinkUtils.toMinorUnits(150.005), 'Arrotonda per eccesso: 150.005 -> 150.01');
+        Assert.areEqual(15000L, PaymentLinkUtils.toMinorUnits(150.004), 'Arrotonda per difetto: 150.004 -> 150.00');
         Assert.areEqual(1L, PaymentLinkUtils.toMinorUnits(0.01), 'Importi piccoli restano precisi');
     }
 
