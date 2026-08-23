@@ -1,67 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Generate_Revolut_link</name>
+        <label>Generate Revolut link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>RevolutPaymentLinkGeneration</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_email_to_customer</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>opportunities</name>
+            <value>
+                <elementReference>opp</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>RevolutPaymentLinkGeneration</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_email_to_customer</name>
+        <label>Send email to customer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>emailAddress</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>info@fabiodex.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useEmailTemplate</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateName</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <setupReference>unfiled$public/Invito_pagamento_caparra</setupReference>
+                <setupReferenceType>EmailTemplate</setupReferenceType>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>recipientiId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>3.0.1</versionString>
+    </actionCalls>
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Assign_Business_Account_email</name>
-        <label>Assign Business Account email</label>
+        <name>Assign_Business_Account_email_and_recipient</name>
+        <label>Assign Business Account email and recipient</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>opportunity.Account.Email_per_fatturazione__c</elementReference>
+                <elementReference>opp.Account.Email_per_fatturazione__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recipientiId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>opp.Account.PersonContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Email_address_null</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_hasError</name>
+        <label>Assign hasError</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>hasError</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
     </assignments>
     <assignments>
-        <name>Assign_Lead_email</name>
-        <label>Assign Lead email</label>
+        <name>Assign_lead_email_and_recipient</name>
+        <label>Assign lead email and recipient</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>opportunity.Lead__r.Email</elementReference>
+                <elementReference>opp.Lead__r.Email</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recipientiId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>opp.Lead__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Email_address_null</targetReference>
+        </connector>
     </assignments>
     <assignments>
-        <name>Assign_Person_Account_email</name>
-        <label>Assign Person Account email</label>
+        <name>Assign_Person_Account_email_and_recipient</name>
+        <label>Assign Person Account email and recipient</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
             <assignToReference>emailAddress</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>opportunity.Account.PersonEmail</elementReference>
+                <elementReference>opp.Account.PersonEmail</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>recipientiId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>opp.Account.PersonContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Email_address_null</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>No_deposit_available</name>
+        <label>No deposit available</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>depositMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Non è stato impostato l&apos;importo della caparra, impossibile generare il link di pagamento</stringValue>
             </value>
         </assignmentItems>
     </assignments>
+    <decisions>
+        <name>Check_deposit</name>
+        <label>Check deposit</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>No_deposit_available</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Null</defaultConnectorLabel>
+        <rules>
+            <name>Not_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>opp.Caparra__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>opp.Caparra__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Generate_Revolut_link</targetReference>
+            </connector>
+            <label>Not null</label>
+        </rules>
+    </decisions>
     <decisions>
         <name>Check_recipient</name>
         <label>Check recipient</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Assign_Business_Account_email</targetReference>
+            <targetReference>Email_address_null</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Business Account</defaultConnectorLabel>
+        <defaultConnectorLabel>Other</defaultConnectorLabel>
         <rules>
             <name>Lead</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>opportunity.DestinatarioPagamento__c</leftValueReference>
+                <leftValueReference>opp.DestinatarioPagamento__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Lead</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Lead_email</targetReference>
+                <targetReference>Assign_lead_email_and_recipient</targetReference>
             </connector>
             <label>Lead</label>
         </rules>
@@ -69,27 +236,74 @@
             <name>Person_Account</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>opportunity.DestinatarioPagamento__c</leftValueReference>
+                <leftValueReference>opp.DestinatarioPagamento__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Account</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>opportunity.Account.IsPersonAccount</leftValueReference>
+                <leftValueReference>opp.Account.IsPersonAccount</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Person_Account_email</targetReference>
+                <targetReference>Assign_Person_Account_email_and_recipient</targetReference>
             </connector>
             <label>Person Account</label>
         </rules>
+        <rules>
+            <name>Business_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>opp.DestinatarioPagamento__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Account</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>opp.Account.IsPersonAccount</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Business_Account_email_and_recipient</targetReference>
+            </connector>
+            <label>Business Account</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Email_address_null</name>
+        <label>Email address null?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Check_deposit</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not null</defaultConnectorLabel>
+        <rules>
+            <name>Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>emailAddress</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_hasError</targetReference>
+            </connector>
+            <label>Null</label>
+        </rules>
     </decisions>
     <environments>Default</environments>
-    <interviewLabel>Genera link pagamento {!$Flow.CurrentDateTime}</interviewLabel>
+    <interviewLabel>Genera link Pagamento {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Genera link pagamento</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -119,6 +333,13 @@
     </start>
     <status>Draft</status>
     <variables>
+        <name>depositMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
         <name>emailAddress</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -126,11 +347,25 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>opportunity</name>
+        <name>hasError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>opp</name>
         <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
         <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>recipientiId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>

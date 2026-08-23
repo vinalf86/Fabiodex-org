@@ -1,24 +1,24 @@
 # Progetto: Generazione link di pagamento Revolut da Salesforce
 
 ## Contesto
-Integrazione Salesforce ↔ Revolut per generare link di pagamento dinamici da inviare ai clienti finali. Fase 1: solo Revolut. Fasi successive: PayPal e Stripe, riusando la stessa architettura. Lo sviluppatore ha discreta conoscenza di Apex; questa è la sua prima integrazione con API esterne — preferire spiegazioni chiare dei pattern usati (callout, mock, async).
+Integrazione Salesforce ↔ Revolut per generare link di pagamento dinamici da inviare ai clienti finali. Fase 1: solo Revolut. Fasi successive: Stripe, riusando la stessa architettura. Lo sviluppatore ha discreta conoscenza di Apex; questa è la sua prima integrazione con API esterne — preferire spiegazioni chiare dei pattern usati (callout, mock, async).
 
 ## Requisiti funzionali
 1. Da un'Opportunity, generare un link di pagamento Revolut (hosted checkout) in base a:
-   - un campo custom che indica la piattaforma di pagamento (per ora solo "Revolut"; il dispatch deve essere dinamico e pronto per PayPal/Stripe)
-   - un campo custom con l'importo da pagare
-2. Salvare il `checkout_url` restituito su un campo dell'Opportunity.
-3. Alla conferma del pagamento (webhook Revolut, evento ORDER_COMPLETED), aggiornare lo Stage dell'Opportunity a Chiusa Vinta.
+   - un campo custom con l'importo da pagare --> Caparra__c
+2. Salvare il `checkout_url` restituito su un campo dell'Opportunity. --> Link_pagamento__c
+3. Alla conferma del pagamento (webhook Revolut, evento ORDER_COMPLETED), aggiornare lo Stage dell'Opportunity a Chiusa Vinta e la data di pagamento in questo modo:
+   - se Caparra__c < Amount, valorizzara Data_ricezione_caparra__c con la data odierna;
+   - se Caparra__c == Amount, valorizzare Data_ricezione_caparra__c e Data_ricezione_saldo__c con la data odierna
 4. Oggetto custom di log errori con: gateway, request/response (troncati), status code, record correlato, stato (Resend / Sent / Failed), contatore tentativi, timestamp ultimo tentativo, payload della richiesta per il replay.
-5. Meccanismo di retry: Scheduled Apex che riprende i log "In retry" con contatore sotto soglia (3) e rilancia la chiamata; oltre soglia marca "Fallito definitivo".
+5. Meccanismo di retry: Scheduled Apex che riprende i log "In retry" con contatore sotto soglia (definito nel Custom Setting UserIds__c sul campo IntegrationRetry__c) e rilancia la chiamata; oltre soglia marca "Fallito definitivo".
 
 ## Architettura decisa
-- Interfaccia `PaymentLinkProvider` + implementazione `RevolutPaymentLinkProvider` (Strategy pattern).
 - Dispatcher che risolve l'implementazione dal campo piattaforma dell'Opportunity.
-- Callout asincroni (Queueable) se innescati da trigger/Flow; valutare Invocable Action per il Flow.
-- Named Credential / External Credential per l'autenticazione (mai chiavi nel codice).
-- Endpoint webhook: classe `@RestResource` esposta via Site pubblico (guest user), con validazione firma HMAC di Revolut, idempotenza (evento duplicato su Opportunity già chiusa non deve fallire né duplicare log), log anche degli inbound.
-- Nessun pacchetto AppExchange: tutto custom per uniformità tra i tre gateway futuri.
+- Callout asincroni (Queueable) poiché innescati da trigger/Flow; Invocable Action per il Flow che accetta in input una lista di Opportunità.
+- Named Credential / External Credential per l'autenticazione (mai chiavi nel codice). --> già creati
+- Endpoint webhook: classe `@RestResource` esposta via Site pubblico (guest user), con validazione firma HMAC di Revolut, idempotenza (evento duplicato su Opportunity già chiusa non deve fallire né duplicare log).
+- Nessun pacchetto AppExchange: tutto custom per uniformità tra i gateway futuri.
 
 ## API Revolut Merchant — dettagli verificati (versione 2026-04-20)
 - Sandbox base URL: `https://sandbox-merchant.revolut.com` (produzione: `https://merchant.revolut.com`). Chiavi e account Sandbox/Production completamente separati.

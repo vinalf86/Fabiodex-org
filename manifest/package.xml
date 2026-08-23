@@ -49,10 +49,12 @@
         <name>CustomMetadata</name>
     </types>
     <types>
-        <members>RevolutPaymentLinkService</members>
+        <members>RevolutPaymentLinkGeneration</members>
         <members>PaymentLinkUtils</members>
-        <members>RevolutPaymentLinkServiceTest</members>
+        <members>RevolutPaymentLinkGenerationTest</members>
         <members>PaymentLinkUtilsTest</members>
+        <members>RevolutWebhookHandler</members>
+        <members>RevolutWebhookHandlerTest</members>        
         <name>ApexClass</name>
     </types>
      <types>
@@ -75,5 +77,5 @@
         <members>Revolut</members>
         <name>RemoteSiteSetting</name>
     </types>
-    <version>64.0</version>
+    <version>67.0</version>
 </Package>

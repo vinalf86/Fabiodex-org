@@ -2,13 +2,33 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>67.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Error_message</name>
+        <label>Error message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Flow.FaultMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>No_deposit_message</name>
+        <label>No deposit message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>{!depositMessage}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
     <decisions>
         <name>Closed_Won_or_Contract_Signed</name>
         <label>Closed Won or Contract Signed?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Genera_link_pagamento</targetReference>
+            <targetReference>Generate_payment_link</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Yes</defaultConnectorLabel>
         <rules>
@@ -32,6 +52,53 @@
                 <targetReference>Update_Stage</targetReference>
             </connector>
             <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Deposit_available</name>
+        <label>Deposit available?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Error</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Available</defaultConnectorLabel>
+        <rules>
+            <name>Not_available</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>depositMessage</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_deposit_message</targetReference>
+            </connector>
+            <label>Not available</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Error</name>
+        <label>Error?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>hasError</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_message</targetReference>
+            </connector>
+            <label>Yes</label>
         </rules>
     </decisions>
     <description>Aggiorna la fase dell&apos;Opportunità una volta ricevuto il contratto, se non è già Chiusa Vinta o Contratto Firmato, poi chiama il flusso secondario per la generazione del link di pagamento.</description>
@@ -63,7 +130,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Genera_link_pagamento</targetReference>
+            <targetReference>Generate_payment_link</targetReference>
         </connector>
         <inputAssignments>
             <field>Data_ricevuta_contratto_firmato__c</field>
@@ -118,18 +185,43 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <subflows>
-        <name>Genera_link_pagamento</name>
-        <label>Genera link pagamento</label>
+        <name>Generate_payment_link</name>
+        <label>Generate payment link</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Deposit_available</targetReference>
+        </connector>
         <flowName>Genera_link_pagamento</flowName>
         <inputAssignments>
-            <name>opportunity</name>
+            <name>opp</name>
             <value>
                 <elementReference>$Record</elementReference>
             </value>
         </inputAssignments>
+        <outputAssignments>
+            <assignToReference>depositMessage</assignToReference>
+            <name>depositMessage</name>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>hasError</assignToReference>
+            <name>hasError</name>
+        </outputAssignments>
     </subflows>
+    <variables>
+        <name>depositMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>hasError</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
 </Flow>

@@ -1,44 +1,4 @@
-/**
- * Genera link di pagamento Revolut (hosted checkout) per una o più Opportunity: legge
- * l'importo da Caparra__c, chiama la Revolut Merchant API (versione 2026-04-20) e, in base
- * all'esito, valorizza Link_pagamento__c oppure registra l'errore su Log__c.
- *
- * Bulk by design: generateRevolutPaymentLinks accetta sempre una List<Opportunity> e
- * bulkifica query di dedup e DML (1 query di lettura + al massimo 2 DML in scrittura totali,
- * indipendentemente da quante Opportunity vengono passate). generateRevolutPaymentLink
- * (singolare) è solo una comodità per i call site con un solo record: richiama sempre la
- * versione bulk. L'unica cosa che NON si può bulkificare è il callout HTTP in sé: Revolut non
- * offre una API per creare più ordini in una sola chiamata, quindi c'è comunque 1 callout per
- * Opportunity. Per questo il metodo rifiuta liste più lunghe del limite Salesforce di 100
- * callout per transazione, con un errore chiaro invece di un LimitException a metà lista.
- *
- * Precondizione sui record in input: ogni Opportunity deve arrivare con almeno i campi Id e
- * Caparra__c già interrogati (es. dal Flow/trigger chiamante) — questa classe non fa una query
- * di completamento, per evitare una SELECT ridondante quando il chiamante li ha già.
- *
- * Prerequisito da configurare a mano in Setup (NON gestito da questa classe, per non mettere
- * mai una chiave nel codice): Named Credential "Revolut_Merchant" con External Credential
- * collegata che inietta l'header Authorization: Bearer <Secret API key> ad ogni callout su
- * "callout:Revolut_Merchant". L'header "Revolut-Api-Version" invece non è un segreto: viene
- * impostato qui in Apex.
- *
- * Due percorsi di errore, loggati entrambi su Log__c con Status__c = 'Resend':
- * - Revolut risponde ma non con 201, o con un body inatteso: non c'è un'eccezione Apex reale,
- *   quindi StackTrace__c resta vuoto; ResultCode__c = lo status HTTP restituito dal gateway.
- * - Eccezione di sistema (timeout, importo non valido...): StackTrace__c e SystemException__c
- *   vengono presi dall'eccezione reale; ResultCode__c = il tipo dell'eccezione (es.
- *   'System.CalloutException'). Payload__c viene comunque valorizzato con il body già
- *   costruito, se il fallimento è avvenuto dopo la sua costruzione (es. su un timeout) — è
- *   proprio il caso più ambiguo (non si sa se Revolut ha ricevuto l'ordine prima di scadere)
- *   in cui riaverlo per il replay conta di più.
- *
- * Dedup: prima di creare un nuovo Log__c, si cerca uno esistente con lo stesso
- * FailedRecordId__c (l'Id dell'Opportunity) e Origin__c = 'Revolut'. Se trovato, viene
- * aggiornato invece di duplicato — così un futuro log di un altro gateway sulla stessa
- * Opportunity non viene mai sovrascritto. Retry__c non viene mai toccato qui: parte da 0 per
- * default sul nuovo record, e il suo incremento è compito del futuro job di retry schedulato.
- */
-public with sharing class RevolutPaymentLinkService {
+public with sharing class RevolutPaymentLinkGeneration {
 
     private static final String NAMED_CREDENTIAL_ENDPOINT = 'callout:Revolut_Merchant';
     private static final String ORDERS_PATH = '/api/orders';
@@ -51,9 +11,22 @@ public with sharing class RevolutPaymentLinkService {
     private static final String LOG_STATUS_RESEND = 'Resend';
     private static final Integer MAX_CALLOUTS_PER_TRANSACTION = 100;
 
-    /** Comodità per un solo record: internamente richiama sempre la versione bulk. */
-    public static void generateRevolutPaymentLink(Opportunity opportunity) {
-        generateRevolutPaymentLinks(new List<Opportunity>{ opportunity });
+    public class Request {
+        @InvocableVariable(label='Opportunity' description='Opportunity per cui generare il link di pagamento Revolut.' required=true)
+        public Opportunity opportunity;
+    }
+
+    @InvocableMethod(label='Crea link di pagamento Revolut' description='Crea il link di pagamento Revolut per le Opportunity passate come input.')
+    public static void generateRevolutPaymentLinksFromFlow(List<Request> requests) {
+        List<Opportunity> opportunities = new List<Opportunity>();
+        if (requests != null) {
+            for (Request req : requests) {
+                if (req != null && req.opportunity != null) {
+                    opportunities.add(req.opportunity);
+                }
+            }
+        }
+        generateRevolutPaymentLinks(opportunities);
     }
 
     public static void generateRevolutPaymentLinks(List<Opportunity> opportunities) {
@@ -83,10 +56,6 @@ public with sharing class RevolutPaymentLinkService {
         }
     }
 
-    // Fa tutto il lavoro per una singola Opportunity: valida, chiama Revolut, decide se
-    // aggiornare il record o loggare un errore. Tutto in un unico metodo con return anticipati
-    // per ogni esito, così non serve un tipo "risultato" a parte solo per passare i dettagli
-    // tra metodi diversi.
     private static void processOpportunity(Opportunity opp, Map<Id, Log__c> existingLogsByOpportunityId,
             List<Opportunity> opportunitiesToUpdate, List<Log__c> logsToUpsert) {
 
@@ -126,10 +95,6 @@ public with sharing class RevolutPaymentLinkService {
             opportunitiesToUpdate.add(new Opportunity(Id = opp.Id, Link_pagamento__c = checkoutUrl));
 
         } catch (Exception ex) {
-            // requestBody qui può essere null (se validate() ha fallito prima di costruirlo)
-            // o valorizzato (es. su un timeout dopo che il body era già pronto): in entrambi i
-            // casi è la variabile locale giusta da salvare in Payload__c, senza bisogno che
-            // l'eccezione la porti con sé.
             logsToUpsert.add(buildLog(existingLogsByOpportunityId.get(opp.Id), opp.Id,
                 ex.getTypeName(), ex.getMessage(), ex.getStackTraceString(), requestBody));
         }
@@ -180,7 +145,6 @@ public with sharing class RevolutPaymentLinkService {
         ]) {
             Id opportunityId = Id.valueOf(logRecord.FailedRecordId__c);
             if (!logsByOpportunityId.containsKey(opportunityId)) {
-                // Il primo risultato per ciascun Id è il più recente, grazie all'ORDER BY DESC.
                 logsByOpportunityId.put(opportunityId, logRecord);
             }
         }
