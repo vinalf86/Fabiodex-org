@@ -14,55 +14,79 @@ public with sharing class RevolutPaymentLinkGeneration {
     public class Request {
         @InvocableVariable(label='Opportunity' description='Opportunity per cui generare il link di pagamento Revolut.' required=true)
         public Opportunity opportunity;
+
+        @InvocableVariable(label='Importo ordine' description='Importo da addebitare su Revolut per questo ordine (es. caparra o saldo), calcolato dal chiamante.' required=true)
+        public Decimal orderAmount;
     }
 
-    @InvocableMethod(label='Crea link di pagamento Revolut' description='Crea il link di pagamento Revolut per le Opportunity passate come input.')
-    public static void generateRevolutPaymentLinksFromFlow(List<Request> requests) {
-        List<Opportunity> opportunities = new List<Opportunity>();
-        if (requests != null) {
-            for (Request req : requests) {
-                if (req != null && req.opportunity != null) {
-                    opportunities.add(req.opportunity);
-                }
-            }
-        }
-        generateRevolutPaymentLinks(opportunities);
-    }
-
-    public static void generateRevolutPaymentLinks(List<Opportunity> opportunities) {
-        if (opportunities == null || opportunities.isEmpty()) {
+    @InvocableMethod(label='Crea link di pagamento Revolut' description='Crea in modo asincrono il link di pagamento Revolut per le Opportunity passate come input.')
+    public static void generateRevolutPaymentLinks(List<Request> requests) {
+        if (requests == null || requests.isEmpty()) {
             return;
         }
-        if (opportunities.size() > MAX_CALLOUTS_PER_TRANSACTION) {
-            throw new PaymentLinkUtils.PaymentLinkException('Troppe Opportunità in una chiamata (' +
-                opportunities.size() + '): il limite Salesforce è ' + MAX_CALLOUTS_PER_TRANSACTION +
+        if (requests.size() > MAX_CALLOUTS_PER_TRANSACTION) {
+            throw new PaymentLinkUtils.PaymentLinkException('Troppe richieste in una chiamata (' +
+                requests.size() + '): il limite Salesforce è ' + MAX_CALLOUTS_PER_TRANSACTION +
                 ' callout per transazione. Suddividere il lavoro in batch più piccoli.');
         }
 
-        Map<Id, Log__c> existingLogsByOpportunityId = fetchExistingLogs(opportunities);
-
-        List<Opportunity> opportunitiesToUpdate = new List<Opportunity>();
-        List<Log__c> logsToUpsert = new List<Log__c>();
-
-        for (Opportunity opp : opportunities) {
-            processOpportunity(opp, existingLogsByOpportunityId, opportunitiesToUpdate, logsToUpsert);
+        Map<Id, Decimal> orderAmountByOpportunityId = new Map<Id, Decimal>();
+        for (Request req : requests) {
+            if (req != null && req.opportunity != null && req.opportunity.Id != null) {
+                orderAmountByOpportunityId.put(req.opportunity.Id, req.orderAmount);
+            }
+        }
+        if (orderAmountByOpportunityId.isEmpty()) {
+            return;
         }
 
-        if (!opportunitiesToUpdate.isEmpty()) {
-            update opportunitiesToUpdate;
+        System.enqueueJob(new AsyncProcessor(orderAmountByOpportunityId));
+    }
+
+    public class AsyncProcessor implements Queueable, Database.AllowsCallouts {
+
+        private Map<Id, Decimal> orderAmountByOpportunityId;
+
+        public AsyncProcessor(Map<Id, Decimal> orderAmountByOpportunityId) {
+            this.orderAmountByOpportunityId = orderAmountByOpportunityId;
         }
-        if (!logsToUpsert.isEmpty()) {
-            upsert logsToUpsert;
+
+        public void execute(QueueableContext context) {
+            List<Opportunity> opportunities = [
+                SELECT Id, Caparra__c
+                FROM Opportunity
+                WHERE Id IN :orderAmountByOpportunityId.keySet()
+            ];
+            if (opportunities.isEmpty()) {
+                return;
+            }
+
+            Map<Id, Log__c> existingLogsByOpportunityId = fetchExistingLogs(opportunities);
+
+            List<Opportunity> opportunitiesToUpdate = new List<Opportunity>();
+            List<Log__c> logsToUpsert = new List<Log__c>();
+
+            for (Opportunity opp : opportunities) {
+                processOpportunity(opp, orderAmountByOpportunityId.get(opp.Id), existingLogsByOpportunityId,
+                    opportunitiesToUpdate, logsToUpsert);
+            }
+
+            if (!opportunitiesToUpdate.isEmpty()) {
+                update opportunitiesToUpdate;
+            }
+            if (!logsToUpsert.isEmpty()) {
+                upsert logsToUpsert;
+            }
         }
     }
 
-    private static void processOpportunity(Opportunity opp, Map<Id, Log__c> existingLogsByOpportunityId,
+    private static void processOpportunity(Opportunity opp, Decimal orderAmount, Map<Id, Log__c> existingLogsByOpportunityId,
             List<Opportunity> opportunitiesToUpdate, List<Log__c> logsToUpsert) {
 
         String requestBody;
         try {
-            validate(opp);
-            requestBody = buildRequestBody(opp);
+            validate(opp, orderAmount);
+            requestBody = buildRequestBody(opp, orderAmount);
             HttpResponse response = sendCallout(requestBody);
             Integer statusCode = response.getStatusCode();
             String responseBody = response.getBody();
@@ -100,18 +124,21 @@ public with sharing class RevolutPaymentLinkGeneration {
         }
     }
 
-    private static void validate(Opportunity opp) {
+    private static void validate(Opportunity opp, Decimal orderAmount) {
         if (opp == null || opp.Id == null) {
             throw new PaymentLinkUtils.PaymentLinkException('Opportunity non valida: Id mancante.');
         }
         if (opp.Caparra__c == null || opp.Caparra__c <= 0) {
-            throw new PaymentLinkUtils.PaymentLinkException('Caparra__c deve essere un valore positivo.');
+            throw new PaymentLinkUtils.PaymentLinkException('Il campo Caparra deve essere valorizzato e deve avere un valore positivo.');
+        }
+        if (orderAmount == null || orderAmount <= 0) {
+            throw new PaymentLinkUtils.PaymentLinkException('orderAmount deve essere valorizzato e deve avere un valore positivo.');
         }
     }
 
-    private static String buildRequestBody(Opportunity opp) {
+    private static String buildRequestBody(Opportunity opp, Decimal orderAmount) {
         Map<String, Object> body = new Map<String, Object>();
-        body.put('amount', PaymentLinkUtils.toMinorUnits(opp.Caparra__c));
+        body.put('amount', PaymentLinkUtils.toMinorUnits(orderAmount));
         body.put('currency', CURRENCY_EUR);
         body.put('merchant_order_data', new Map<String, Object>{ 'reference' => opp.Id });
         body.put('metadata', new Map<String, String>{ 'salesforce_record_id' => opp.Id });
@@ -145,6 +172,7 @@ public with sharing class RevolutPaymentLinkGeneration {
         ]) {
             Id opportunityId = Id.valueOf(logRecord.FailedRecordId__c);
             if (!logsByOpportunityId.containsKey(opportunityId)) {
+                // Il primo risultato per ciascun Id è il più recente, grazie all'ORDER BY DESC.
                 logsByOpportunityId.put(opportunityId, logRecord);
             }
         }
