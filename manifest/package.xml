@@ -30,6 +30,7 @@
         <members>Reminder_secondo_pagamento</members>
         <members>Aggiorna_a_Contratto_Firmato</members>
         <members>Genera_link_pagamento</members>
+        <members>Riprova_record_falliti</members>
         <name>Flow</name>
     </types>
     <types>
