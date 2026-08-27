@@ -1,6 +1,11 @@
 @isTest
 private class RevolutWebhookHandlerTest {
 
+    @TestSetup
+    static void setupUserIdsSetting() {
+        insert new UserIds__c(Fabio__c = UserInfo.getUserId());
+    }
+
     private static final String TEST_SECRET = 'test-signing-secret';
 
     // Mock HTTP per la GET di richiamo sull'ordine (usata solo quando il payload ricevuto non
@@ -25,6 +30,8 @@ private class RevolutWebhookHandlerTest {
     // Metodo di utilità per creare un'Opportunità valida (stesso pattern già usato altrove:
     // Lead__c soddisfa la validation rule Account_or_Lead)
     private static Opportunity createOpportunity(String uniqueSuffix, Decimal caparra, Decimal amount, String stageName) {
+        UserIds__c uids = UserIds__c.getOrgDefaults();
+
         Lead l = new Lead(
             FirstName = 'Test',
             LastName = 'Lead ' + uniqueSuffix,
@@ -44,7 +51,8 @@ private class RevolutWebhookHandlerTest {
             Event_End_Date__c = Date.today().addDays(1),
             Lead__c = l.Id,
             Caparra__c = caparra,
-            Amount = amount
+            Amount = amount,
+            OwnerId = uids.Fabio__c
         );
         insert opp;
         return opp;
@@ -104,9 +112,10 @@ private class RevolutWebhookHandlerTest {
         Assert.areEqual(0, [SELECT COUNT() FROM Log__c WHERE FailedRecordId__c = :opp.Id]);
     }
 
-    // Scenario 2: pagamento del saldo (Caparra__c == Amount) -> Data_ricezione_saldo__c valorizzata
+    // Scenario 2: caparra uguale all'importo totale (Caparra__c == Amount) -> caparra e saldo
+    // valorizzati insieme, nello stesso pagamento
     @isTest
-    static void testHandleOrderCompleted_CaparraUgualeAdAmount_ValorizzaDataSaldo() {
+    static void testHandleOrderCompleted_CaparraUgualeAdAmount_ValorizzaCaparraESaldo() {
         Opportunity opp = createOpportunity('saldo', 200.00, 200.00, 'Richiesta');
 
         Test.startTest();
@@ -115,8 +124,27 @@ private class RevolutWebhookHandlerTest {
 
         Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
+        Assert.areEqual(Date.today(), updated.Data_ricezione_caparra__c);
         Assert.areEqual(Date.today(), updated.Data_ricezione_saldo__c);
-        Assert.isNull(updated.Data_ricezione_caparra__c);
+    }
+
+    // Scenario 2b: la caparra è già stata ricevuta in precedenza -> questo evento riguarda
+    // il saldo, che viene valorizzato senza toccare la data caparra già presente
+    @isTest
+    static void testHandleOrderCompleted_CaparraGiaRicevuta_ValorizzaSoloSaldo() {
+        Opportunity opp = createOpportunity('saldosuccessivo', 100.00, 200.00, 'Chiuse/Conseguite');
+        Date dataCaparra = Date.today().addDays(-10);
+        opp.Data_ricezione_caparra__c = dataCaparra;
+        update opp;
+
+        Test.startTest();
+        invokeWebhook(orderCompletedPayload(opp.Id), true);
+        Test.stopTest();
+
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
+        Assert.areEqual('Chiuse/Conseguite', updated.StageName);
+        Assert.areEqual(dataCaparra, updated.Data_ricezione_caparra__c, 'La data della caparra già ricevuta non va toccata');
+        Assert.areEqual(Date.today(), updated.Data_ricezione_saldo__c);
     }
 
     // Scenario 3: firma non valida -> 401, log di anomalia, nessun aggiornamento Opportunity
@@ -231,13 +259,19 @@ private class RevolutWebhookHandlerTest {
         Assert.areEqual(1, [SELECT COUNT() FROM Log__c WHERE ResultCode__c = 'OPPORTUNITY_NOT_FOUND']);
     }
 
-    // Scenario 9: idempotenza -> Stage già Chiuse/Conseguite e data già valorizzata, un secondo
-    // evento non sovrascrive la data né crea eccezioni
+    // Scenario 9: idempotenza vera -> Opportunity già completamente processata (Stage chiuso,
+    // entrambe le date già valorizzate), un evento duplicato non deve modificare nulla né
+    // creare log. Nota: senza un identificativo dell'ordine Revolut già elaborato, questo è
+    // l'unico caso in cui un evento ripetuto è distinguibile con certezza da un evento nuovo
+    // (rischio residuo accettato esplicitamente: la redelivery di un evento "solo caparra" con
+    // saldo ancora mancante non è distinguibile dall'arrivo effettivo del saldo, vedi scenario 2b).
     @isTest
-    static void testHandleOrderCompleted_GiaProcessato_NonSovrascriveELogNulla() {
+    static void testHandleOrderCompleted_GiaCompletamenteProcessato_NonSovrascriveELogNulla() {
         Opportunity opp = createOpportunity('idempotenza', 100.00, 200.00, 'Chiuse/Conseguite');
-        Date dataOriginale = Date.today().addDays(-5);
-        opp.Data_ricezione_caparra__c = dataOriginale;
+        Date dataCaparra = Date.today().addDays(-10);
+        Date dataSaldo = Date.today().addDays(-5);
+        opp.Data_ricezione_caparra__c = dataCaparra;
+        opp.Data_ricezione_saldo__c = dataSaldo;
         update opp;
 
         Test.startTest();
@@ -245,16 +279,17 @@ private class RevolutWebhookHandlerTest {
         Test.stopTest();
 
         Assert.areEqual(200, RestContext.response.statusCode);
-        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c FROM Opportunity WHERE Id = :opp.Id];
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
-        Assert.areEqual(dataOriginale, updated.Data_ricezione_caparra__c, 'La data reale del pagamento non deve mai essere sovrascritta');
+        Assert.areEqual(dataCaparra, updated.Data_ricezione_caparra__c, 'La data della caparra non deve mai essere sovrascritta');
+        Assert.areEqual(dataSaldo, updated.Data_ricezione_saldo__c, 'La data del saldo non deve mai essere sovrascritta');
         Assert.areEqual(0, [SELECT COUNT() FROM Log__c WHERE FailedRecordId__c = :opp.Id]);
     }
 
-    // Scenario 10: Caparra__c > Amount (incoerenza dati) -> log di anomalia, nessun campo data
-    // valorizzato, ma lo Stage viene comunque aggiornato
+    // Scenario 10: Caparra__c > Amount (incoerenza dati) -> trattato come pagamento della sola
+    // caparra per decisione esplicita, ma viene comunque loggata l'anomalia per revisione manuale
     @isTest
-    static void testHandleOrderCompleted_CaparraMaggioreDiAmount_LogAnomaliaMaStageAggiornato() {
+    static void testHandleOrderCompleted_CaparraMaggioreDiAmount_TrattatoComeCaparraELoggato() {
         Opportunity opp = createOpportunity('caparramaggiore', 300.00, 200.00, 'Richiesta');
 
         Test.startTest();
@@ -263,7 +298,7 @@ private class RevolutWebhookHandlerTest {
 
         Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
-        Assert.isNull(updated.Data_ricezione_caparra__c);
+        Assert.areEqual(Date.today(), updated.Data_ricezione_caparra__c);
         Assert.isNull(updated.Data_ricezione_saldo__c);
         Assert.areEqual(1, [SELECT COUNT() FROM Log__c WHERE ResultCode__c = 'CAPARRA_MAGGIORE_AMOUNT']);
     }

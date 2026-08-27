@@ -11,11 +11,15 @@
         <members>Log__c.Payload__c</members>
         <members>Opportunity.Caparra__c</members>
         <members>Opportunity.Link_pagamento__c</members>
+        <members>Opportunity.Destinatario_pagamento__c</members>
+        <members>Opportunity.Recipient_Name__c</members>
         <members>UserIds__c.IntegrationRetry__c</members>
+        <members>Revolut_Webhook_Config__mdt.Signing_Secret__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>Log__c</members>
+        <members>Revolut_Webhook_Config__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -47,6 +51,7 @@
     </types>
     <types>
         <members>Jotform_link_mapping.Required_data_form</members>
+        <members>Revolut_Webhook_Config.Default</members>
         <name>CustomMetadata</name>
     </types>
     <types>

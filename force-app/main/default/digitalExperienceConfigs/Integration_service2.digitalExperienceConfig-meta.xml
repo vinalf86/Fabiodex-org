@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DigitalExperienceConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Integration service</label>
+    <site>
+        <urlPathPrefix>callback</urlPathPrefix>
+    </site>
+    <space>site/Integration_service2</space>
+</DigitalExperienceConfig>

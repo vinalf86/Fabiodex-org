@@ -16,9 +16,6 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>EmailQuote</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>Quote.Applica_Rimuovi_IVA</value>
                         </valueListItems>
                         <valueListItems>
@@ -43,6 +40,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideSlackAction</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
