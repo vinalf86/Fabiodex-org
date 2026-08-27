@@ -11,8 +11,6 @@ global without sharing class RevolutWebhookHandler {
     private static final String API_VERSION_HEADER = 'Revolut-Api-Version';
     private static final String API_VERSION = '2026-04-20';
 
-    // "Chiusa Vinta" non esiste come valore del picklist StageName in questo org: l'unico
-    // stage con won = true è "Chiuse/Conseguite" (verificato su OpportunityStage.standardValueSet).
     private static final String STAGE_CHIUSA_VINTA = 'Chiuse/Conseguite';
     private static final String COMPLETED_STATE = 'completed';
     private static final String COMPLETED_EVENT = 'ORDER_COMPLETED';
@@ -205,21 +203,34 @@ global without sharing class RevolutWebhookHandler {
             needsUpdate = true;
         }
 
-        if (opp.Caparra__c != null && opp.Amount != null) {
-            if (opp.Caparra__c < opp.Amount) {
-                if (opp.Data_ricezione_caparra__c == null) {
-                    opp.Data_ricezione_caparra__c = Date.today();
-                    needsUpdate = true;
-                }
-            } else if (opp.Caparra__c == opp.Amount) {
-                if (opp.Data_ricezione_saldo__c == null) {
-                    opp.Data_ricezione_saldo__c = Date.today();
-                    needsUpdate = true;
-                }
+        if (opp.Data_ricezione_caparra__c != null) {
+            // La caparra risulta già ricevuta in una chiamata precedente: questo evento
+            // può riguardare solo il pagamento del saldo (i due pagamenti arrivano quasi
+            // sempre in momenti diversi, ma il metodo chiamato da Revolut è lo stesso).
+            if (opp.Data_ricezione_saldo__c == null) {
+                opp.Data_ricezione_saldo__c = Date.today();
+                needsUpdate = true;
+            }
+        } else if (opp.Caparra__c != null && opp.Amount != null) {
+            if (opp.Caparra__c == opp.Amount) {
+                // La caparra copre l'intero importo: caparra e saldo vengono ricevuti
+                // nello stesso pagamento.
+                opp.Data_ricezione_caparra__c = Date.today();
+                opp.Data_ricezione_saldo__c = Date.today();
+                needsUpdate = true;
             } else {
-                logAnomaly('CAPARRA_MAGGIORE_AMOUNT',
-                    'Caparra__c (' + opp.Caparra__c + ') è maggiore di Amount (' + opp.Amount + ') sull\'Opportunity ' + opp.Id,
-                    reference, rawBody);
+                // Caparra__c < Amount: pagamento della sola caparra, caso normale.
+                // Caparra__c > Amount: dato anomalo (la caparra impostata supera il totale),
+                // ma per decisione esplicita viene trattato allo stesso modo, segnalando
+                // comunque l'anomalia con un log per la revisione manuale.
+                opp.Data_ricezione_caparra__c = Date.today();
+                needsUpdate = true;
+                if (opp.Caparra__c > opp.Amount) {
+                    logAnomaly('CAPARRA_MAGGIORE_AMOUNT',
+                        'Caparra__c (' + opp.Caparra__c + ') è maggiore di Amount (' + opp.Amount + ') sull\'Opportunity ' +
+                            opp.Id + ': trattato comunque come pagamento della caparra.',
+                        reference, rawBody);
+                }
             }
         } else {
             logAnomaly('IMPORTI_MANCANTI',

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComClean</excludeButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -93,7 +91,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Codice_fiscale__c</field>
+                <field>Codice_Fiscale__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -165,6 +163,14 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Where_did_you_hear_about_us__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Event_Start_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Event_End_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
