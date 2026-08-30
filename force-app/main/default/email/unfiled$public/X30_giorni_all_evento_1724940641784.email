@@ -2,19 +2,15 @@
 <head>
 	<title></title>
 </head>
-<body style="height: auto; min-height: auto;">Hello {{{Recipient.FirstName}}} {{{Recipient.LastName}}},<br />
+<body style="height: auto; min-height: auto;">Hello {{{Opportunity.Recipient_Name__c}}},<br />
 How are your event preparations going? hope well!<br />
-I would like to remind you that it’s very important for us to receive the file with your music requests on time;&nbsp;<br />
+I would like to remind you that it’s very important for us to receive the file with your music requests on time.<br />
 Attached an example to share in the perfect way al the requests!&nbsp;<br />
 <br />
 <a href="https://fabiodex2023.lightning.force.com/https://drive.google.com/open?id=1uwu9FS_E_Y3xkhR5F5x1anTUuR7Ksp46&amp;usp=drive_fs">https://drive.google.com/open?id=1uwu9FS_E_Y3xkhR5F5x1anTUuR7Ksp46&amp;usp=drive_fs</a><br />
 <br />
-I remind you in addition to be on time with the payment of the balance. Many thanks<br />
-<br />
-<br />
-IBAN: LT64 3250 0474 3621 6795<br />
-BIC: REVOLT21<br />
-BIC banca intermediaria:<br />
-CHASDEFX&nbsp;<br />
+I remind you in addition to be on time with the payment of the balance.<br />
+You will find the link to complete the payment here:&nbsp;{{{Opportunity.Link_pagamento__c}}}.<br />
+Many thanks<br />
 &nbsp;</body>
 </html>

@@ -67,8 +67,8 @@ global without sharing class RevolutWebhookHandler {
     }
 
     private static Boolean isSignatureValid(RestRequest req, String rawBody) {
-        String signatureHeader = req.headers.get(SIGNATURE_HEADER);
-        String timestampHeader = req.headers.get(TIMESTAMP_HEADER);
+        String signatureHeader = getHeaderIgnoreCase(req.headers, SIGNATURE_HEADER);
+        String timestampHeader = getHeaderIgnoreCase(req.headers, TIMESTAMP_HEADER);
         if (String.isBlank(signatureHeader) || String.isBlank(timestampHeader)) {
             return false;
         }
@@ -91,6 +91,22 @@ global without sharing class RevolutWebhookHandler {
             }
         }
         return false;
+    }
+
+    /** RestRequest.headers è case-sensitive sulle chiavi, ma su questo sito i nomi degli header
+     * arrivano in minuscolo (normalizzazione legata a HTTP/2 lungo il percorso Cloudflare/edge) —
+     * confermato analizzando il contenuto reale di req.headers in fase di collaudo. Cerchiamo quindi
+     * l'header ignorando maiuscole/minuscole, senza fare affidamento su una particolare casistica. */
+    private static String getHeaderIgnoreCase(Map<String, String> headers, String headerName) {
+        if (headers == null) {
+            return null;
+        }
+        for (String key : headers.keySet()) {
+            if (key.equalsIgnoreCase(headerName)) {
+                return headers.get(key);
+            }
+        }
+        return null;
     }
 
     private static Boolean isTimestampWithinTolerance(String timestampHeader) {

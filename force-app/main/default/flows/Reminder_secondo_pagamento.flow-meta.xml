@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Copy_1_of_No_Email</name>
-        <label>No Email</label>
-        <locationX>842</locationX>
-        <locationY>900</locationY>
-        <actionName>customNotificationAction</actionName>
-        <actionType>customNotificationAction</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>customNotifTypeId</name>
-            <value>
-                <elementReference>Get_Notification.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>recipientIds</name>
-            <value>
-                <elementReference>RecipientId</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>title</name>
-            <value>
-                <stringValue>Email non inviata</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>body</name>
-            <value>
-                <elementReference>Body</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>targetId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <nameSegment>customNotificationAction</nameSegment>
-        <offset>0</offset>
-    </actionCalls>
-    <actionCalls>
         <name>No_Email</name>
         <label>No Email</label>
         <locationX>314</locationX>
@@ -85,8 +44,8 @@
     <actionCalls>
         <name>Notify_Fabio</name>
         <label>Notify Fabio</label>
-        <locationX>1546</locationX>
-        <locationY>792</locationY>
+        <locationX>1898</locationX>
+        <locationY>684</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -133,7 +92,7 @@
         <name>Notify_internal_users</name>
         <label>Notify internal users</label>
         <locationX>578</locationX>
-        <locationY>1440</locationY>
+        <locationY>1332</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <faultConnector>
@@ -150,7 +109,7 @@
         <inputParameters>
             <name>recipientIds</name>
             <value>
-                <elementReference>Recipients</elementReference>
+                <elementReference>RecipientId</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
@@ -177,8 +136,8 @@
     <actionCalls>
         <name>Notify_Sabrina</name>
         <label>Notify Sabrina</label>
-        <locationX>2338</locationX>
-        <locationY>792</locationY>
+        <locationX>2690</locationX>
+        <locationY>684</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -223,147 +182,228 @@
         <offset>0</offset>
     </actionCalls>
     <actionCalls>
-        <name>Reminder_pagamento_Lead</name>
-        <label>Reminder pagamento Lead</label>
+        <name>Payment_reminder_Business_Account</name>
+        <label>Payment reminder - Business Account</label>
+        <locationX>1106</locationX>
+        <locationY>684</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Add_recipients</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_recipient_Id</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recipientAddresses</name>
+            <value>
+                <collectionElements>
+                    <elementReference>Get_Primary_Contact.Contact.Email</elementReference>
+                </collectionElements>
+                <collectionElements>
+                    <elementReference>$Record.Account.Email_per_fatturazione__c</elementReference>
+                </collectionElements>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <stringValue>info@fabiodex.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useEmailTemplate</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateName</name>
+            <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <setupReference>unfiled$public/X30_giorni_all_evento_1724940641784</setupReference>
+                <setupReferenceType>EmailTemplate</setupReferenceType>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Get_Primary_Contact.ContactId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>3.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>Payment_reminder_Lead</name>
+        <label>Payment reminder - Lead</label>
         <locationX>50</locationX>
         <locationY>684</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Get_users</targetReference>
+            <targetReference>Add_recipients</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Assign_recipient_Id</targetReference>
         </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>emailAddresses</name>
+            <name>recipientAddresses</name>
             <value>
-                <elementReference>$Record.Lead__r.Email</elementReference>
+                <collectionElements>
+                    <elementReference>$Record.Lead__r.Email</elementReference>
+                </collectionElements>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderType</name>
             <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>OrgWideEmailAddress</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderAddress</name>
             <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>info@fabiodex.com</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>emailSubject</name>
+            <name>useEmailTemplate</name>
             <value>
-                <elementReference>Subject</elementReference>
+                <stringValue>True</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>emailBody</name>
+            <name>emailTemplateName</name>
             <value>
-                <elementReference>EmailBodyLead</elementReference>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <setupReference>unfiled$public/X30_giorni_all_evento_1724940641784</setupReference>
+                <setupReferenceType>EmailTemplate</setupReferenceType>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>sendRichBody</name>
+            <name>recipientId</name>
             <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>relatedRecordId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>logEmailOnSend</name>
-            <value>
-                <booleanValue>true</booleanValue>
+                <elementReference>$Record.Lead__c</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <offset>0</offset>
+        <versionString>3.0.1</versionString>
     </actionCalls>
     <actionCalls>
-        <name>Reminder_pagamento_Person_Account</name>
-        <label>Reminder pagamento Person Account</label>
+        <name>Payment_reminder_Person_Account</name>
+        <label>Payment reminder - Person Account</label>
         <locationX>578</locationX>
         <locationY>684</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
-            <targetReference>Get_users</targetReference>
+            <targetReference>Add_recipients</targetReference>
         </connector>
         <faultConnector>
-            <targetReference>Copy_2_of_Assign_recipient_Id</targetReference>
+            <isGoTo>true</isGoTo>
+            <targetReference>Assign_recipient_Id</targetReference>
         </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>emailAddresses</name>
+            <name>recipientAddresses</name>
             <value>
-                <elementReference>$Record.Account.PersonEmail</elementReference>
+                <collectionElements>
+                    <elementReference>$Record.Account.PersonEmail</elementReference>
+                </collectionElements>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderType</name>
             <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>OrgWideEmailAddress</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>senderAddress</name>
             <value>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
                 <stringValue>info@fabiodex.com</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>emailSubject</name>
+            <name>useEmailTemplate</name>
             <value>
-                <elementReference>Subject</elementReference>
+                <stringValue>True</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>emailBody</name>
+            <name>emailTemplateName</name>
             <value>
-                <elementReference>EmailBodyPersAccount</elementReference>
+                <inputConfiguratorMode>Custom</inputConfiguratorMode>
+                <setupReference>unfiled$public/X30_giorni_all_evento_1724940641784</setupReference>
+                <setupReferenceType>EmailTemplate</setupReferenceType>
             </value>
         </inputParameters>
         <inputParameters>
-            <name>sendRichBody</name>
+            <name>recipientId</name>
             <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>relatedRecordId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>logEmailOnSend</name>
-            <value>
-                <booleanValue>true</booleanValue>
+                <elementReference>$Record.AccountId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <offset>0</offset>
+        <versionString>3.0.1</versionString>
     </actionCalls>
     <apiVersion>60.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Assign_Recipient_Fabio</name>
-        <label>Assign Recipient Fabio</label>
-        <locationX>1546</locationX>
-        <locationY>684</locationY>
+        <name>Add_recipients</name>
+        <label>Add recipients</label>
+        <locationX>578</locationX>
+        <locationY>1224</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Get_User_Fabio.Id</elementReference>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>RecipientId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Notify_internal_users</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Recipient_Fabio</name>
+        <label>Assign Recipient Fabio</label>
+        <locationX>1898</locationX>
+        <locationY>576</locationY>
+        <assignmentItems>
+            <assignToReference>RecipientId</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -389,13 +429,13 @@
     <assignments>
         <name>Assign_Recipient_Sabrina</name>
         <label>Assign Recipient Sabrina</label>
-        <locationX>2338</locationX>
-        <locationY>684</locationY>
+        <locationX>2690</locationX>
+        <locationY>576</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Get_User_Sabrina.Id</elementReference>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -403,26 +443,10 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Copy_2_of_Assign_recipient_Id</name>
-        <label>Assign recipient Id</label>
-        <locationX>842</locationX>
-        <locationY>792</locationY>
-        <assignmentItems>
-            <assignToReference>RecipientId</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>$Record.OwnerId</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Copy_1_of_No_Email</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Increase_retry</name>
         <label>Increase retry</label>
-        <locationX>1810</locationX>
-        <locationY>1008</locationY>
+        <locationX>2162</locationX>
+        <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>retry</assignToReference>
             <operator>Add</operator>
@@ -437,26 +461,26 @@
     <assignments>
         <name>Remove_Recipient</name>
         <label>Remove Recipient</label>
-        <locationX>1546</locationX>
-        <locationY>900</locationY>
+        <locationX>1898</locationX>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>RemoveAll</operator>
             <value>
-                <elementReference>Get_User_Fabio.Id</elementReference>
+                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </assignmentItems>
     </assignments>
     <assignments>
         <name>Remove_Recipient_2</name>
         <label>Remove Recipient</label>
-        <locationX>2338</locationX>
-        <locationY>900</locationY>
+        <locationX>2690</locationX>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>RemoveAll</operator>
             <value>
-                <elementReference>Get_User_Sabrina.Id</elementReference>
+                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </assignmentItems>
     </assignments>
@@ -470,7 +494,7 @@
     <decisions>
         <name>Check_Days_to_Event</name>
         <label>Check Days to Event</label>
-        <locationX>1722</locationX>
+        <locationX>1898</locationX>
         <locationY>468</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -506,7 +530,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_User_Fabio</targetReference>
+                <targetReference>Assign_Recipient_Fabio</targetReference>
             </connector>
             <label>7 Days</label>
         </rules>
@@ -521,7 +545,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_User_Sabrina</targetReference>
+                <targetReference>Assign_Recipient_Sabrina</targetReference>
             </connector>
             <label>Today plus 7</label>
         </rules>
@@ -532,7 +556,7 @@
         <locationX>578</locationX>
         <locationY>576</locationY>
         <defaultConnector>
-            <targetReference>Get_users</targetReference>
+            <targetReference>Payment_reminder_Business_Account</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Business Account</defaultConnectorLabel>
         <rules>
@@ -546,7 +570,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Reminder_pagamento_Lead</targetReference>
+                <targetReference>Payment_reminder_Lead</targetReference>
             </connector>
             <label>Lead</label>
         </rules>
@@ -568,7 +592,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Reminder_pagamento_Person_Account</targetReference>
+                <targetReference>Payment_reminder_Person_Account</targetReference>
             </connector>
             <label>Person Account</label>
         </rules>
@@ -576,8 +600,8 @@
     <decisions>
         <name>Check_retry</name>
         <label>Check retry</label>
-        <locationX>1942</locationX>
-        <locationY>900</locationY>
+        <locationX>2294</locationX>
+        <locationY>792</locationY>
         <defaultConnectorLabel>Greater than 2</defaultConnectorLabel>
         <rules>
             <name>Less_or_equal_2</name>
@@ -628,7 +652,7 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
     <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
-        <locationX>1722</locationX>
+        <locationX>1898</locationX>
         <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -649,7 +673,7 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
     <recordLookups>
         <name>Get_Primary_Contact</name>
         <label>Get Primary Contact</label>
-        <locationX>1722</locationX>
+        <locationX>1898</locationX>
         <locationY>252</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -674,99 +698,8 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
         <object>OpportunityContactRole</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordLookups>
-        <name>Get_User_Fabio</name>
-        <label>Get User Fabio</label>
-        <locationX>1546</locationX>
-        <locationY>576</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Recipient_Fabio</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>IsActive</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>User</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_User_Sabrina</name>
-        <label>Get User Sabrina</label>
-        <locationX>2338</locationX>
-        <locationY>576</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Assign_Recipient_Sabrina</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>IsActive</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>User</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_users</name>
-        <label>Get users</label>
-        <locationX>578</locationX>
-        <locationY>1224</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Recipients</targetReference>
-        </connector>
-        <filterLogic>1 AND (2 OR 3)</filterLogic>
-        <filters>
-            <field>IsActive</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
-        <object>User</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
     <start>
-        <locationX>1596</locationX>
+        <locationX>1772</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Primary_Contact</targetReference>
@@ -870,27 +803,6 @@ Per Fabio: preparare pernotto, inviare richieste musicali agli artisti e verific
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>7 giorni trascorsi dall&apos;evento</text>
     </textTemplates>
-    <transforms>
-        <name>Recipients</name>
-        <label>Recipients</label>
-        <locationX>578</locationX>
-        <locationY>1332</locationY>
-        <connector>
-            <targetReference>Notify_internal_users</targetReference>
-        </connector>
-        <dataType>String</dataType>
-        <isCollection>true</isCollection>
-        <scale>0</scale>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-        <transformValues>
-            <transformValueActions>
-                <transformType>Map</transformType>
-                <value>
-                    <elementReference>Get_users[$EachItem].Id</elementReference>
-                </value>
-            </transformValueActions>
-        </transformValues>
-    </transforms>
     <variables>
         <name>RecipientId</name>
         <dataType>String</dataType>
@@ -913,8 +825,8 @@ Per Fabio: preparare pernotto, inviare richieste musicali agli artisti e verific
         <name>Wait_5_minutes</name>
         <elementSubtype>WaitDuration</elementSubtype>
         <label>Wait 5 minutes</label>
-        <locationX>1810</locationX>
-        <locationY>1116</locationY>
+        <locationX>2162</locationX>
+        <locationY>1008</locationY>
         <defaultConnectorLabel>Default Path</defaultConnectorLabel>
         <waitEvents>
             <conditionLogic>and</conditionLogic>
