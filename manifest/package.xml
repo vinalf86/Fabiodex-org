@@ -13,7 +13,7 @@
         <members>Opportunity.Link_pagamento__c</members>
         <members>Opportunity.Destinatario_pagamento__c</members>
         <members>Opportunity.Recipient_Name__c</members>
-        <members>Opportunity.Destinatario_pagamento__c</members>
+        <members>Opportunity.DestinatarioPagamento__c</members>
         <members>UserIds__c.IntegrationRetry__c</members>
         <members>Revolut_Webhook_Config__mdt.Signing_Secret__c</members>
         <name>CustomField</name>
