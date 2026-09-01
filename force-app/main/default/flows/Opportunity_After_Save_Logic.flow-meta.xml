@@ -125,9 +125,6 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_9</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Event_Sync</name>
@@ -148,9 +145,6 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_10</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Generic</name>
@@ -171,9 +165,6 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_11</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Invalid_Dates</name>
@@ -194,9 +185,6 @@
                 <elementReference>InvalidEventDatesReason</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_12</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Lead_Event</name>
@@ -217,9 +205,6 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_13</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Opportunity_Update</name>
@@ -240,9 +225,6 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_14</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_Future_Event</name>
@@ -527,9 +509,6 @@
         <label>Check Run Event Logic</label>
         <locationX>2640</locationX>
         <locationY>2762</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_15</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Skip</defaultConnectorLabel>
         <rules>
             <name>Run_Event_Logic</name>
@@ -715,46 +694,6 @@
         </rules>
     </decisions>
     <description>Logica centralizzata post-salvataggio Opportunità: aggiornamento Name, sync Quote, notifica push alla creazione, creazione/aggiornamento Evento e Close Date. Richiamato dal record-triggered flow Opportunity_After_Save. Consolida la logica di Notifica_nuova_Opportunita e OpportunityAfterInsert.</description>
-    <ends>
-        <name>END_ELEMENT_10</name>
-        <locationX>314</locationX>
-        <locationY>4142</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_11</name>
-        <locationX>2640</locationX>
-        <locationY>914</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_12</name>
-        <locationX>2866</locationX>
-        <locationY>3086</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_13</name>
-        <locationX>578</locationX>
-        <locationY>3626</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_14</name>
-        <locationX>2602</locationX>
-        <locationY>4658</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_15</name>
-        <locationX>3130</locationX>
-        <locationY>2870</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_16</name>
-        <locationX>1436</locationX>
-        <locationY>4550</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_9</name>
-        <locationX>1370</locationX>
-        <locationY>3734</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>CloseDateFormula</name>
@@ -1319,9 +1258,6 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <label>Update Close Date</label>
         <locationX>1436</locationX>
         <locationY>4442</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_16</targetReference>
-        </connector>
         <faultConnector>
             <targetReference>Assign_Fault_Opportunity_Update</targetReference>
         </faultConnector>

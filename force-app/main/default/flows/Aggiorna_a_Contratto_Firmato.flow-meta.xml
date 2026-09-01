@@ -7,9 +7,6 @@
         <label>Error message</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_5</targetReference>
-        </connector>
         <customErrorMessages>
             <errorMessage>{!$Flow.FaultMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -20,9 +17,6 @@
         <label>No deposit message</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_6</targetReference>
-        </connector>
         <customErrorMessages>
             <errorMessage>{!depositMessage}</errorMessage>
             <isFieldError>false</isFieldError>
@@ -90,9 +84,6 @@
         <label>Error?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_4</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
@@ -111,21 +102,6 @@
         </rules>
     </decisions>
     <description>Aggiorna la fase dell&apos;Opportunità una volta ricevuto il contratto, se non è già Chiusa Vinta o Contratto Firmato, poi chiama il flusso secondario per la generazione del link di pagamento.</description>
-    <ends>
-        <name>END_ELEMENT_4</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_5</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_6</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <interviewLabel>Aggiorna a Contratto Firmato se non è Chiusa Vinta {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Aggiorna a Contratto Firmato</label>

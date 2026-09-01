@@ -35,9 +35,6 @@
         <locationY>0</locationY>
         <actionName>RevolutPaymentLinkGeneration</actionName>
         <actionType>apex</actionType>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
             <name>opportunity</name>
@@ -63,9 +60,6 @@
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
@@ -165,9 +159,6 @@
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_5</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Assign_lead_email_and_recipient</name>
@@ -227,9 +218,6 @@
                 <stringValue>Non è stato impostato l&apos;importo della caparra, impossibile generare il link di pagamento</stringValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_1</targetReference>
-        </connector>
     </assignments>
     <decisions>
         <name>Check_deposit</name>
@@ -382,16 +370,6 @@
             <label>False</label>
         </rules>
     </decisions>
-    <ends>
-        <name>END_ELEMENT_1</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_5</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <interviewLabel>Genera link Pagamento {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Genera link pagamento</label>

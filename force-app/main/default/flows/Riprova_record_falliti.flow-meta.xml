@@ -197,18 +197,12 @@
                 <numberValue>1.0</numberValue>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_8</targetReference>
-        </connector>
     </assignments>
     <decisions>
         <name>Controlla_importo</name>
         <label>Controlla importo</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_4</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Non valido</defaultConnectorLabel>
         <rules>
             <name>Valido</name>
@@ -309,21 +303,6 @@
         </rules>
     </decisions>
     <description>Il flow ritenta i record andati in errore durante la chiamata API, prendendo l&apos;id del record fallito dal record di Log__c e riprovando l&apos;invio per il numero di volte impostato nel custom setting.</description>
-    <ends>
-        <name>END_ELEMENT_4</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_6</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_8</name>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>formSaldo</name>
@@ -378,9 +357,6 @@
         <label>Aggiorna stato Log Fallito</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_8</targetReference>
-        </connector>
         <inputAssignments>
             <field>Status__c</field>
             <value>
@@ -394,9 +370,6 @@
         <label>Aggiorna stato Log Inviato</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_6</targetReference>
-        </connector>
         <inputAssignments>
             <field>Status__c</field>
             <value>
