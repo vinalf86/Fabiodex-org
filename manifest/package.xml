@@ -13,6 +13,7 @@
         <members>Opportunity.Link_pagamento__c</members>
         <members>Opportunity.Destinatario_pagamento__c</members>
         <members>Opportunity.Recipient_Name__c</members>
+        <members>Opportunity.DestinatarioPagamento__c</members>
         <members>UserIds__c.IntegrationRetry__c</members>
         <members>Revolut_Webhook_Config__mdt.Signing_Secret__c</members>
         <name>CustomField</name>
@@ -69,6 +70,7 @@
     </types>
     <types>
         <members>unfiled$public/X30_giorni_all_evento_1724940641784</members>
+        <members>unfiled$public/Invito_pagamento_caparra</members>
         <name>EmailTemplate</name>
     </types>
       <types>
