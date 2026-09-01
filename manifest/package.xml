@@ -69,6 +69,7 @@
     </types>
     <types>
         <members>unfiled$public/X30_giorni_all_evento_1724940641784</members>
+        <members>unfiled$public/Invito_pagamento_caparra</members>
         <name>EmailTemplate</name>
     </types>
       <types>
@@ -82,6 +83,10 @@
     <types>
         <members>Revolut</members>
         <name>RemoteSiteSetting</name>
+    </types>
+     <types>
+        <members>Integration_service2</members>
+        <name>DigitalExperienceConfig</name>
     </types>
     <version>67.0</version>
 </Package>

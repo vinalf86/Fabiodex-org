@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Genera_link_di_pagamento</name>
+        <label>Genera link di pagamento</label>
+        <locationX>50</locationX>
+        <locationY>684</locationY>
+        <actionName>RevolutPaymentLinkGeneration</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Check_Lead_or_Contact</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>opportunity</name>
+            <value>
+                <elementReference>$Record</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>orderAmount</name>
+            <value>
+                <elementReference>amountToPay</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>RevolutPaymentLinkGeneration</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>No_Email</name>
         <label>No Email</label>
         <locationX>314</locationX>
-        <locationY>900</locationY>
+        <locationY>1008</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -92,7 +120,7 @@
         <name>Notify_internal_users</name>
         <label>Notify internal users</label>
         <locationX>578</locationX>
-        <locationY>1332</locationY>
+        <locationY>1440</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <faultConnector>
@@ -250,7 +278,7 @@
         <name>Payment_reminder_Lead</name>
         <label>Payment reminder - Lead</label>
         <locationX>50</locationX>
-        <locationY>684</locationY>
+        <locationY>792</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -300,6 +328,20 @@
             <name>recipientId</name>
             <value>
                 <elementReference>$Record.Lead__c</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>false</booleanValue>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
@@ -375,7 +417,7 @@
         <name>Add_recipients</name>
         <label>Add recipients</label>
         <locationX>578</locationX>
-        <locationY>1224</locationY>
+        <locationY>1332</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -414,7 +456,7 @@
         <name>Assign_recipient_Id</name>
         <label>Assign recipient Id</label>
         <locationX>314</locationX>
-        <locationY>792</locationY>
+        <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -515,7 +557,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Lead_or_Contact</targetReference>
+                <targetReference>Genera_link_di_pagamento</targetReference>
             </connector>
             <label>30 Days</label>
         </rules>
@@ -623,6 +665,12 @@
 A 7 giorni dall&apos;evento avvisa Fabio tramite una notifica.
 Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>amountToPay</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Amount} - {!$Record.Caparra__c}</expression>
+        <scale>2</scale>
+    </formulas>
     <formulas>
         <name>EventPlus7</name>
         <dataType>Date</dataType>
@@ -750,7 +798,7 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>Body</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>

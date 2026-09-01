@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Notify_new_Opportunity</name>
         <label>Notify new Opportunity</label>
-        <locationX>1997</locationX>
-        <locationY>1598</locationY>
+        <locationX>2486</locationX>
+        <locationY>1946</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -47,8 +47,8 @@
     <actionCalls>
         <name>Notify_Won_Opportunity</name>
         <label>Notify Won Opportunity</label>
-        <locationX>2019</locationX>
-        <locationY>1322</locationY>
+        <locationX>2508</locationX>
+        <locationY>2570</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -93,8 +93,8 @@
     <assignments>
         <name>Assign_Fabio_Recipient</name>
         <label>Assign Fabio Recipient</label>
-        <locationX>1865</locationX>
-        <locationY>1106</locationY>
+        <locationX>2354</locationX>
+        <locationY>1454</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -110,7 +110,7 @@
         <name>Assign_Fault_Account_Event</name>
         <label>Assign Fault - Account Event</label>
         <locationX>1370</locationX>
-        <locationY>2270</locationY>
+        <locationY>3626</locationY>
         <assignmentItems>
             <assignToReference>FaultStage</assignToReference>
             <operator>Assign</operator>
@@ -125,12 +125,15 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_9</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Event_Sync</name>
         <label>Assign Fault - Event Sync</label>
         <locationX>314</locationX>
-        <locationY>2678</locationY>
+        <locationY>4034</locationY>
         <assignmentItems>
             <assignToReference>FaultStage</assignToReference>
             <operator>Assign</operator>
@@ -145,12 +148,15 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_10</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Generic</name>
         <label>Assign Fault - Generic</label>
-        <locationX>2151</locationX>
-        <locationY>458</locationY>
+        <locationX>2640</locationX>
+        <locationY>806</locationY>
         <assignmentItems>
             <assignToReference>FaultStage</assignToReference>
             <operator>Assign</operator>
@@ -165,12 +171,15 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_11</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Invalid_Dates</name>
         <label>Assign Fault - Invalid Event Dates</label>
-        <locationX>2151</locationX>
-        <locationY>1730</locationY>
+        <locationX>2866</locationX>
+        <locationY>2978</locationY>
         <assignmentItems>
             <assignToReference>FaultStage</assignToReference>
             <operator>Assign</operator>
@@ -185,12 +194,15 @@
                 <elementReference>InvalidEventDatesReason</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_12</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Lead_Event</name>
         <label>Assign Fault - Lead Event</label>
         <locationX>578</locationX>
-        <locationY>2162</locationY>
+        <locationY>3518</locationY>
         <assignmentItems>
             <assignToReference>FaultStage</assignToReference>
             <operator>Assign</operator>
@@ -205,12 +217,15 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_13</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Fault_Opportunity_Update</name>
         <label>Assign Fault - Opportunity Update</label>
         <locationX>2602</locationX>
-        <locationY>3194</locationY>
+        <locationY>4550</locationY>
         <assignmentItems>
             <assignToReference>FaultStage</assignToReference>
             <operator>Assign</operator>
@@ -225,12 +240,15 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_14</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_Future_Event</name>
         <label>Assign Future Event</label>
         <locationX>138</locationX>
-        <locationY>2378</locationY>
+        <locationY>3734</locationY>
         <assignmentItems>
             <assignToReference>Loop_Future_Events.Subject</assignToReference>
             <operator>Assign</operator>
@@ -266,7 +284,7 @@
     <assignments>
         <name>Assign_Name_BusAccount</name>
         <label>Assign Name - Business Account</label>
-        <locationX>2679</locationX>
+        <locationX>3168</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>ResolvedOppName</assignToReference>
@@ -289,7 +307,7 @@
     <assignments>
         <name>Assign_Name_Lead</name>
         <label>Assign Name - Lead</label>
-        <locationX>1623</locationX>
+        <locationX>2112</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>ResolvedOppName</assignToReference>
@@ -312,7 +330,7 @@
     <assignments>
         <name>Assign_Name_PersAccount</name>
         <label>Assign Name - Person Account</label>
-        <locationX>2151</locationX>
+        <locationX>2640</locationX>
         <locationY>242</locationY>
         <assignmentItems>
             <assignToReference>ResolvedOppName</assignToReference>
@@ -335,8 +353,8 @@
     <assignments>
         <name>Assign_Sabrina_Recipient</name>
         <label>Assign Sabrina Recipient</label>
-        <locationX>1865</locationX>
-        <locationY>1406</locationY>
+        <locationX>2354</locationX>
+        <locationY>1754</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -351,8 +369,8 @@
     <assignments>
         <name>Assign_Won_Recipient</name>
         <label>Assign Won Recipient</label>
-        <locationX>2019</locationX>
-        <locationY>1214</locationY>
+        <locationX>2508</locationX>
+        <locationY>2462</locationY>
         <assignmentItems>
             <assignToReference>WonRecipientId</assignToReference>
             <operator>Add</operator>
@@ -368,7 +386,7 @@
         <name>Check_Account_Rec_Type</name>
         <label>Check Account Rec Type</label>
         <locationX>1370</locationX>
-        <locationY>2054</locationY>
+        <locationY>3410</locationY>
         <defaultConnector>
             <targetReference>Create_Event_Person_Account</targetReference>
         </defaultConnector>
@@ -392,7 +410,7 @@
     <decisions>
         <name>Check_Category</name>
         <label>Check Category</label>
-        <locationX>2151</locationX>
+        <locationX>2640</locationX>
         <locationY>134</locationY>
         <defaultConnector>
             <targetReference>Assign_Name_BusAccount</targetReference>
@@ -432,8 +450,8 @@
     <decisions>
         <name>Check_Closed_Won</name>
         <label>Check Closed Won</label>
-        <locationX>2151</locationX>
-        <locationY>890</locationY>
+        <locationX>2640</locationX>
+        <locationY>2138</locationY>
         <defaultConnector>
             <targetReference>Check_Run_Event_Logic</targetReference>
         </defaultConnector>
@@ -458,7 +476,7 @@
         <name>Check_Event_Dates</name>
         <label>Check Event Dates</label>
         <locationX>2151</locationX>
-        <locationY>1622</locationY>
+        <locationY>2870</locationY>
         <defaultConnector>
             <targetReference>Assign_Fault_Invalid_Dates</targetReference>
         </defaultConnector>
@@ -482,8 +500,8 @@
     <decisions>
         <name>Check_Fabio_Id</name>
         <label>Check Fabio Id</label>
-        <locationX>1997</locationX>
-        <locationY>998</locationY>
+        <locationX>2486</locationX>
+        <locationY>1346</locationY>
         <defaultConnector>
             <targetReference>Check_Sabrina_Id</targetReference>
         </defaultConnector>
@@ -507,8 +525,11 @@
     <decisions>
         <name>Check_Run_Event_Logic</name>
         <label>Check Run Event Logic</label>
-        <locationX>2151</locationX>
-        <locationY>1514</locationY>
+        <locationX>2640</locationX>
+        <locationY>2762</locationY>
+        <defaultConnector>
+            <targetReference>END_ELEMENT_15</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Skip</defaultConnectorLabel>
         <rules>
             <name>Run_Event_Logic</name>
@@ -529,8 +550,8 @@
     <decisions>
         <name>Check_Sabrina_Id</name>
         <label>Check Sabrina Id</label>
-        <locationX>1997</locationX>
-        <locationY>1298</locationY>
+        <locationX>2486</locationX>
+        <locationY>1646</locationY>
         <defaultConnector>
             <targetReference>Notify_new_Opportunity</targetReference>
         </defaultConnector>
@@ -554,8 +575,8 @@
     <decisions>
         <name>Check_Should_Notify</name>
         <label>Check Should Notify</label>
-        <locationX>2151</locationX>
-        <locationY>782</locationY>
+        <locationX>2640</locationX>
+        <locationY>1130</locationY>
         <defaultConnector>
             <targetReference>Check_Closed_Won</targetReference>
         </defaultConnector>
@@ -579,8 +600,8 @@
     <decisions>
         <name>Check_Synced_Quote</name>
         <label>Check Synced Quote</label>
-        <locationX>2151</locationX>
-        <locationY>242</locationY>
+        <locationX>2640</locationX>
+        <locationY>590</locationY>
         <defaultConnector>
             <targetReference>Check_Should_Notify</targetReference>
         </defaultConnector>
@@ -605,7 +626,7 @@
         <name>Event_existing_Account</name>
         <label>Event existing? (Account)</label>
         <locationX>1766</locationX>
-        <locationY>1838</locationY>
+        <locationY>3194</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Get_Future_Events</targetReference>
@@ -631,7 +652,7 @@
         <name>Event_existing_Lead</name>
         <label>Event existing? (Lead)</label>
         <locationX>446</locationX>
-        <locationY>1838</locationY>
+        <locationY>3194</locationY>
         <defaultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Get_Future_Events</targetReference>
@@ -657,7 +678,7 @@
         <name>OpportunityComesFrom</name>
         <label>Opportunity Comes From</label>
         <locationX>1436</locationX>
-        <locationY>1730</locationY>
+        <locationY>3086</locationY>
         <defaultConnector>
             <targetReference>Update_Close_Date</targetReference>
         </defaultConnector>
@@ -694,6 +715,46 @@
         </rules>
     </decisions>
     <description>Logica centralizzata post-salvataggio Opportunità: aggiornamento Name, sync Quote, notifica push alla creazione, creazione/aggiornamento Evento e Close Date. Richiamato dal record-triggered flow Opportunity_After_Save. Consolida la logica di Notifica_nuova_Opportunita e OpportunityAfterInsert.</description>
+    <ends>
+        <name>END_ELEMENT_10</name>
+        <locationX>314</locationX>
+        <locationY>4142</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_11</name>
+        <locationX>2640</locationX>
+        <locationY>914</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_12</name>
+        <locationX>2866</locationX>
+        <locationY>3086</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_13</name>
+        <locationX>578</locationX>
+        <locationY>3626</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_14</name>
+        <locationX>2602</locationX>
+        <locationY>4658</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_15</name>
+        <locationX>3130</locationX>
+        <locationY>2870</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_16</name>
+        <locationX>1436</locationX>
+        <locationY>4550</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_9</name>
+        <locationX>1370</locationX>
+        <locationY>3734</locationY>
+    </ends>
     <environments>Default</environments>
     <formulas>
         <name>CloseDateFormula</name>
@@ -751,13 +812,27 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({
         <expression>IF (
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
 TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+
 IF(
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} = {!OpportunityRecord.Event_End_Date__c},
 TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+
 IF(
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
 TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName}
+
+IF(
+ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} = {!OpportunityRecord.Event_End_Date__c},
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName},
+
+IF(
+ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} 
+
+)
+)
 )
 )
 )</expression>
@@ -871,7 +946,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Loop_Future_Events</name>
         <label>Loop Future Events</label>
         <locationX>50</locationX>
-        <locationY>2270</locationY>
+        <locationY>3626</locationY>
         <collectionReference>Get_Future_Events</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -904,7 +979,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Create_Event_Business_Account</name>
         <label>Create Event Business Account</label>
         <locationX>1106</locationX>
-        <locationY>2162</locationY>
+        <locationY>3518</locationY>
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>Get_Future_Events</targetReference>
@@ -961,7 +1036,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Create_Event_Lead</name>
         <label>Create Event Lead</label>
         <locationX>50</locationX>
-        <locationY>2054</locationY>
+        <locationY>3410</locationY>
         <connector>
             <targetReference>Get_Future_Events</targetReference>
         </connector>
@@ -1017,7 +1092,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Create_Event_Person_Account</name>
         <label>Create Event Person Account</label>
         <locationX>1634</locationX>
-        <locationY>2162</locationY>
+        <locationY>3518</locationY>
         <connector>
             <isGoTo>true</isGoTo>
             <targetReference>Get_Future_Events</targetReference>
@@ -1075,7 +1150,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Get_Admin_user</name>
         <label>Get Admin user</label>
         <locationX>1370</locationX>
-        <locationY>1946</locationY>
+        <locationY>3302</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Account_Rec_Type</targetReference>
@@ -1103,7 +1178,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Get_existing_Event</name>
         <label>Get existing Event</label>
         <locationX>1436</locationX>
-        <locationY>1622</locationY>
+        <locationY>2978</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>OpportunityComesFrom</targetReference>
@@ -1124,7 +1199,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Get_Future_Events</name>
         <label>Get Future Events</label>
         <locationX>50</locationX>
-        <locationY>2162</locationY>
+        <locationY>3518</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_Future_Events</targetReference>
@@ -1151,8 +1226,8 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordLookups>
         <name>Get_Group_Gestione_Lead</name>
         <label>Get Group Gestione Lead</label>
-        <locationX>2019</locationX>
-        <locationY>1106</locationY>
+        <locationX>2508</locationX>
+        <locationY>2354</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Assign_Won_Recipient</targetReference>
@@ -1172,8 +1247,8 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
-        <locationX>1997</locationX>
-        <locationY>890</locationY>
+        <locationX>2486</locationX>
+        <locationY>1238</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Fabio_Id</targetReference>
@@ -1193,8 +1268,8 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordLookups>
         <name>Get_Notification_Won</name>
         <label>Get Notification Won</label>
-        <locationX>2019</locationX>
-        <locationY>998</locationY>
+        <locationX>2508</locationX>
+        <locationY>2246</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Group_Gestione_Lead</targetReference>
@@ -1215,7 +1290,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Get_user</name>
         <label>Get user</label>
         <locationX>50</locationX>
-        <locationY>1946</locationY>
+        <locationY>3302</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Event_Lead</targetReference>
@@ -1243,7 +1318,10 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Update_Close_Date</name>
         <label>Update Close Date</label>
         <locationX>1436</locationX>
-        <locationY>3086</locationY>
+        <locationY>4442</locationY>
+        <connector>
+            <targetReference>END_ELEMENT_16</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Assign_Fault_Opportunity_Update</targetReference>
         </faultConnector>
@@ -1267,7 +1345,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <name>Update_Future_Events</name>
         <label>Update Future Events</label>
         <locationX>50</locationX>
-        <locationY>2570</locationY>
+        <locationY>3926</locationY>
         <connector>
             <targetReference>Update_Close_Date</targetReference>
         </connector>
@@ -1279,7 +1357,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordUpdates>
         <name>Update_Name_BusAccount</name>
         <label>Update Name - Business Account</label>
-        <locationX>2679</locationX>
+        <locationX>3168</locationX>
         <locationY>350</locationY>
         <connector>
             <targetReference>Check_Synced_Quote</targetReference>
@@ -1307,7 +1385,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordUpdates>
         <name>Update_Name_Lead</name>
         <label>Update Name - Lead</label>
-        <locationX>1623</locationX>
+        <locationX>2112</locationX>
         <locationY>350</locationY>
         <connector>
             <targetReference>Check_Synced_Quote</targetReference>
@@ -1335,7 +1413,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordUpdates>
         <name>Update_Name_PersAccount</name>
         <label>Update Name - Person Account</label>
-        <locationX>2151</locationX>
+        <locationX>2640</locationX>
         <locationY>350</locationY>
         <connector>
             <targetReference>Check_Synced_Quote</targetReference>
@@ -1363,8 +1441,8 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
     <recordUpdates>
         <name>Update_Quote</name>
         <label>Update Quote</label>
-        <locationX>1887</locationX>
-        <locationY>350</locationY>
+        <locationX>2376</locationX>
+        <locationY>698</locationY>
         <connector>
             <targetReference>Check_Should_Notify</targetReference>
         </connector>
@@ -1388,7 +1466,7 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT (
         <object>Quote</object>
     </recordUpdates>
     <start>
-        <locationX>2025</locationX>
+        <locationX>2514</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Check_Category</targetReference>

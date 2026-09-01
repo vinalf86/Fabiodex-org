@@ -4,15 +4,15 @@
 </head>
 <body style="height: auto; min-height: auto;">
 <p>🇬🇧<br />
-Ciao {{{Opportunity.First_Name_Customer_1__c}}} and {{{Opportunity.First_Name_Customer_2__c}}}!</p>
+Ciao&nbsp;{{{Opportunity.Recipient_Name__c}}}!</p>
 
 <p>Your contract has been signed, we are now ready to go!<br />
-In order to proceed with the preparation of your event, you can click on the following link and pay the amount of <strong>€</strong>&nbsp;<strong>{{{Opportunity.Caparra__c}}}</strong>:&nbsp;<strong>{{{Opportunity.Link_pagamento__c}}}.</strong></p>
+In order to proceed with the preparation of your event, you can click on the following link and pay the amount of <strong>€&nbsp;{{{Opportunity.Caparra__c}}}:</strong>&nbsp;<strong>{{{Opportunity.Link_pagamento__c}}}.</strong></p>
 
 <p>Ciao Ciao<br />
 <br />
 🇮🇹<br />
-Ciao {{{Opportunity.First_Name_Customer_1__c}}} e {{{Opportunity.First_Name_Customer_2__c}}}!</p>
+Ciao {{{Opportunity.Recipient_Name__c}}}!</p>
 
 <p>Il contratto è stato firmato correttamente, ora siamo pronti a partire!<br />
 Per procedere con i preparativi dell'evento, potete cliccare sul link di seguito e completare il pagamento di&nbsp;<strong>€</strong>&nbsp;<strong>{{{Opportunity.Caparra__c}}}</strong>:&nbsp;<strong>{{{Opportunity.Link_pagamento__c}}}.</strong><br />

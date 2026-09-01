@@ -29,12 +29,43 @@
         <offset>0</offset>
     </actionCalls>
     <actionCalls>
+        <name>Generate_Revolut_link_for_retry</name>
+        <label>Generate Revolut link for retry</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>RevolutPaymentLinkGeneration</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>opportunity</name>
+            <value>
+                <elementReference>opp</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>orderAmount</name>
+            <value>
+                <elementReference>importo</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>RevolutPaymentLinkGeneration</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>Send_email_to_customer</name>
         <label>Send email to customer</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>recipientAddresses</name>
@@ -81,6 +112,17 @@
         </inputParameters>
         <inputParameters>
             <name>relatedRecordId</name>
+            <value>
+                <elementReference>opp.Id</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>false</booleanValue>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
         <offset>0</offset>
@@ -123,6 +165,9 @@
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_5</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Assign_lead_email_and_recipient</name>
@@ -182,6 +227,9 @@
                 <stringValue>Non è stato impostato l&apos;importo della caparra, impossibile generare il link di pagamento</stringValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_1</targetReference>
+        </connector>
     </assignments>
     <decisions>
         <name>Check_deposit</name>
@@ -290,7 +338,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
-            <targetReference>Check_deposit</targetReference>
+            <targetReference>Skip_email</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Not null</defaultConnectorLabel>
         <rules>
@@ -309,6 +357,41 @@
             <label>Null</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Skip_email</name>
+        <label>Skip email?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Generate_Revolut_link_for_retry</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>True</defaultConnectorLabel>
+        <rules>
+            <name>False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>skipEmail</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_deposit</targetReference>
+            </connector>
+            <label>False</label>
+        </rules>
+    </decisions>
+    <ends>
+        <name>END_ELEMENT_1</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_5</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
     <environments>Default</environments>
     <interviewLabel>Genera link Pagamento {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Genera link pagamento</label>
@@ -338,7 +421,7 @@
             <targetReference>Check_recipient</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>depositMessage</name>
         <dataType>String</dataType>
@@ -351,7 +434,7 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
-        <isOutput>false</isOutput>
+        <isOutput>true</isOutput>
     </variables>
     <variables>
         <name>hasError</name>
@@ -359,6 +442,14 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>importo</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
     </variables>
     <variables>
         <name>opp</name>
@@ -373,6 +464,16 @@
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>skipEmail</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
         <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
 </Flow>
