@@ -3959,21 +3959,6 @@
             <label>Yes</label>
         </rules>
     </decisions>
-    <ends>
-        <name>END_ELEMENT_4</name>
-        <locationX>578</locationX>
-        <locationY>7730</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_5</name>
-        <locationX>1370</locationX>
-        <locationY>6806</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_6</name>
-        <locationX>50</locationX>
-        <locationY>8162</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>Day1</name>
@@ -4156,9 +4141,6 @@
         <label>Create Interviews 2</label>
         <locationX>578</locationX>
         <locationY>7622</locationY>
-        <connector>
-            <targetReference>END_ELEMENT_4</targetReference>
-        </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Fault_Message_Screen_2</targetReference>
@@ -4689,9 +4671,6 @@
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>END_ELEMENT_5</targetReference>
-        </connector>
         <fields>
             <name>Copy_1_of_ErroreMessage</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(250, 3, 3);&quot;&gt;{!$Flow.FaultMessage}&lt;/strong&gt;&lt;/p&gt;</fieldText>
@@ -19116,9 +19095,6 @@
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>END_ELEMENT_6</targetReference>
-        </connector>
         <fields>
             <name>Thank_you_message</name>
             <fieldText>&lt;p&gt;Grazie, il preventivo con i prodotti selezionati è pronto, per vederlo &lt;a href=&quot;/{!NewQuoteId}&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(27, 100, 237);&quot;&gt;&lt;strong&gt;&lt;u&gt;clicca qui&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</fieldText>
