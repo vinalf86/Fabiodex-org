@@ -35,9 +35,6 @@
         <locationY>1698</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
-        <connector>
-            <targetReference>END_ELEMENT_8</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>customNotifTypeId</name>
@@ -126,9 +123,6 @@
         <locationY>2130</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
-        <connector>
-            <targetReference>END_ELEMENT_9</targetReference>
-        </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Check_retry</targetReference>
@@ -535,9 +529,6 @@
                 <elementReference>$Setup.UserIds__c.Fabio__c</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_10</targetReference>
-        </connector>
     </assignments>
     <assignments>
         <name>Remove_Recipient_2</name>
@@ -551,18 +542,12 @@
                 <elementReference>$Setup.UserIds__c.Sabrina__c</elementReference>
             </value>
         </assignmentItems>
-        <connector>
-            <targetReference>END_ELEMENT_11</targetReference>
-        </connector>
     </assignments>
     <decisions>
         <name>Check_Days_to_Event</name>
         <label>Check Days to Event</label>
         <locationX>1898</locationX>
         <locationY>576</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_12</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X30_Days</name>
@@ -669,9 +654,6 @@
         <label>Check org</label>
         <locationX>2690</locationX>
         <locationY>252</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_13</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Sandbox</defaultConnectorLabel>
         <rules>
             <name>Production</name>
@@ -694,9 +676,6 @@
         <label>Check retry</label>
         <locationX>2294</locationX>
         <locationY>900</locationY>
-        <defaultConnector>
-            <targetReference>END_ELEMENT_14</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Greater than 2</defaultConnectorLabel>
         <rules>
             <name>Less_or_equal_2</name>
@@ -757,41 +736,6 @@
     <description>A 30 giorni dall&apos;evento manda una mail al cliente se il saldo non è stato ancora versato per ricordarglielo, inoltre invia una notifica a Fabio e Sabrina per definire i dettagli.
 A 7 giorni dall&apos;evento avvisa Fabio tramite una notifica.
 Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
-    <ends>
-        <name>END_ELEMENT_10</name>
-        <locationX>1898</locationX>
-        <locationY>1008</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_11</name>
-        <locationX>2690</locationX>
-        <locationY>1008</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_12</name>
-        <locationX>3218</locationX>
-        <locationY>684</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_13</name>
-        <locationX>3482</locationX>
-        <locationY>360</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_14</name>
-        <locationX>2426</locationX>
-        <locationY>1008</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_8</name>
-        <locationX>314</locationX>
-        <locationY>1806</locationY>
-    </ends>
-    <ends>
-        <name>END_ELEMENT_9</name>
-        <locationX>578</locationX>
-        <locationY>2238</locationY>
-    </ends>
     <environments>Default</environments>
     <formulas>
         <name>amountToPay</name>
