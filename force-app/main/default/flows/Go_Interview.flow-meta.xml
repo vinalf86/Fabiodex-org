@@ -6,7 +6,7 @@
         <name>Add_Interviews_to_collection</name>
         <label>Add Interviews to collection</label>
         <locationX>314</locationX>
-        <locationY>3782</locationY>
+        <locationY>5162</locationY>
         <assignmentItems>
             <assignToReference>InterviewsCollection</assignToReference>
             <operator>Add</operator>
@@ -64,7 +64,7 @@
         <name>Add_Quote_Lines_to_collection</name>
         <label>Add Quote Lines to collection</label>
         <locationX>534</locationX>
-        <locationY>5834</locationY>
+        <locationY>7214</locationY>
         <assignmentItems>
             <assignToReference>TotalQuoteLines</assignToReference>
             <operator>Add</operator>
@@ -80,7 +80,7 @@
         <name>Assign_Chosen_Products_to_collection</name>
         <label>Assign Chosen Products to collection</label>
         <locationX>314</locationX>
-        <locationY>4322</locationY>
+        <locationY>5702</locationY>
         <assignmentItems>
             <assignToReference>varProdList</assignToReference>
             <operator>Add</operator>
@@ -138,7 +138,7 @@
         <name>Assign_Prod_Day_1</name>
         <label>Assign Prod Day 1</label>
         <locationX>314</locationX>
-        <locationY>1190</locationY>
+        <locationY>2570</locationY>
         <assignmentItems>
             <assignToReference>ProdDay1</assignToReference>
             <operator>Add</operator>
@@ -224,7 +224,7 @@
         <name>Assign_Prod_Day_2</name>
         <label>Assign Prod Day 2</label>
         <locationX>314</locationX>
-        <locationY>1622</locationY>
+        <locationY>3002</locationY>
         <assignmentItems>
             <assignToReference>ProdDay2</assignToReference>
             <operator>Add</operator>
@@ -310,7 +310,7 @@
         <name>Assign_Prod_Day_3</name>
         <label>Assign Prod Day 3</label>
         <locationX>314</locationX>
-        <locationY>2054</locationY>
+        <locationY>3434</locationY>
         <assignmentItems>
             <assignToReference>ProdDay3</assignToReference>
             <operator>Add</operator>
@@ -396,7 +396,7 @@
         <name>Assign_Prod_Day_4</name>
         <label>Assign Prod Day 4</label>
         <locationX>314</locationX>
-        <locationY>2486</locationY>
+        <locationY>3866</locationY>
         <assignmentItems>
             <assignToReference>ProdDay4</assignToReference>
             <operator>Add</operator>
@@ -482,7 +482,7 @@
         <name>Assign_Prod_Day_5</name>
         <label>Assign Prod Day 5</label>
         <locationX>314</locationX>
-        <locationY>2918</locationY>
+        <locationY>4298</locationY>
         <assignmentItems>
             <assignToReference>ProdDay5</assignToReference>
             <operator>Add</operator>
@@ -568,7 +568,7 @@
         <name>Assign_Prod_Day_6</name>
         <label>Assign Prod Day 6</label>
         <locationX>314</locationX>
-        <locationY>3350</locationY>
+        <locationY>4730</locationY>
         <assignmentItems>
             <assignToReference>ProdDay6</assignToReference>
             <operator>Add</operator>
@@ -654,7 +654,7 @@
         <name>Assign_Prod_Day_7</name>
         <label>Assign Prod Day 7</label>
         <locationX>314</locationX>
-        <locationY>3998</locationY>
+        <locationY>5378</locationY>
         <assignmentItems>
             <assignToReference>ProdDay7</assignToReference>
             <operator>Add</operator>
@@ -740,7 +740,7 @@
         <name>Assign_values_Interview_1</name>
         <label>Assign values Interview 1</label>
         <locationX>314</locationX>
-        <locationY>1082</locationY>
+        <locationY>2462</locationY>
         <assignmentItems>
             <assignToReference>varInterview1.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1092,7 +1092,7 @@
         <name>Assign_values_Interview_2</name>
         <label>Assign values Interview 2</label>
         <locationX>314</locationX>
-        <locationY>1514</locationY>
+        <locationY>2894</locationY>
         <assignmentItems>
             <assignToReference>varInterview2.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1444,7 +1444,7 @@
         <name>Assign_values_Interview_3</name>
         <label>Assign values Interview 3</label>
         <locationX>314</locationX>
-        <locationY>1946</locationY>
+        <locationY>3326</locationY>
         <assignmentItems>
             <assignToReference>varInterview3.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -1796,7 +1796,7 @@
         <name>Assign_values_Interview_4</name>
         <label>Assign values Interview 4</label>
         <locationX>314</locationX>
-        <locationY>2378</locationY>
+        <locationY>3758</locationY>
         <assignmentItems>
             <assignToReference>varInterview4.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2148,7 +2148,7 @@
         <name>Assign_values_Interview_5</name>
         <label>Assign values Interview 5</label>
         <locationX>314</locationX>
-        <locationY>2810</locationY>
+        <locationY>4190</locationY>
         <assignmentItems>
             <assignToReference>varInterview5.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2500,7 +2500,7 @@
         <name>Assign_values_Interview_6</name>
         <label>Assign values Interview 6</label>
         <locationX>314</locationX>
-        <locationY>3242</locationY>
+        <locationY>4622</locationY>
         <assignmentItems>
             <assignToReference>varInterview6.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -2852,7 +2852,7 @@
         <name>Assign_values_Interview_7</name>
         <label>Assign values Interview 7</label>
         <locationX>314</locationX>
-        <locationY>3674</locationY>
+        <locationY>5054</locationY>
         <assignmentItems>
             <assignToReference>varInterview7.RecordTypeId</assignToReference>
             <operator>Assign</operator>
@@ -3204,7 +3204,7 @@
         <name>Assign_values_to_Opp</name>
         <label>Assign values to Opp</label>
         <locationX>50</locationX>
-        <locationY>5750</locationY>
+        <locationY>7622</locationY>
         <assignmentItems>
             <assignToReference>updatedOpp.Caparra__c</assignToReference>
             <operator>Assign</operator>
@@ -3220,7 +3220,7 @@
         <name>Assign_values_to_Quote_Lines_English</name>
         <label>Assign values to Quote Lines English</label>
         <locationX>402</locationX>
-        <locationY>5642</locationY>
+        <locationY>7022</locationY>
         <assignmentItems>
             <assignToReference>varQuoteLine.QuoteId</assignToReference>
             <operator>Assign</operator>
@@ -3292,7 +3292,7 @@
         <name>Assign_values_to_Quote_Lines_Italian</name>
         <label>Assign values to Quote Lines Italian</label>
         <locationX>666</locationX>
-        <locationY>5642</locationY>
+        <locationY>7022</locationY>
         <assignmentItems>
             <assignToReference>varQuoteLine.QuoteId</assignToReference>
             <operator>Assign</operator>
@@ -3581,7 +3581,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter day 6</label>
         <locationX>314</locationX>
-        <locationY>3458</locationY>
+        <locationY>4838</locationY>
         <assignNextValueToReference>currentItem_Filter_day_6</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay6</collectionReference>
@@ -3602,7 +3602,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 1</label>
         <locationX>314</locationX>
-        <locationY>1298</locationY>
+        <locationY>2678</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_1</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay1</collectionReference>
@@ -3623,7 +3623,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 2</label>
         <locationX>314</locationX>
-        <locationY>1730</locationY>
+        <locationY>3110</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_2</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay2</collectionReference>
@@ -3644,7 +3644,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 3</label>
         <locationX>314</locationX>
-        <locationY>2162</locationY>
+        <locationY>3542</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_2</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay3</collectionReference>
@@ -3665,7 +3665,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 4</label>
         <locationX>314</locationX>
-        <locationY>2594</locationY>
+        <locationY>3974</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_4</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay4</collectionReference>
@@ -3686,7 +3686,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 5</label>
         <locationX>314</locationX>
-        <locationY>3026</locationY>
+        <locationY>4406</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_5</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay5</collectionReference>
@@ -3707,7 +3707,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Filter Prod Day 7</label>
         <locationX>314</locationX>
-        <locationY>4106</locationY>
+        <locationY>5486</locationY>
         <assignNextValueToReference>currentItem_Filter_Prod_Day_7</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>ProdDay7</collectionReference>
@@ -3728,7 +3728,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Interviews with day requested</label>
         <locationX>314</locationX>
-        <locationY>3890</locationY>
+        <locationY>5270</locationY>
         <assignNextValueToReference>currentItem_Remove_nulle_Interviews</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>InterviewsCollection</collectionReference>
@@ -3749,7 +3749,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Products to Iterate</label>
         <locationX>314</locationX>
-        <locationY>5318</locationY>
+        <locationY>6698</locationY>
         <assignNextValueToReference>currentItem_Products_to_Iterate</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>FinalProdList</collectionReference>
@@ -3784,7 +3784,7 @@
         <elementSubtype>FilterCollectionProcessor</elementSubtype>
         <label>Remove Null Values</label>
         <locationX>314</locationX>
-        <locationY>4430</locationY>
+        <locationY>5810</locationY>
         <assignNextValueToReference>currentItem_Remove_Null_Values</assignNextValueToReference>
         <collectionProcessorType>FilterCollectionProcessor</collectionProcessorType>
         <collectionReference>varProdList</collectionReference>
@@ -3838,7 +3838,7 @@
         <name>Check_customer</name>
         <label>Check customer</label>
         <locationX>314</locationX>
-        <locationY>4646</locationY>
+        <locationY>6026</locationY>
         <defaultConnector>
             <targetReference>Update_Lead_with_company_info</targetReference>
         </defaultConnector>
@@ -3863,7 +3863,7 @@
         <name>Check_language</name>
         <label>Check language</label>
         <locationX>534</locationX>
-        <locationY>5534</locationY>
+        <locationY>6914</locationY>
         <defaultConnector>
             <targetReference>Assign_values_to_Quote_Lines_Italian</targetReference>
         </defaultConnector>
@@ -3938,7 +3938,7 @@
         <name>Quote_Lines_available</name>
         <label>Quote Lines available?</label>
         <locationX>314</locationX>
-        <locationY>5534</locationY>
+        <locationY>7406</locationY>
         <defaultConnector>
             <targetReference>No_Products_Selected</targetReference>
         </defaultConnector>
@@ -4093,7 +4093,7 @@
         <name>Iterate_Products_List</name>
         <label>Iterate Products List</label>
         <locationX>314</locationX>
-        <locationY>5426</locationY>
+        <locationY>6806</locationY>
         <collectionReference>Products_to_Iterate</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -4126,7 +4126,7 @@
         <name>Create_Interviews</name>
         <label>Create Interviews</label>
         <locationX>314</locationX>
-        <locationY>4994</locationY>
+        <locationY>6374</locationY>
         <connector>
             <targetReference>Create_Quote</targetReference>
         </connector>
@@ -4140,7 +4140,7 @@
         <name>Create_Interviews_2</name>
         <label>Create Interviews 2</label>
         <locationX>578</locationX>
-        <locationY>5750</locationY>
+        <locationY>7622</locationY>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Fault_Message_Screen_2</targetReference>
@@ -4151,7 +4151,7 @@
         <name>Create_Quote</name>
         <label>Create Quote</label>
         <locationX>314</locationX>
-        <locationY>5102</locationY>
+        <locationY>6482</locationY>
         <assignRecordIdToReference>NewQuoteId</assignRecordIdToReference>
         <connector>
             <targetReference>Update_Event</targetReference>
@@ -4231,7 +4231,7 @@
         <name>Create_Task</name>
         <label>Create Task</label>
         <locationX>50</locationX>
-        <locationY>6074</locationY>
+        <locationY>7946</locationY>
         <connector>
             <targetReference>Thank_you_screen</targetReference>
         </connector>
@@ -4381,7 +4381,7 @@
         <name>Get_User</name>
         <label>Get User</label>
         <locationX>50</locationX>
-        <locationY>5966</locationY>
+        <locationY>7838</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Task</targetReference>
@@ -4402,7 +4402,7 @@
         <name>Roll_Back_Quote</name>
         <label>Roll Back Quote</label>
         <locationX>1370</locationX>
-        <locationY>5210</locationY>
+        <locationY>6590</locationY>
         <connector>
             <targetReference>Fault_Message_Screen_2</targetReference>
         </connector>
@@ -4411,7 +4411,7 @@
         <name>Update_Event</name>
         <label>Update Event</label>
         <locationX>314</locationX>
-        <locationY>5210</locationY>
+        <locationY>6590</locationY>
         <connector>
             <targetReference>Products_to_Iterate</targetReference>
         </connector>
@@ -4469,7 +4469,7 @@
         <name>Update_Lead_with_company_info</name>
         <label>Update Lead with company info</label>
         <locationX>578</locationX>
-        <locationY>4754</locationY>
+        <locationY>6134</locationY>
         <connector>
             <targetReference>Create_Interviews</targetReference>
         </connector>
@@ -4539,7 +4539,7 @@
         <name>Update_Lead_with_private_customer_info</name>
         <label>Update Lead with private customer info</label>
         <locationX>50</locationX>
-        <locationY>4754</locationY>
+        <locationY>6134</locationY>
         <connector>
             <targetReference>Create_Interviews</targetReference>
         </connector>
@@ -4657,7 +4657,7 @@
         <name>Update_Opp</name>
         <label>Update Opp</label>
         <locationX>50</locationX>
-        <locationY>5858</locationY>
+        <locationY>7730</locationY>
         <connector>
             <targetReference>Get_User</targetReference>
         </connector>
@@ -4667,7 +4667,7 @@
         <name>Fault_Message_Screen_2</name>
         <label>Fault Message Screen 2</label>
         <locationX>1370</locationX>
-        <locationY>5318</locationY>
+        <locationY>6698</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -18280,7 +18280,7 @@
         <name>No_Products_Selected</name>
         <label>No Products Selected</label>
         <locationX>578</locationX>
-        <locationY>5642</locationY>
+        <locationY>7514</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -18308,7 +18308,7 @@
         <name>Products_Recap</name>
         <label>Products Recap</label>
         <locationX>314</locationX>
-        <locationY>4538</locationY>
+        <locationY>5918</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -18400,7 +18400,7 @@
                     <choiceReferences>c50</choiceReferences>
                     <choiceReferences>c100</choiceReferences>
                     <dataType>Number</dataType>
-                    <fieldText>Importo caparra</fieldText>
+                    <fieldText>Deposit</fieldText>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
@@ -19091,7 +19091,7 @@
         <name>Thank_you_screen</name>
         <label>Thank you screen</label>
         <locationX>50</locationX>
-        <locationY>6182</locationY>
+        <locationY>8054</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -20279,7 +20279,7 @@
         <name>Create_Quote_Lines</name>
         <label>Create Quote Lines</label>
         <locationX>50</locationX>
-        <locationY>5642</locationY>
+        <locationY>7514</locationY>
         <connector>
             <targetReference>Assign_values_to_Opp</targetReference>
         </connector>
@@ -20323,7 +20323,7 @@
         <name>Transform_Day_5</name>
         <label>Transform Day 5</label>
         <locationX>314</locationX>
-        <locationY>3134</locationY>
+        <locationY>4514</locationY>
         <connector>
             <targetReference>Assign_values_Interview_6</targetReference>
         </connector>
@@ -20472,7 +20472,7 @@
         <name>Transform_Day_6</name>
         <label>Transform Day 6</label>
         <locationX>314</locationX>
-        <locationY>3566</locationY>
+        <locationY>4946</locationY>
         <connector>
             <targetReference>Assign_values_Interview_7</targetReference>
         </connector>
@@ -20621,7 +20621,7 @@
         <name>Transform_Day_7</name>
         <label>Transform Day 7</label>
         <locationX>314</locationX>
-        <locationY>4214</locationY>
+        <locationY>5594</locationY>
         <connector>
             <targetReference>Assign_Chosen_Products_to_collection</targetReference>
         </connector>
@@ -20770,7 +20770,7 @@
         <name>Transform_Prod_Day_1</name>
         <label>Transform Prod Day 1</label>
         <locationX>314</locationX>
-        <locationY>1406</locationY>
+        <locationY>2786</locationY>
         <connector>
             <targetReference>Assign_values_Interview_2</targetReference>
         </connector>
@@ -20919,7 +20919,7 @@
         <name>Transform_Prod_Day_2</name>
         <label>Transform Prod Day 2</label>
         <locationX>314</locationX>
-        <locationY>1838</locationY>
+        <locationY>3218</locationY>
         <connector>
             <targetReference>Assign_values_Interview_3</targetReference>
         </connector>
@@ -21068,7 +21068,7 @@
         <name>Transform_Prod_Day_3</name>
         <label>Transform Prod Day 3</label>
         <locationX>314</locationX>
-        <locationY>2270</locationY>
+        <locationY>3650</locationY>
         <connector>
             <targetReference>Assign_values_Interview_4</targetReference>
         </connector>
@@ -21217,7 +21217,7 @@
         <name>Transform_Prod_Day_4</name>
         <label>Transform Prod Day 4</label>
         <locationX>314</locationX>
-        <locationY>2702</locationY>
+        <locationY>4082</locationY>
         <connector>
             <targetReference>Assign_values_Interview_5</targetReference>
         </connector>

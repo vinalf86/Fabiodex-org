@@ -186,6 +186,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Incrementa_tentativi_link</name>
+        <label>Incrementa tentativi link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>tentativiLink</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Attendi_generazione_link</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Aumenta_contatore_di_1</name>
         <label>Aumenta contatore di 1</label>
         <locationX>0</locationX>
@@ -225,6 +241,46 @@
                 <targetReference>Rigenera_link_di_pagamento</targetReference>
             </connector>
             <label>Valido</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Link_pagamento_aggiornato</name>
+        <label>Link pagamento aggiornato?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Incrementa_tentativi_link</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Non ancora aggiornato</defaultConnectorLabel>
+        <rules>
+            <name>Link_aggiornato</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Verifica_link_pagamento.Link_pagamento__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Trova_Opportunita.Link_pagamento__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Controlla_mail_da_inviare</targetReference>
+            </connector>
+            <label>Link aggiornato</label>
+        </rules>
+        <rules>
+            <name>Tentativi_esauriti</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>tentativiLink</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>3.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Controlla_mail_da_inviare</targetReference>
+            </connector>
+            <label>Tentativi esauriti</label>
         </rules>
     </decisions>
     <decisions>
@@ -332,6 +388,27 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Verifica_link_pagamento</name>
+        <label>Verifica link pagamento</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Link_pagamento_aggiornato</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Trova_Opportunita.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Trova_Opportunita</name>
         <label>Trova Opportunità</label>
         <locationX>0</locationX>
@@ -410,7 +487,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Controlla_mail_da_inviare</targetReference>
+            <targetReference>Attendi_generazione_link</targetReference>
         </connector>
         <flowName>Genera_link_pagamento</flowName>
         <inputAssignments>
@@ -480,6 +557,17 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
     </variables>
+    <variables>
+        <name>tentativiLink</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
     <waits>
         <name>Attendi_15_minuti</name>
         <elementSubtype>WaitDuration</elementSubtype>
@@ -494,6 +582,23 @@
             </connector>
             <label>el_0</label>
             <offset>15</offset>
+            <offsetUnit>Minutes</offsetUnit>
+        </waitEvents>
+    </waits>
+    <waits>
+        <name>Attendi_generazione_link</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Attendi generazione link</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Verifica_link_pagamento</targetReference>
+            </connector>
+            <label>el_0</label>
+            <offset>1</offset>
             <offsetUnit>Minutes</offsetUnit>
         </waitEvents>
     </waits>
