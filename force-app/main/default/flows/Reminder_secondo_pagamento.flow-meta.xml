@@ -3,12 +3,12 @@
     <actionCalls>
         <name>Genera_link_di_pagamento</name>
         <label>Genera link di pagamento</label>
-        <locationX>50</locationX>
+        <locationX>578</locationX>
         <locationY>684</locationY>
         <actionName>RevolutPaymentLinkGeneration</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Check_Lead_or_Contact</targetReference>
+            <targetReference>Attendi_generazione_link</targetReference>
         </connector>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
@@ -32,7 +32,7 @@
         <name>No_Email</name>
         <label>No Email</label>
         <locationX>314</locationX>
-        <locationY>1008</locationY>
+        <locationY>1116</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -73,7 +73,7 @@
         <name>Notify_Fabio</name>
         <label>Notify Fabio</label>
         <locationX>1898</locationX>
-        <locationY>684</locationY>
+        <locationY>792</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -120,7 +120,7 @@
         <name>Notify_internal_users</name>
         <label>Notify internal users</label>
         <locationX>578</locationX>
-        <locationY>1440</locationY>
+        <locationY>1548</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <faultConnector>
@@ -165,7 +165,7 @@
         <name>Notify_Sabrina</name>
         <label>Notify Sabrina</label>
         <locationX>2690</locationX>
-        <locationY>684</locationY>
+        <locationY>792</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
@@ -213,7 +213,7 @@
         <name>Payment_reminder_Business_Account</name>
         <label>Payment reminder - Business Account</label>
         <locationX>1106</locationX>
-        <locationY>684</locationY>
+        <locationY>900</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -278,7 +278,7 @@
         <name>Payment_reminder_Lead</name>
         <label>Payment reminder - Lead</label>
         <locationX>50</locationX>
-        <locationY>792</locationY>
+        <locationY>900</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -353,7 +353,7 @@
         <name>Payment_reminder_Person_Account</name>
         <label>Payment reminder - Person Account</label>
         <locationX>578</locationX>
-        <locationY>684</locationY>
+        <locationY>900</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -414,10 +414,26 @@
     <apiVersion>60.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Incrementa_tentativi_link</name>
+        <label>Incrementa tentativi link</label>
+        <locationX>578</locationX>
+        <locationY>360</locationY>
+        <assignmentItems>
+            <assignToReference>tentativiLink</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Attendi_generazione_link</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Add_recipients</name>
         <label>Add recipients</label>
         <locationX>578</locationX>
-        <locationY>1332</locationY>
+        <locationY>1440</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -440,7 +456,7 @@
         <name>Assign_Recipient_Fabio</name>
         <label>Assign Recipient Fabio</label>
         <locationX>1898</locationX>
-        <locationY>576</locationY>
+        <locationY>684</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -456,7 +472,7 @@
         <name>Assign_recipient_Id</name>
         <label>Assign recipient Id</label>
         <locationX>314</locationX>
-        <locationY>900</locationY>
+        <locationY>1008</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -472,7 +488,7 @@
         <name>Assign_Recipient_Sabrina</name>
         <label>Assign Recipient Sabrina</label>
         <locationX>2690</locationX>
-        <locationY>576</locationY>
+        <locationY>684</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>Add</operator>
@@ -488,7 +504,7 @@
         <name>Increase_retry</name>
         <label>Increase retry</label>
         <locationX>2162</locationX>
-        <locationY>900</locationY>
+        <locationY>1008</locationY>
         <assignmentItems>
             <assignToReference>retry</assignToReference>
             <operator>Add</operator>
@@ -504,7 +520,7 @@
         <name>Remove_Recipient</name>
         <label>Remove Recipient</label>
         <locationX>1898</locationX>
-        <locationY>792</locationY>
+        <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>RemoveAll</operator>
@@ -517,7 +533,7 @@
         <name>Remove_Recipient_2</name>
         <label>Remove Recipient</label>
         <locationX>2690</locationX>
-        <locationY>792</locationY>
+        <locationY>900</locationY>
         <assignmentItems>
             <assignToReference>RecipientId</assignToReference>
             <operator>RemoveAll</operator>
@@ -534,10 +550,50 @@
         </value>
     </constants>
     <decisions>
+        <name>Link_pagamento_aggiornato</name>
+        <label>Link pagamento aggiornato?</label>
+        <locationX>578</locationX>
+        <locationY>252</locationY>
+        <defaultConnector>
+            <targetReference>Incrementa_tentativi_link</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Non ancora aggiornato</defaultConnectorLabel>
+        <rules>
+            <name>Link_aggiornato</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Verifica_link_pagamento.Link_pagamento__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Link_pagamento__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Lead_or_Contact</targetReference>
+            </connector>
+            <label>Link aggiornato</label>
+        </rules>
+        <rules>
+            <name>Tentativi_esauriti</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>tentativiLink</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>3.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Lead_or_Contact</targetReference>
+            </connector>
+            <label>Tentativi esauriti</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Days_to_Event</name>
         <label>Check Days to Event</label>
         <locationX>1898</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X30_Days</name>
@@ -596,7 +652,7 @@
         <name>Check_Lead_or_Contact</name>
         <label>Check Lead or Contact</label>
         <locationX>578</locationX>
-        <locationY>576</locationY>
+        <locationY>792</locationY>
         <defaultConnector>
             <targetReference>Payment_reminder_Business_Account</targetReference>
         </defaultConnector>
@@ -640,10 +696,32 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_org</name>
+        <label>Check org</label>
+        <locationX>2690</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Sandbox</defaultConnectorLabel>
+        <rules>
+            <name>Production</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Setup.Org_Settings__c.Production__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Primary_Contact</targetReference>
+            </connector>
+            <label>Production</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_retry</name>
         <label>Check retry</label>
         <locationX>2294</locationX>
-        <locationY>792</locationY>
+        <locationY>900</locationY>
         <defaultConnectorLabel>Greater than 2</defaultConnectorLabel>
         <rules>
             <name>Less_or_equal_2</name>
@@ -698,10 +776,31 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Verifica_link_pagamento</name>
+        <label>Verifica link pagamento</label>
+        <locationX>578</locationX>
+        <locationY>468</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Link_pagamento_aggiornato</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Notification</name>
         <label>Get Notification</label>
         <locationX>1898</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Days_to_Event</targetReference>
@@ -722,7 +821,7 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
         <name>Get_Primary_Contact</name>
         <label>Get Primary Contact</label>
         <locationX>1898</locationX>
-        <locationY>252</locationY>
+        <locationY>360</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Notification</targetReference>
@@ -747,10 +846,10 @@ Dopo 7 giorni dall&apos;evento avvisa Sabrina tramite notifica.</description>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>1772</locationX>
+        <locationX>2564</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Primary_Contact</targetReference>
+            <targetReference>Check_org</targetReference>
         </connector>
         <filterLogic>1 AND ((2 AND 3) OR 4 OR 5)</filterLogic>
         <filters>
@@ -869,12 +968,40 @@ Per Fabio: preparare pernotto, inviare richieste musicali agli artisti e verific
             <numberValue>0.0</numberValue>
         </value>
     </variables>
+    <variables>
+        <name>tentativiLink</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <waits>
+        <name>Attendi_generazione_link</name>
+        <elementSubtype>WaitDuration</elementSubtype>
+        <label>Attendi generazione link</label>
+        <locationX>578</locationX>
+        <locationY>360</locationY>
+        <defaultConnectorLabel>Default Path</defaultConnectorLabel>
+        <waitEvents>
+            <conditionLogic>and</conditionLogic>
+            <connector>
+                <targetReference>Verifica_link_pagamento</targetReference>
+            </connector>
+            <label>el_0</label>
+            <offset>1</offset>
+            <offsetUnit>Minutes</offsetUnit>
+        </waitEvents>
+    </waits>
     <waits>
         <name>Wait_5_minutes</name>
         <elementSubtype>WaitDuration</elementSubtype>
         <label>Wait 5 minutes</label>
         <locationX>2162</locationX>
-        <locationY>1008</locationY>
+        <locationY>1116</locationY>
         <defaultConnectorLabel>Default Path</defaultConnectorLabel>
         <waitEvents>
             <conditionLogic>and</conditionLogic>
