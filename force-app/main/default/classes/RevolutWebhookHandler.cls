@@ -201,7 +201,8 @@ global without sharing class RevolutWebhookHandler {
         }
 
         List<Opportunity> matches = [
-            SELECT Id, Caparra__c, Amount, StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c
+            SELECT Id, Caparra__c, Amount, StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c,
+                   Data_inserita_automaticamente__c
             FROM Opportunity
             WHERE Id = :opportunityId
             LIMIT 1
@@ -213,6 +214,7 @@ global without sharing class RevolutWebhookHandler {
 
         Opportunity opp = matches[0];
         Boolean needsUpdate = false;
+        Boolean dateUpdated = false;
 
         if (opp.StageName != STAGE_CHIUSA_VINTA) {
             opp.StageName = STAGE_CHIUSA_VINTA;
@@ -226,6 +228,7 @@ global without sharing class RevolutWebhookHandler {
             if (opp.Data_ricezione_saldo__c == null) {
                 opp.Data_ricezione_saldo__c = Date.today();
                 needsUpdate = true;
+                dateUpdated = true;
             }
         } else if (opp.Caparra__c != null && opp.Amount != null) {
             if (opp.Caparra__c == opp.Amount) {
@@ -234,6 +237,7 @@ global without sharing class RevolutWebhookHandler {
                 opp.Data_ricezione_caparra__c = Date.today();
                 opp.Data_ricezione_saldo__c = Date.today();
                 needsUpdate = true;
+                dateUpdated = true;
             } else {
                 // Caparra__c < Amount: pagamento della sola caparra, caso normale.
                 // Caparra__c > Amount: dato anomalo (la caparra impostata supera il totale),
@@ -241,6 +245,7 @@ global without sharing class RevolutWebhookHandler {
                 // comunque l'anomalia con un log per la revisione manuale.
                 opp.Data_ricezione_caparra__c = Date.today();
                 needsUpdate = true;
+                dateUpdated = true;
                 if (opp.Caparra__c > opp.Amount) {
                     logAnomaly('CAPARRA_MAGGIORE_AMOUNT',
                         'Caparra__c (' + opp.Caparra__c + ') è maggiore di Amount (' + opp.Amount + ') sull\'Opportunity ' +
@@ -252,6 +257,14 @@ global without sharing class RevolutWebhookHandler {
             logAnomaly('IMPORTI_MANCANTI',
                 'Caparra__c o Amount non valorizzati sull\'Opportunity ' + opp.Id + ': impossibile determinare quale campo data valorizzare.',
                 reference, rawBody);
+        }
+
+        // Se una delle due date di pagamento è stata valorizzata da questo webhook,
+        // segnaliamo che il dato è stato inserito automaticamente (senza riscriverlo
+        // se il flag risulta già attivo).
+        if (dateUpdated && opp.Data_inserita_automaticamente__c != true) {
+            opp.Data_inserita_automaticamente__c = true;
+            needsUpdate = true;
         }
 
         if (needsUpdate) {

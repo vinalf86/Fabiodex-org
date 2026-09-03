@@ -105,10 +105,11 @@ private class RevolutWebhookHandlerTest {
 
         Assert.areEqual(200, RestContext.response.statusCode);
 
-        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
         Assert.areEqual(Date.today(), updated.Data_ricezione_caparra__c);
         Assert.isNull(updated.Data_ricezione_saldo__c);
+        Assert.isTrue(updated.Data_inserita_automaticamente__c, 'La data è stata inserita dal webhook: il flag deve essere TRUE');
         Assert.areEqual(0, [SELECT COUNT() FROM Log__c WHERE FailedRecordId__c = :opp.Id]);
     }
 
@@ -122,10 +123,11 @@ private class RevolutWebhookHandlerTest {
         invokeWebhook(orderCompletedPayload(opp.Id), true);
         Test.stopTest();
 
-        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
         Assert.areEqual(Date.today(), updated.Data_ricezione_caparra__c);
         Assert.areEqual(Date.today(), updated.Data_ricezione_saldo__c);
+        Assert.isTrue(updated.Data_inserita_automaticamente__c, 'Entrambe le date inserite dal webhook: il flag deve essere TRUE');
     }
 
     // Scenario 2b: la caparra è già stata ricevuta in precedenza -> questo evento riguarda
@@ -141,10 +143,11 @@ private class RevolutWebhookHandlerTest {
         invokeWebhook(orderCompletedPayload(opp.Id), true);
         Test.stopTest();
 
-        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
         Assert.areEqual(dataCaparra, updated.Data_ricezione_caparra__c, 'La data della caparra già ricevuta non va toccata');
         Assert.areEqual(Date.today(), updated.Data_ricezione_saldo__c);
+        Assert.isTrue(updated.Data_inserita_automaticamente__c, 'La data del saldo è stata inserita dal webhook: il flag deve essere TRUE');
     }
 
     // Scenario 3: firma non valida -> 401, log di anomalia, nessun aggiornamento Opportunity
@@ -279,10 +282,11 @@ private class RevolutWebhookHandlerTest {
         Test.stopTest();
 
         Assert.areEqual(200, RestContext.response.statusCode);
-        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
         Assert.areEqual(dataCaparra, updated.Data_ricezione_caparra__c, 'La data della caparra non deve mai essere sovrascritta');
         Assert.areEqual(dataSaldo, updated.Data_ricezione_saldo__c, 'La data del saldo non deve mai essere sovrascritta');
+        Assert.isFalse(updated.Data_inserita_automaticamente__c, 'Nessuna data valorizzata da questo evento: il flag non deve essere attivato');
         Assert.areEqual(0, [SELECT COUNT() FROM Log__c WHERE FailedRecordId__c = :opp.Id]);
     }
 
@@ -296,10 +300,11 @@ private class RevolutWebhookHandlerTest {
         invokeWebhook(orderCompletedPayload(opp.Id), true);
         Test.stopTest();
 
-        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c FROM Opportunity WHERE Id = :opp.Id];
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Chiuse/Conseguite', updated.StageName);
         Assert.areEqual(Date.today(), updated.Data_ricezione_caparra__c);
         Assert.isNull(updated.Data_ricezione_saldo__c);
+        Assert.isTrue(updated.Data_inserita_automaticamente__c, 'La data è stata inserita dal webhook: il flag deve essere TRUE');
         Assert.areEqual(1, [SELECT COUNT() FROM Log__c WHERE ResultCode__c = 'CAPARRA_MAGGIORE_AMOUNT']);
     }
 
@@ -323,5 +328,43 @@ private class RevolutWebhookHandlerTest {
         Opportunity updated = [SELECT StageName FROM Opportunity WHERE Id = :opp.Id];
         Assert.areEqual('Richiesta', updated.StageName);
         Assert.areEqual(0, [SELECT COUNT() FROM Log__c]);
+    }
+
+    // Scenario 12: il flag Data_inserita_automaticamente__c è già TRUE da un pagamento
+    // precedente -> resta TRUE e la nuova data viene comunque valorizzata
+    @isTest
+    static void testHandleOrderCompleted_FlagGiaTrue_RestaTrue() {
+        Opportunity opp = createOpportunity('flaggiaattivo', 100.00, 200.00, 'Chiuse/Conseguite');
+        opp.Data_ricezione_caparra__c = Date.today().addDays(-10);
+        opp.Data_inserita_automaticamente__c = true;
+        update opp;
+
+        Test.startTest();
+        invokeWebhook(orderCompletedPayload(opp.Id), true);
+        Test.stopTest();
+
+        Assert.areEqual(200, RestContext.response.statusCode);
+        Opportunity updated = [SELECT Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
+        Assert.areEqual(Date.today(), updated.Data_ricezione_saldo__c);
+        Assert.isTrue(updated.Data_inserita_automaticamente__c, 'Il flag già attivo deve rimanere TRUE');
+    }
+
+    // Scenario 13: importi mancanti -> nessuna data valorizzata, quindi il flag
+    // Data_inserita_automaticamente__c non deve essere attivato (lo Stage sì)
+    @isTest
+    static void testHandleOrderCompleted_NessunaDataValorizzata_FlagRestaFalse() {
+        Opportunity opp = createOpportunity('importimancanti', null, 200.00, 'Richiesta');
+
+        Test.startTest();
+        invokeWebhook(orderCompletedPayload(opp.Id), true);
+        Test.stopTest();
+
+        Assert.areEqual(200, RestContext.response.statusCode);
+        Opportunity updated = [SELECT StageName, Data_ricezione_caparra__c, Data_ricezione_saldo__c, Data_inserita_automaticamente__c FROM Opportunity WHERE Id = :opp.Id];
+        Assert.areEqual('Chiuse/Conseguite', updated.StageName);
+        Assert.isNull(updated.Data_ricezione_caparra__c);
+        Assert.isNull(updated.Data_ricezione_saldo__c);
+        Assert.isFalse(updated.Data_inserita_automaticamente__c, 'Senza date valorizzate il flag non deve essere attivato');
+        Assert.areEqual(1, [SELECT COUNT() FROM Log__c WHERE ResultCode__c = 'IMPORTI_MANCANTI']);
     }
 }
