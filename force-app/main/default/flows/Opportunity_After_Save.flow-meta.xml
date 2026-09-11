@@ -60,7 +60,7 @@
         <description>Blocca il salvataggio se Event_Start_Date__c/Event_End_Date__c non sono compilate o End &lt; Start</description>
         <name>Manage_Error_Invalid_Event_Dates</name>
         <label>Manage Error Invalid Event Dates</label>
-        <locationX>1362</locationX>
+        <locationX>1370</locationX>
         <locationY>539</locationY>
         <customErrorMessages>
             <errorMessage>Hey {!$User.FirstName}, {!Call_Opportunity_After_Save_Logic.FaultMessage} sull&apos;Opportunità. La Data Fine Evento deve essere compilata ed essere uguale o successiva alla Data Inizio Evento.</errorMessage>
@@ -70,7 +70,7 @@
     <decisions>
         <name>Check_Fault_Stage</name>
         <label>Check Fault Stage</label>
-        <locationX>710</locationX>
+        <locationX>842</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>No Fault</defaultConnectorLabel>
         <rules>
@@ -247,14 +247,15 @@ ISNEW() ||
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>584</locationX>
+        <locationX>716</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Call_Opportunity_After_Save_Logic</targetReference>
         </connector>
-        <filterFormula>{!$Record.Opp_automatica_da_web__c} = false &amp;&amp;
+        <filterFormula>({!$Record.Opp_automatica_da_web__c} = false &amp;&amp;
+ISNEW()) ||
 (
-ISNEW() ||
+!ISNEW() &amp;&amp;
 (
 !ISPICKVAL({!$Record.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
 !ISPICKVAL({!$Record__Prior.StageName}, &apos;Chiuse/Perse&apos;) &amp;&amp;
@@ -280,7 +281,7 @@ ISCHANGED({!$Record.StageName})
     <subflows>
         <name>Call_Opportunity_After_Save_Logic</name>
         <label>Call Opportunity After Save Logic</label>
-        <locationX>710</locationX>
+        <locationX>842</locationX>
         <locationY>323</locationY>
         <connector>
             <targetReference>Check_Fault_Stage</targetReference>

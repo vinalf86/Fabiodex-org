@@ -529,6 +529,16 @@
                 <identifier>RecordReference__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.DestinatarioPagamento__c</fieldItem>
+                <identifier>RecordDestinatarioPagamento_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-3e88abdc-79dc-4d36-8153-1a1854b8145b</name>
         <type>Facet</type>
     </flexiPageRegions>
