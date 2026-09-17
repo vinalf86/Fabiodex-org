@@ -741,8 +741,8 @@ ISNULL({!OpportunityRecord.Event_End_Date__c}),
         <name>NameBusAccount</name>
         <dataType>String</dataType>
         <expression>IF ( {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.Name},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.Name}
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.Name},
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.Name}
 )</expression>
     </formulas>
     <formulas>
@@ -750,25 +750,25 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({
         <dataType>String</dataType>
         <expression>IF (
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
 
 IF(
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Fabiodex&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} = {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;FX&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
 
 IF(
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
 
 IF(
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;Tuscany Entertainement&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} = {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName},
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;-&quot; &amp; &quot; &quot; &amp; &quot;TE&quot; &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName},
 
 IF(
 ISPICKVAL({!OpportunityRecord.Lead__r.Sito_di_ingresso__c}, &apos;&apos;) &amp;&amp; {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} ,
 
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} 
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.FirstName}  &amp; &quot; &quot; &amp; {!OpportunityRecord.Lead__r.LastName} 
 
 )
 )
@@ -780,8 +780,8 @@ TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({
         <name>NamePersAccount</name>
         <dataType>String</dataType>
         <expression>IF ( {!OpportunityRecord.Event_Start_Date__c} &lt;&gt; {!OpportunityRecord.Event_End_Date__c},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.LastName},
-TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT({!OpportunityRecord.StageName}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.LastName}
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; TEXT ({!OpportunityRecord.Event_End_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.LastName},
+TEXT ({!OpportunityRecord.Event_Start_Date__c}) &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Location__c} &amp; &quot; &quot; &amp; &quot;/&quot; &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.FirstName} &amp; &quot; &quot; &amp; {!OpportunityRecord.Account.LastName}
 )</expression>
     </formulas>
     <formulas>
